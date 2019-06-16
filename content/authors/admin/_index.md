@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Nelson Bighetti
+name: Greg Langmead
 
 # Username (this should match the folder name)
 authors:
@@ -10,50 +10,42 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Machine Learning Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
+- name: Apple Inc., Carnegie Mellon University
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I am a software engineer and mathematician. I work on NLP algorithms for Apple News, and research homotopy type theory in CMU's philosophy department.
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Differential geometry and topology
+- Homotopy type theory
+- Higher category theory
+- AI
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: PhD in Mathematics
+    institution: Columbia University
+    year: 2001
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/glangmead
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=KFbBBPD_nAoJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/glangmead
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
@@ -61,15 +53,22 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
-  
+email: "glangmead@gmail.com"
+
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.  
-user_groups:
-- Researchers
-- Visitors
+#user_groups:
+#- Researchers
+#- Visitors
 ---
+My name is Greg Langmead. I am a machine learning engineer at [Apple](https://machinelearning.apple.com), where I work on [Apple News](https://www.apple.com/news/) and Stocks.
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am also a student in the [Philosophy department](https://www.cmu.edu/dietrich/philosophy) at Carnegie Mellon University. I study [homotopy type theory](https://homotopytypetheory.org) and differential geometry. I use theorem proving software such as [Agda](https://en.wikipedia.org/wiki/Agda_(programming_language)) and [Lean](https://leanprover.github.io).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+I have a Ph.D. in mathematics from Columbia University (2001) where I studied gauge theory, supersymmetry, and four-dimensional topology. My dissertation was titled "[A Supersymmetric Gauge Theory Formulation of the Donaldson Polynomial Invariants](https://arxiv.org/abs/hep-th/0210192)."
+
+Previously I worked at Design Science and SDL Language Weaver. I'm all over the map.
+
+I'm interested in music and try to find time to practice piano, guitar and sometimes the ukulele. I love learning about the chord progressions used in music and am a frequent visitor to [Theorytab](https://www.hooktheory.com/theorytab).
+
+My interests include mathematics, physics, software, board games (including their iPad versions), and I pile up video games for iOS, Xbox, PC and Mac and never quite get around to playing them. I do the same with books and movies.
