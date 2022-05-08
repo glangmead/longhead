@@ -28,13 +28,7 @@
     {{/* Correct the title and URL for author profile pages. */}}
     {{- if eq .Section "authors" -}}
       {{- $title = .Params.name -}}
-      {{ $path := "" }}
-      {{ with .File }}
-      {{ $path = .Path }}
-      {{ else }}
-      {{ $path = .Path }}
-      {{ end }}
-          {{- $username := path.Base (path.Split $path).Dir -}}
+      {{- $username := path.Base (path.Split .Path).Dir -}}
       {{- with site.GetPage (printf "/authors/%s" $username) -}}
         {{- $permalink = .Permalink -}}
         {{- $rel_permalink = .RelPermalink -}}

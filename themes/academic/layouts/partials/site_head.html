@@ -11,15 +11,9 @@
   {{ $superuser_name := "" }}
   {{ $superuser_username := "" }}
   {{ $superuser_role := "" }}
-  {{ $path := "" }}
-  {{ with .File }}
-	{{ $path = .Path }}
-  {{ else }}
-	{{ $path = .Path }}
-  {{ end }}
   {{ range first 1 (where (where site.Pages "Section" "authors") "Params.superuser" true) }}
     {{ $superuser_name = .Params.name }}
-    {{ $superuser_username = path.Base (path.Split $path).Dir }}
+    {{ $superuser_username = path.Base (path.Split .Path).Dir }}
     {{ $superuser_role = .Params.role }}
   {{ end }}
   {{ $scr.Set "superuser_username" $superuser_username }}{{/* For access from page_author.html. */}}
