@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Lord of the Rings Annotated Differences From the Peter Jackson Movies"
-summary: ""
+summary: "This post is for anyone who enjoyed watching the movies, is willing to re-watch the extended editions, and has a desire to read the books but hesitates to invest the full time required to read 3 novels."
 authors: []
 tags: []
 categories: []
