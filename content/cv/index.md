@@ -5,14 +5,14 @@
 I am a teammate and leader, mathematician and engineer, researcher and
 developer of shipping products. I want to give back and have an impact.
 
+* Successful leader, individual contributor, and collaborator
+* Long and successful track record integrating research into products
 * Ph.D. in mathematics, in four-dimensional geometry and mathematical
 physics
 * Machine learning, natural language processing, Java, Python, Spark,
 Swift
 * Recent second mathematical career in homotopy type theory
-* Successful leader, individual contributor, and collaborator
 * Good listener, eager to teach and learn
-* Long and successful track record integrating research into products
 
 ## Experience
 
