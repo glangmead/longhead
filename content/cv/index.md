@@ -135,7 +135,7 @@ Polynomial
 Invariants](https://arxiv.org/abs/hep-th/0210192), G.
 Langmead, Ph.D. dissertation. Self-published to arxiv.org.
 
-Patents
+## Patents
 
 *Task parallelization in a text-to-text system*, G. Langmead, K. Yamada,
 K. Knight, D. Marcu, US patent
@@ -175,7 +175,7 @@ Georgios Sofianatos, Justin W. Sung, Kang Tu, Jason A. Novak, US patent
 [10,268,747](https://patents.google.com/patent/US10268747B2/en?oq=10,268,747),
 to Apple Inc., Patent and Trademark Office, 2019.
 
-CONTACT
+## Contact
 
 [glangmead\@gmail.com](mailto:glangmead@gmail.com)\
 [greg.langmead.info](http://greg.langmead.info)\
