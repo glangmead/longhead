@@ -16,7 +16,7 @@ Here is how the two platforms deal with this issue. On the Mac, every so often, 
 
 
 
-![mac_way.png](/wp-content/my_images/mac_way.png)
+![mac_way.png](/img/mac_way.png)
 
 
 
@@ -35,7 +35,7 @@ Here's how it works on Windows. I think I have my machine set up in the most agr
 
 
 
-![windows_way.png](/wp-content/my_images/windows_way.png)
+![windows_way.png](/img/windows_way.png)
 
 
 
@@ -54,7 +54,7 @@ One day, with the update pictured above in fact, I took the plunge, and decided 
 
 
 
-![windows_lose.png](/wp-content/my_images/windows_lose.png)
+![windows_lose.png](/img/windows_lose.png)
 
 
 
@@ -71,7 +71,7 @@ So, I lost the gamble. "May have to restart" became "must restart." I was busy, 
 
 
 
-![windows_worse.png](/wp-content/my_images/windows_worse.png)
+![windows_worse.png](/img/windows_worse.png)
 
 
 

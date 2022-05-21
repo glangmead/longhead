@@ -11,5 +11,5 @@ categories:
 I came across this site while looking for card tables. It made me laugh out loud.
 
 
-![bad_design.png](/wp-content/my_images/bad_design.png)
+![bad_design.png](/img/bad_design.png)
 

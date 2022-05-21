@@ -26,7 +26,7 @@ I tried other kinds of straps besides a rubber band, but the elasticity and rubb
 
 
 
-![ingredients](http://greg.langmead.info/wp-content/uploads/2009/11/IMG_1201.JPG)
+![ingredients](/img/IMG_1201.JPG)
 
 
 
@@ -37,7 +37,7 @@ Notice my Incipio case is looking cracked and old, after just a year! I do not r
 
 
 
-![rubber band around case](http://greg.langmead.info/wp-content/uploads/2009/11/IMG_1203.JPG)
+![rubber band around case](/img/IMG_1203.JPG)
 
 
 
@@ -48,7 +48,7 @@ Then, put the iphone in the case, on top of the rubber band. You may have to wor
 
 
 
-![iPhone, rubber band, and case](http://greg.langmead.info/wp-content/uploads/2009/11/IMG_1204.JPG)
+![iPhone, rubber band, and case](/img/IMG_1204.JPG)
 
 
 
@@ -70,7 +70,7 @@ Now, whenever you want to hold the phone for extended periods, just slip your in
 
 
 
-![finger in rubber band](http://greg.langmead.info/wp-content/uploads/2009/11/IMG_1206.JPG)
+![finger in rubber band](/img/IMG_1206.JPG)
 
 
 
@@ -81,7 +81,7 @@ Your hand muscles can relax, and you can much more easily use your thumb to scro
 
 
 
-![scrolling ebook](http://greg.langmead.info/wp-content/uploads/2009/11/IMG_1207.JPG)
+![scrolling ebook](/img/IMG_1207.JPG)
 
 
 

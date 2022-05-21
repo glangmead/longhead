@@ -13,7 +13,7 @@ My second Mac moment came when using the text editor TextWrangler to work on She
 
 
 
-![Textwranglervisual](/wp-content/my_images/TextWranglerVisual.png)
+![Textwranglervisual](/img/TextWranglerVisual.png)
 
 
 
