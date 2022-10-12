@@ -14,6 +14,12 @@ Swift
 * Recent second mathematical career in homotopy type theory
 * Good listener, eager to teach and learn
 
+## Education
+
+* Carnegie Mellon University, Pittsburgh, PA --- M.S. Philosophy, expected 2023.
+* Columbia University, New York, NY --- Ph.D Mathematics, 2001.
+* Columbia University, New York, NY --- B.A., Mathematics and Astrophysics, Magna cum Laude, 1994.
+
 ## Experience
 
 ### **Apple Inc., Pittsburgh, PA --- 2011--Present** 
@@ -39,13 +45,13 @@ mentoring. Many positive comments in peer and manager feedback.
 
 #### Software Engineer, Productivity Applications, July 2011
 
-Developed iOS and OS X software for designing and reading multi-touch
+Developed iOS and macOS iBooks Author software for authoring and reading multi-touch
 books. Wrote Objective-C code, performed code reviews, and collaborated
 with other internal groups through three release cycles including the
 initial release of multi-touch features in January 2012. Designed and
 pitched novel features and filed one patent application.
 
-### **SDL Language Technologies, Los Angeles, CA --- OCT 2004--July 2011** 
+### **SDL Language Technologies, Los Angeles, CA --- Oct 2004--July 2011** 
 
 #### Manager, Dec 2010--July 2011 
 
@@ -104,14 +110,8 @@ Served as liaison with the Microsoft Office for Mac team.
 
 Collaborated with teammate Robert Miner on math-aware search engine.
 Modified Lucene open source document indexer with custom analyzer plugin
-to index normalized MathML expressions. Part of [[an NSF SBIR
-project]{.underline}](https://www.sbir.gov/sbirsearch/detail/145099).
-
-## Education
-
-* Carnegie Mellon University, Pittsburgh, PA --- M.S. Philosophy, expected 2023.
-* Columbia University, New York, NY --- Ph.D Mathematics, 2001.
-* Columbia University, New York, NY --- B.A., Mathematics and Astrophysics, Magna cum Laude, 1994.
+to index normalized MathML expressions. Part of [an NSF SBIR
+project](https://www.sbir.gov/sbirsearch/detail/145099).
 
 ## Publications
 
