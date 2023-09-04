@@ -2,11 +2,12 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "The Future Does Not Compute: Book Report"
-subtitle: "It's been on my to-read list for nearly 30 years"
+subtitle: "Putting our finger on how computing distorts us."
 summary: ""
 authors: []
 tags: []
-categories: []
+categories:
+- Tech
 date: 2023-08-28T17:33:15-04:00
 lastmod: 2023-08-28T17:33:15-04:00
 featured: false
