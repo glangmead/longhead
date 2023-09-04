@@ -12,7 +12,7 @@ lastmod: 2023-08-28T17:33:15-04:00
 featured: false
 draft: false
 ---
-I've owned the book _The Future Does Not Compute_ by Steven Talbott for almost 30 years, but for a million reasons it was only recently that I focused on reading it. What I found was what I always knew I'd find: thoughtful and clear reflections on some problems with computing. I want to relate some of his main arguments, and give you an idea of what an eloquent writer he is.
+I've owned the book _The Future Does Not Compute_ by Stephen Talbott for almost 30 years, but for a million reasons it was only recently that I focused on reading it. What I found was what I always knew I'd find: thoughtful and clear reflections on some problems with computing. I want to relate some of his main arguments, and give you an idea of what an eloquent writer he is.
 
 I've organized quotes from the book into three themes:
 * _destructiveness_: computers bring about change; they render lifeless things that were alive in us, which is bad
