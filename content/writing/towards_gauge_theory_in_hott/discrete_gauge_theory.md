@@ -19,6 +19,7 @@ csl: ima.csl
 ---
 
 <!-- https://pandoc.org/MANUAL.html -->
+\newcommand{\todo}[1]{\textbf{[TODO: {#1}]}}
 \newcommand{\defeq}{\stackrel{\textup{def}}{=}}
 \newcommand{\U}{\mathcal{U}}
 \newcommand{\BG}{\mathsf{B}G}
@@ -121,7 +122,45 @@ Here is a brief overview of the kinds of results we want to gain access to in Ho
 
 ## Not the fundamental groupoid, not the path groupoid
 
-There are other avenues one could pursue to treat the theory of connections in category theory or homotopy type theory.
+There are other avenues one could pursue to treat the theory of connections in category theory or homotopy type theory. John Baez and collaborators [@baez_schreiber_higher_gauge] [@baez_huerta_higher_gauge] have emphasized the *path groupoid* $\mathcal{P}_1(X)$ of a manifold $X$, which is a sort of infinitary higher inductive type whose points are the points of $X$, whose paths are so-called *thin homotopy* classes of smooth paths (paths up to a homotopy that is 1-dimensional, for example a reparameterization of the path that simply changes speed), and where composition of paths is carefully defined so that compositions are always smooth. A connection is then simply a functor $\mathcal{P}_1(X)\to BG$ where $BG$ is a one-object groupoid whose paths are a given group $G$. 
+
+The path groupoid construction has not been defined in HoTT, and it's not clear that it can be done, or whether it's worthwhile to do so. A related object which does exist in HoTT is the *fundamental groupoid* of $X$, whose points are the points of $X$ and whose paths are homotopy classes of paths. This is the 1-truncation of the full *fundamental $\infty$-groupoid* of $X$ which does not take equivalence classes but retains all the paths and adds higher equalities for the homotopies. Mike Shulman [@shulman_cohesion] and others have developed and extended a system of functions and higher inductive types that act as *modal operators* inside HoTT, with a corresponding topos-theoretic interpretation that extends ideas of Lawvere known as *cohesion*. One of the higher inductive types is called *shape* and when applied to a 0-type such as a manifold, constructs its fundamental $\infty$-groupoid as a higher type. This offers a pathway for classical objects to be imported into type theory, and for us to then define type-theoretic versions of classical constructions such as bundles and connections.
+
+But the fundamental $\infty$-groupoid of a space is a relatively impoverished object, since paths that are homotopic are made equal. Connections that agree on homotopy-equivalent paths are called *flat* and are so special that we cannot build gauge theory with them! We need non-flat connections.
+
+## Combinatorial manifolds
+
+Per Hatcher [@hatcher_at] a *CW complex* is a space $X$ constructed through the following recursive procedure. Start with a set $X_0$, the 0-cells of $X$. Then inductively form the $n$-skeleton from the $n-1$-skeleton by attaching a set of disks via attaching maps of the boundary spheres. If $I_{n}$ is the indexing set at stage $n$, this means forming the pushout
+$$\begin{CD}
+\coprod_{I_n} S^{n-1} @>\mathrm{attach}>> X_{n-1} \\
+@V\mathrm{incl}VV @VVV \\
+\coprod_{I_n} D^{n} @>\phi_{I_n}>> X_{n}
+\end{CD}
+$$
+We require each map in the set $\phi_{I_n}$ to be a homeomorphism on the interior of the disk. We will assume we stop at a finite dimension. We will be left with maps $X_0\hookrightarrow X_1\hookrightarrow\cdots\hookrightarrow X_n$ for some finite dimension $n$. 
+
+What spaces are equivalent to a CW complex, and which CW complexes have other structures such as a piecewise linear structure or a smooth structure? Here's a quick rundown. $\todo{Get some clarity and present it.}$
+
+It's easy to see how to take the data of a classical CW complex and convert it into a higher inductive type. Just replace the pushout with the homotopy pushout, and we have constructed a type that has $n$-cells living in path level $n$. Of course we may end up obtaining more paths than we put in the constructor, since even simple spaces like spheres have nontrivial higher homotopy. And on the other hand our space may turn out to be equivalent to a type with lower truncation level than $n$, for example if we create an interval with two points and a path between them, which nominally is a 1-type but is equivalent to a single point. But the situation should mirror the classical picture, so these are all features and not bugs.
+
+But even a CW complex is not obviously amenable to defining discrete forms or connections. Why? Because the "bulk" of the manifold, the top-dimensional cells, have been thrust up to level $n$ in the type theory. 
+
+Imagine trying to approximate a function $f:X\to \rr$ on a manifold with some sort of sampling or averaging. Start by forming a fine triangulation on the manifold (i.e. using lots of triangles). To construct a discrete approximation $f_d$ it seems natural to assign to each triangle a value that approximates $f$ in that region, say by taking the average of $f$ over the triangle. What would play the role of the differential $df$? It makes sense to look at two triangles $t_1$ and $t_2$ that share an edge $e_{12}$ and look at the difference $f_d(t_2)-f_d(t_1)$ and assign that to the edge $e_{12}$. This is a *dual* edge to the triangulation, and the two vertices that it joins are $t_1$ and $t_2$ considered as single points, i.e. *dual* vertices.
+
+In HoTT terms we would like the top-dimensional classical information to live at level 0 in the type theory, and the connectivity to live at level 1 and so on. So instead of forming a triangulation or CW structure for our manifold, we want to form a *Cech nerve of an open cover*.
+
+$\todo{define this, and cite theorems about its homotopy type, focusing on the niceness or other special conditions}$
+
+So let's form HITs whose points correspond to the bulk, that is to open sets in $X$, so as to capture combinatorially structures that are samples or averages of their classical counterparts.
+
+This is calculus without infinitesimals and without tangent spaces. Paths and higher paths have finite length. There is no de Rham cohomology, only cellular cohomology.
+
+Consider the surface of a Rubik's cube as a stand-in for a 2-sphere. Let's call the face that has a white center the white face, even if the cube is scrambled. If the white face is on top and the green face is facing you, then yellow is on the bottom, blue is at the back, red is to the right and orange is to the left. Form an open cover whose open sets are faces plus a little spillover to the four neighboring faces. The nerve of this cover is an octahedron with vertices colored white, green and so on, with edges that correspond to adjacent faces, and with 2-cells for the 3-way intersections taking place at the original corners. We can define a non-flat connection on this space, one that captures the intrinsic curvature of the embedding into 3-dimensional space, in the following way. 
+
+Imagine a closed path on the original cube that starts at the white center square, moves along the top face and then the red face to the red center square, then comes around to the front green square, then back up to the white north pole. This path traverses three faces. In the dual octahedron this path picks out the white-red edge, then the red-green edge, then green-white. So it's also a closed path in the dual space. We will assign to this curve a point in $SO(2)$, which is the structure group of the tangent bundle of the sphere. In particular we assign the value "clockwise rotation by 90 degrees". That's what happens to an imaginary tangent vector as it is transported around this curve. I haven't defined tangent vectors, but I don't need to, they are just to help us understand why we made this choice of group element.
+
+Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
+
 
 
 
