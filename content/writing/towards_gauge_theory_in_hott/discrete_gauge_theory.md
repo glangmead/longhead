@@ -147,7 +147,7 @@ But even a CW complex is not obviously amenable to defining discrete forms or co
 
 Imagine trying to approximate a function $f:X\to \rr$ on a manifold with some sort of sampling or averaging. Start by forming a fine triangulation on the manifold (i.e. using lots of triangles). To construct a discrete approximation $f_d$ it seems natural to assign to each triangle a value that approximates $f$ in that region, say by taking the average of $f$ over the triangle. What would play the role of the differential $df$? It makes sense to look at two triangles $t_1$ and $t_2$ that share an edge $e_{12}$ and look at the difference $f_d(t_2)-f_d(t_1)$ and assign that to the edge $e_{12}$. This is a *dual* edge to the triangulation, and the two vertices that it joins are $t_1$ and $t_2$ considered as single points, i.e. *dual* vertices.
 
-In HoTT terms we would like the top-dimensional classical information to live at level 0 in the type theory, and the connectivity to live at level 1 and so on. So instead of forming a triangulation or CW structure for our manifold, we want to form a *Cech nerve of an open cover*.
+In HoTT terms we would like the top-dimensional classical information to live at level 0 in the type theory, and the connectivity to live at level 1 and so on. So instead of forming a triangulation or CW structure for our manifold, we want to form a *Čech nerve of an open cover*.
 
 $\todo{define this, and cite theorems about its homotopy type, focusing on the niceness or other special conditions}$
 
@@ -155,12 +155,33 @@ So let's form HITs whose points correspond to the bulk, that is to open sets in 
 
 This is calculus without infinitesimals and without tangent spaces. Paths and higher paths have finite length. There is no de Rham cohomology, only cellular cohomology.
 
-Consider the surface of a Rubik's cube as a stand-in for a 2-sphere. Let's call the face that has a white center the white face, even if the cube is scrambled. If the white face is on top and the green face is facing you, then yellow is on the bottom, blue is at the back, red is to the right and orange is to the left. Form an open cover whose open sets are faces plus a little spillover to the four neighboring faces. The nerve of this cover is an octahedron with vertices colored white, green and so on, with edges that correspond to adjacent faces, and with 2-cells for the 3-way intersections taking place at the original corners. We can define a non-flat connection on this space, one that captures the intrinsic curvature of the embedding into 3-dimensional space, in the following way. 
+Consider the surface of a Rubik's cube as a stand-in for a 2-sphere. Let's call the face that has a white center the white face. If the white face is on top and the green face is facing you, then yellow is on the bottom, blue is at the back, red is to the right and orange is to the left. (This works even if the cube is scrambled.) Form an open cover whose open sets are faces plus a little spillover to the four neighboring faces. The nerve of this cover is an octahedron with vertices colored white, green and so on, with edges that correspond to adjacent faces, and with 2-cells for the 3-way intersections taking place at the original corners. We can define a non-flat connection on this space, one that captures the intrinsic curvature of the embedding into 3-dimensional space, in the following way. 
 
 Imagine a closed path on the original cube that starts at the white center square, moves along the top face and then the red face to the red center square, then comes around to the front green square, then back up to the white north pole. This path traverses three faces. In the dual octahedron this path picks out the white-red edge, then the red-green edge, then green-white. So it's also a closed path in the dual space. We will assign to this curve a point in $SO(2)$, which is the structure group of the tangent bundle of the sphere. In particular we assign the value "clockwise rotation by 90 degrees". That's what happens to an imaginary tangent vector as it is transported around this curve. I haven't defined tangent vectors, but I don't need to, they are just to help us understand why we made this choice of group element.
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
+<pre class="Agda"><a id="13497" class="Symbol">{-#</a> <a id="13501" class="Keyword">OPTIONS</a> <a id="13509" class="Pragma">--without-K</a> <a id="13521" class="Pragma">--cohesion</a> <a id="13532" class="Pragma">--flat-split</a> <a id="13545" class="Symbol">#-}</a>
 
+<a id="13550" class="Keyword">module</a> <a id="13557" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13579" class="Keyword">where</a>
 
+<a id="13586" class="Comment">-- octahedron</a>
+</pre>
+## $BG$ and $\BAut BG$
+
+Let $G$ be a group which is a 0-type. Then we can deloop $G$ by forming the pointed type of $G$-torsors, called $BG_+$, where the $+$ denotes that the space has a base point. We will refer to base points as $*$, or when there are multiple basepoints using $*_{BG}$. The underlying type of $BG_+$ will be denoted $BG_-$.
+
+Given any type $X$, we can form $\BAut X$ which is the pointed type of types merely equivalent to $X$, pointed by $X$. You can think of this as collapsing $X$ to a point, a term in $\BAut X$. The duality between "$X$ is a type and has points of its own" and "$X$ is a point in a type of types" will keep coming up.
+
+$$
+\begin{CD}
+X_0 @>>> X_1 @>>> X \\
+@VVV @VVV @VVV \\
+X_0 @>>> BG @>>> \BAut BG
+\end{CD}
+$$
+
+## Torus groups
+
+We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle).
 
