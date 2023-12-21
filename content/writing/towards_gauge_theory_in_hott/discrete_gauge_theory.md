@@ -73,6 +73,9 @@ csl: ima.csl
 \newcommand{\uni}{\mathcal{U}}
 \newcommand{\gauge}{\mathcal{G}}
 \newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\Gg}{\mathscr{G}}
+\newcommand{\Aa}{\mathscr{A}}
+\newcommand{\Bb}{\mathscr{B}}
 
 <center>
 ![](geb-logo.png "Image of the book cover of Godel Escher Bach"){ width=500 }
