@@ -165,23 +165,50 @@ Classically a connection is usually defined to be a 1-form with values in the Li
 
 <a id="13550" class="Keyword">module</a> <a id="13557" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13579" class="Keyword">where</a>
 
-<a id="13586" class="Comment">-- octahedron</a>
+<a id="13586" class="Keyword">open</a> <a id="13591" class="Keyword">import</a> <a id="13598" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="13625" class="Keyword">open</a> <a id="13630" class="Keyword">import</a> <a id="13637" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
-## $BG$ and $\BAut BG$
+## Bundles with connection
 
-Let $G$ be a group which is a 0-type. Then we can deloop $G$ by forming the pointed type of $G$-torsors, called $BG_+$, where the $+$ denotes that the space has a base point. We will refer to base points as $*$, or when there are multiple basepoints using $*_{BG}$. The underlying type of $BG_+$ will be denoted $BG_-$.
+We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
-Given any type $X$, we can form $\BAut X$ which is the pointed type of types merely equivalent to $X$, pointed by $X$. You can think of this as collapsing $X$ to a point, a term in $\BAut X$. The duality between "$X$ is a type and has points of its own" and "$X$ is a point in a type of types" will keep coming up.
+ <pre class="Agda"><a id="13862" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="13874" href="discrete_gauge_theory.html#13874" class="Postulate">𝕊¹</a> <a id="13877" class="Symbol">:</a> <a id="13879" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13882" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-$$
-\begin{CD}
-X_0 @>>> X_1 @>>> X \\
-@VVV @VVV @VVV \\
-X_0 @>>> BG @>>> \BAut BG
-\end{CD}
-$$
+<a id="13889" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="13901" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a> <a id="13909" class="Symbol">:</a> <a id="13911" href="discrete_gauge_theory.html#13874" class="Postulate">𝕊¹</a>
+
+<a id="13915" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="13927" href="discrete_gauge_theory.html#13927" class="Postulate">loop-𝕊¹</a> <a id="13935" class="Symbol">:</a> <a id="13937" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13940" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a> <a id="13948" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a>
+</pre>
+Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
+
+Given a particular function $f:X\to \BAut_1 S^1$, what does this function do at the various levels of $X$? On terms $x_0:X$ it assigns a particular $S^1$-torsor $f(x_0):\BAut_1 S^1$. On paths $p:x_1=_X x_2$ it assigns an isomorphism of torsors $f(p):f(x_0)=f(x_1)$. 
+
+Next we will form the total space $(x:X)\times f(x)$ and look at the what we know about *dependent paths*, also known as *pathovers*. We claim that we can lift paths uniquely to dependent paths in a way that corresponds to a connection on this bundle.
+
+Can this connection be curved, or is it necessarily flat? It can be curved! Consider a path in the Rubik's cube nerve (the octahedron) starting from the top (white) point (which stands in for the whole white face of the cube) and moving to the red point, then green, then back to the white point. Applying $f$ to this loop gives an automorphism of the torsor $f(white)$. This is a group element of the central type $S^1$ which we will name $f(wrgw)$. This can be a non-identity element. But since this path bounds a 2-cell $wrg$ in $X$, there is a path from this loop to $\refl_w$. Is there a path from $f(wrgw)$ to $1_{S^1}$? Yes, the central type $S^1$ is connected so there are various paths we could choose, which differ by winding number. The 2-face will map to this path.
+
+The lifting of paths is a connection, and the assignment of paths $1=_{S^1}g$ to 2-cells is curvature. Classically these are defined infinitesimally as a 1-form and a 2-form, so it's all making sense.
+
+Classically we have that hiccup that connections aren't actually 1-forms, they are points in an affine space modeled on 1-forms. But curvature is an honest 2-form. Can we detect that hiccup here?
+
+## Gauge transformations
+
+Physicists call automorphisms of the principal bundle *gauge transformations*. $\todo{explain about torsors and gauges and such}$. This means homotopies of the given bundle $f:X\to \BAut_1 S^1$, i.e. functions of type $(x:X)\to f(x)=f(x)$. 
+
+Donaldson-Kronheimer: “The non-triviality of the orbit space is a reflection of the impossibility of finding a uniform, global procedure by which to pick out a preferred gauge for each equivalence class of connections;” ([Donaldson and Kronheimer, 1997, p. 185](zotero://select/library/items/6SNR3CNY)) ([pdf](zotero://open-pdf/library/items/CIC23ZVM?page=185&annotation=2KPBLMAP))
+
+The action of $\Gg$ on $\Aa$ is not free, even when a connection $A$ is irreducible. The stabilizer of $A$ coincides with the center of $G$. This leads to framed connections.
 
 ## Torus groups
 
-We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle).
+We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle) (aka "splitting principle").
 
+Leray-Hirsch theorem.
+
+## Follow-ups
+
+[Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
+
+[Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
