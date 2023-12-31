@@ -77,7 +77,7 @@ csl: ima.csl
 \newcommand{\Gg}{\mathscr{G}}
 \newcommand{\Aa}{\mathscr{A}}
 \newcommand{\Bb}{\mathscr{B}}
-
+\newcommand{\pathover}[1]{\xrightarrow[{#1}]{=}}
 <center>
 ![](geb-logo.png "Image of the book cover of Godel Escher Bach"){ width=500 }
 </center>
@@ -161,25 +161,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="13497" class="Symbol">{-#</a> <a id="13501" class="Keyword">OPTIONS</a> <a id="13509" class="Pragma">--without-K</a> <a id="13521" class="Pragma">--cohesion</a> <a id="13532" class="Pragma">--flat-split</a> <a id="13545" class="Symbol">#-}</a>
+<pre class="Agda"><a id="13545" class="Symbol">{-#</a> <a id="13549" class="Keyword">OPTIONS</a> <a id="13557" class="Pragma">--without-K</a> <a id="13569" class="Pragma">--cohesion</a> <a id="13580" class="Pragma">--flat-split</a> <a id="13593" class="Symbol">#-}</a>
 
-<a id="13550" class="Keyword">module</a> <a id="13557" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13579" class="Keyword">where</a>
+<a id="13598" class="Keyword">module</a> <a id="13605" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13627" class="Keyword">where</a>
 
-<a id="13586" class="Keyword">open</a> <a id="13591" class="Keyword">import</a> <a id="13598" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="13625" class="Keyword">open</a> <a id="13630" class="Keyword">import</a> <a id="13637" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="13634" class="Keyword">open</a> <a id="13639" class="Keyword">import</a> <a id="13646" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="13673" class="Keyword">open</a> <a id="13678" class="Keyword">import</a> <a id="13685" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="13862" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="13874" href="discrete_gauge_theory.html#13874" class="Postulate">𝕊¹</a> <a id="13877" class="Symbol">:</a> <a id="13879" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13882" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="13910" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="13922" href="discrete_gauge_theory.html#13922" class="Postulate">𝕊¹</a> <a id="13925" class="Symbol">:</a> <a id="13927" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13930" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="13889" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="13901" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a> <a id="13909" class="Symbol">:</a> <a id="13911" href="discrete_gauge_theory.html#13874" class="Postulate">𝕊¹</a>
+<a id="13937" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="13949" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a> <a id="13957" class="Symbol">:</a> <a id="13959" href="discrete_gauge_theory.html#13922" class="Postulate">𝕊¹</a>
 
-<a id="13915" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="13927" href="discrete_gauge_theory.html#13927" class="Postulate">loop-𝕊¹</a> <a id="13935" class="Symbol">:</a> <a id="13937" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13940" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a> <a id="13948" href="discrete_gauge_theory.html#13901" class="Postulate">base-𝕊¹</a>
+<a id="13963" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="13975" href="discrete_gauge_theory.html#13975" class="Postulate">loop-𝕊¹</a> <a id="13983" class="Symbol">:</a> <a id="13985" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13988" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a> <a id="13996" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
@@ -192,6 +192,17 @@ Can this connection be curved, or is it necessarily flat? It can be curved! Cons
 The lifting of paths is a connection, and the assignment of paths $1=_{S^1}g$ to 2-cells is curvature. Classically these are defined infinitesimally as a 1-form and a 2-form, so it's all making sense.
 
 Classically we have that hiccup that connections aren't actually 1-forms, they are points in an affine space modeled on 1-forms. But curvature is an honest 2-form. Can we detect that hiccup here? Yes, in this context we made an arbitrary choice when we assigned $f(white)$. We could slide the whole image of $f$ around in $\BAut_1 S^1$ and get an equivalent bundle and connection. But no matter where we place the octahedron, the curvature assignment is the same, because the choices of torsors cancel out. But do they entirely? If you read classical material very carefully you might notice fine print like this: curvature is defined only up to conjugation! We could have told you that, since all the points in a space of torsors have the same group as the loop space at that point, but they are conjugate to each other. In fact they are merely conjugate, as there are many conjugations (paths between two points) we can choose. A whole torsor's worth!
+
+## Pathovers as horizontal \times vertical
+
+Symmetry Lemma 4.14.1: 
+Fix a section $s:(x:B)\to f(x)$ (or just the two endpoints of the lift).
+Given $f$ and $s$, we have $\underline{\underline{(x, s(x))} =_{E} \underline{(x', s(x'))}} \simeq \underline{\underline{(x=_B x')}\times \underline{s(x)=_{f(x)}s(x')}}$.
+
+the type on the left are paths over $x=x'$ anchored on the section
+(the ones that are $s(x)\pathover{p} s(x')$ for some $p:x=x'$)
+
+This mirrors exactly the classical picture where a connection is exactly the data of a decomposition of tangent vectors in the total space into a horizontal component and a vertical component. The horizontal component is isomorphic to something in the base space, and the vertical component is tangent to a fiber, i.e. a torsor.
 
 ## Gauge transformations
 
