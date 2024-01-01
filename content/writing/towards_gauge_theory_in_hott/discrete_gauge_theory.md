@@ -19,7 +19,6 @@ csl: ima.csl
 ---
 
 <!-- https://pandoc.org/MANUAL.html -->
-\newcommand{\todo}[1]{\textbf{[TODO: {#1}]}}
 \newcommand{\defeq}{\stackrel{\textup{def}}{=}}
 \newcommand{\U}{\mathcal{U}}
 \newcommand{\BG}{\mathsf{B}G}
@@ -127,7 +126,9 @@ $$\begin{CD}
 $$
 We require each map in the set $\phi_{I_n}$ to be a homeomorphism on the interior of the disk. We will assume we stop at a finite dimension. We will be left with maps $X_0\hookrightarrow X_1\hookrightarrow\cdots\hookrightarrow X_n$ for some finite dimension $n$. 
 
-What spaces are equivalent to a CW complex, and which CW complexes have other structures such as a piecewise linear structure or a smooth structure? Here's a quick rundown. $\todo{Get some clarity and present it.}$
+What topological manifolds are equivalent to a CW complex? The answer is the composition of a few results summarized [by Allen Hatcher](https://mathoverflow.net/questions/201944/topological-n-manifolds-have-the-homotopy-type-of-n-dimensional-cw-complexes) (citing [@kirby_siebenmann] and [@freedman_quinn]):
+
+> Every topological manifold has a handlebody structure except in dimension 4, where a 4-manifold has a handlebody structure if and only if it is smoothable. This is a theorem on page 136 of Freedman and Quinn's book "Topology of 4-Manifolds", with a reference given to the Kirby-Siebenmann book for the higher-dimensional case. It is then an elementary fact that an $n$-manifold with a handlebody structure is homotopy equivalent to a CW complex with one $k$-cell for each $k$-handle, so in particular there are no cells of dimension greater than $n$. At least in the compact case a manifold with a handlebody structure is in fact homeomorphic to a CW complex with $k$-cells corresponding to $k$-handles; see page 107 of Kirby-Siebenmann. This probably holds in the noncompact case as well, though I don't know a reference.
 
 It's easy to see how to take the data of a classical CW complex and convert it into a higher inductive type. Just replace the pushout with the homotopy pushout, and we have constructed a type that has $n$-cells living in path level $n$. Of course we may end up obtaining more paths than we put in the constructor, since even simple spaces like spheres have nontrivial higher homotopy. And on the other hand our space may turn out to be equivalent to a type with lower truncation level than $n$, for example if we create an interval with two points and a path between them, which nominally is a 1-type but is equivalent to a single point. But the situation should mirror the classical picture, so these are all features and not bugs.
 
@@ -135,9 +136,7 @@ But even a CW complex is not obviously amenable to defining discrete forms or co
 
 Imagine trying to approximate a function $f:X\to \rr$ on a manifold with some sort of sampling or averaging. Start by forming a fine triangulation on the manifold (i.e. using lots of triangles). To construct a discrete approximation $f_d$ it seems natural to assign to each triangle a value that approximates $f$ in that region, say by taking the average of $f$ over the triangle. What would play the role of the differential $df$? It makes sense to look at two triangles $t_1$ and $t_2$ that share an edge $e_{12}$ and look at the difference $f_d(t_2)-f_d(t_1)$ and assign that to the edge $e_{12}$. This is a *dual* edge to the triangulation, and the two vertices that it joins are $t_1$ and $t_2$ considered as single points, i.e. *dual* vertices.
 
-In HoTT terms we would like the top-dimensional classical information to live at level 0 in the type theory, and the connectivity to live at level 1 and so on. So instead of forming a triangulation or CW structure for our manifold, we want to form a *Čech nerve of an open cover*.
-
-$\todo{define this, and cite theorems about its homotopy type, focusing on the niceness or other special conditions}$
+In HoTT terms we would like the top-dimensional classical information to live at level 0 in the type theory, and the connectivity to live at level 1 and so on. So instead of forming a triangulation or CW structure for our manifold, we want to form a *Čech nerve of a good open cover*. The nLab [states that every CW complex admits a good open cover](https://ncatlab.org/nlab/show/good+open+cover)**[TODO: try to do better]**.
 
 So let's form HITs whose points correspond to the bulk, that is to open sets in $X$, so as to capture combinatorially structures that are samples or averages of their classical counterparts.
 
@@ -149,25 +148,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="13306" class="Symbol">{-#</a> <a id="13310" class="Keyword">OPTIONS</a> <a id="13318" class="Pragma">--without-K</a> <a id="13330" class="Pragma">--cohesion</a> <a id="13341" class="Pragma">--flat-split</a> <a id="13354" class="Symbol">#-}</a>
+<pre class="Agda"><a id="14206" class="Symbol">{-#</a> <a id="14210" class="Keyword">OPTIONS</a> <a id="14218" class="Pragma">--without-K</a> <a id="14230" class="Pragma">--cohesion</a> <a id="14241" class="Pragma">--flat-split</a> <a id="14254" class="Symbol">#-}</a>
 
-<a id="13359" class="Keyword">module</a> <a id="13366" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13388" class="Keyword">where</a>
+<a id="14259" class="Keyword">module</a> <a id="14266" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14288" class="Keyword">where</a>
 
-<a id="13395" class="Keyword">open</a> <a id="13400" class="Keyword">import</a> <a id="13407" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="13434" class="Keyword">open</a> <a id="13439" class="Keyword">import</a> <a id="13446" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="14295" class="Keyword">open</a> <a id="14300" class="Keyword">import</a> <a id="14307" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="14334" class="Keyword">open</a> <a id="14339" class="Keyword">import</a> <a id="14346" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="13671" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="13683" href="discrete_gauge_theory.html#13683" class="Postulate">𝕊¹</a> <a id="13686" class="Symbol">:</a> <a id="13688" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13691" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="14571" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="14583" href="discrete_gauge_theory.html#14583" class="Postulate">𝕊¹</a> <a id="14586" class="Symbol">:</a> <a id="14588" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14591" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="13698" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="13710" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a> <a id="13718" class="Symbol">:</a> <a id="13720" href="discrete_gauge_theory.html#13683" class="Postulate">𝕊¹</a>
+<a id="14598" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="14610" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a> <a id="14618" class="Symbol">:</a> <a id="14620" href="discrete_gauge_theory.html#14583" class="Postulate">𝕊¹</a>
 
-<a id="13724" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="13736" href="discrete_gauge_theory.html#13736" class="Postulate">loop-𝕊¹</a> <a id="13744" class="Symbol">:</a> <a id="13746" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13749" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a> <a id="13757" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a>
+<a id="14624" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="14636" href="discrete_gauge_theory.html#14636" class="Postulate">loop-𝕊¹</a> <a id="14644" class="Symbol">:</a> <a id="14646" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14649" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a> <a id="14657" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
@@ -175,7 +174,7 @@ Given a particular function $f:X\to \BAut_1 S^1$, what does this function do at 
 
 Next we will form the total space $(x:X)\times f(x)$ and look at what we know about *dependent paths*, also known as *pathovers*. We claim that we can lift paths uniquely to dependent paths in a way that corresponds to a connection on this bundle.
 
-Can this connection be curved, or is it necessarily flat? It can be curved! Consider a path in the Rubik's cube nerve (the octahedron) starting from the top (white) point (which stands in for the whole white face of the cube) and moving to the red point, then green, then back to the white point. Applying $f$ to this loop gives an automorphism of the torsor $f(white)$. This is a group element of the central type $S^1$ which we will name $f(wrgw)$. This can be a non-identity element. But since this path bounds a 2-cell $wrg$ in $X$, there is a 2-path from this loop to $\refl_w$. Is there a path from $f(wrgw)$ to $1_{S^1}$? Yes, the central type $S^1$ is connected so there are various paths we could choose, which differ by winding number. The 2-face will map to this path. $\todo{detail the 2-type structure of \(\BAut_1 S^1\)}$
+Can this connection be curved, or is it necessarily flat? It can be curved! Consider a path in the Rubik's cube nerve (the octahedron) starting from the top (white) point (which stands in for the whole white face of the cube) and moving to the red point, then green, then back to the white point. Applying $f$ to this loop gives an automorphism of the torsor $f(white)$. This is a group element of the central type $S^1$ which we will name $f(wrgw)$. This can be a non-identity element. But since this path bounds a 2-cell $wrg$ in $X$, there is a 2-path from this loop to $\refl_w$. Is there a path from $f(wrgw)$ to $1_{S^1}$? Yes, the central type $S^1$ is connected so there are various paths we could choose, which differ by winding number. The 2-face will map to this path. **[TODO: detail the 2-type structure of $\BAut_1 S^1$]**
 
 The lifting of paths is a connection, and the assignment of paths $1=_{S^1}g$ to 2-cells is curvature. Classically these are defined infinitesimally as a 1-form and a 2-form, so it's all making sense.
 
@@ -196,7 +195,7 @@ This mirrors exactly the classical picture where a connection is exactly the dat
 
 ## Gauge transformations
 
-Physicists call automorphisms of the principal bundle *gauge transformations*. $\todo{explain about torsors and gauges and such}$. This means homotopies of the given bundle $f:X\to \BAut_1 S^1$, i.e. functions of type $(x:X)\to f(x)=f(x)$. 
+Physicists call automorphisms of the principal bundle *gauge transformations*. **[TODO: explain about torsors and gauges and such]**. This means homotopies of the given bundle $f:X\to \BAut_1 S^1$, i.e. functions of type $(x:X)\to f(x)=f(x)$. 
 
 Donaldson-Kronheimer: “The non-triviality of the orbit space is a reflection of the impossibility of finding a uniform, global procedure by which to pick out a preferred gauge for each equivalence class of connections;” ([Donaldson and Kronheimer, 1997, p. 185](zotero://select/library/items/6SNR3CNY)) ([pdf](zotero://open-pdf/library/items/CIC23ZVM?page=185&annotation=2KPBLMAP))
 
