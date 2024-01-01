@@ -81,19 +81,9 @@ csl: ima.csl
 ![](geb-logo.png "Image of the book cover of Godel Escher Bach"){ width=500 }
 </center>
 
-## Outline
-1. Combinatorial types
-2. Classifying spaces of principal bundles
-3. Observing connections and curvature
-4. Gauge transformations
-5. Characteristic classes
-    1. Splitting principle
-    2. Tori
-    3. Relationship with curvature (Chern-Weil theory)
-
 ## Abstract
 
-What can we import into homotopy type theory from gauge theory using combinatorial spaces and principal torus bundles?
+We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory.
 
 ## Introduction
 
@@ -148,25 +138,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="14206" class="Symbol">{-#</a> <a id="14210" class="Keyword">OPTIONS</a> <a id="14218" class="Pragma">--without-K</a> <a id="14230" class="Pragma">--cohesion</a> <a id="14241" class="Pragma">--flat-split</a> <a id="14254" class="Symbol">#-}</a>
+<pre class="Agda"><a id="13955" class="Symbol">{-#</a> <a id="13959" class="Keyword">OPTIONS</a> <a id="13967" class="Pragma">--without-K</a> <a id="13979" class="Pragma">--cohesion</a> <a id="13990" class="Pragma">--flat-split</a> <a id="14003" class="Symbol">#-}</a>
 
-<a id="14259" class="Keyword">module</a> <a id="14266" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14288" class="Keyword">where</a>
+<a id="14008" class="Keyword">module</a> <a id="14015" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14037" class="Keyword">where</a>
 
-<a id="14295" class="Keyword">open</a> <a id="14300" class="Keyword">import</a> <a id="14307" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="14334" class="Keyword">open</a> <a id="14339" class="Keyword">import</a> <a id="14346" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="14044" class="Keyword">open</a> <a id="14049" class="Keyword">import</a> <a id="14056" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="14083" class="Keyword">open</a> <a id="14088" class="Keyword">import</a> <a id="14095" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="14571" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="14583" href="discrete_gauge_theory.html#14583" class="Postulate">𝕊¹</a> <a id="14586" class="Symbol">:</a> <a id="14588" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14591" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="14320" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="14332" href="discrete_gauge_theory.html#14332" class="Postulate">𝕊¹</a> <a id="14335" class="Symbol">:</a> <a id="14337" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14340" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="14598" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="14610" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a> <a id="14618" class="Symbol">:</a> <a id="14620" href="discrete_gauge_theory.html#14583" class="Postulate">𝕊¹</a>
+<a id="14347" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="14359" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a> <a id="14367" class="Symbol">:</a> <a id="14369" href="discrete_gauge_theory.html#14332" class="Postulate">𝕊¹</a>
 
-<a id="14624" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="14636" href="discrete_gauge_theory.html#14636" class="Postulate">loop-𝕊¹</a> <a id="14644" class="Symbol">:</a> <a id="14646" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14649" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a> <a id="14657" href="discrete_gauge_theory.html#14610" class="Postulate">base-𝕊¹</a>
+<a id="14373" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="14385" href="discrete_gauge_theory.html#14385" class="Postulate">loop-𝕊¹</a> <a id="14393" class="Symbol">:</a> <a id="14395" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14398" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a> <a id="14406" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
