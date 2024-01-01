@@ -88,9 +88,9 @@ csl: ima.csl
 3. Observing connections and curvature
 4. Gauge transformations
 5. Characteristic classes
-	1. Splitting principle
-  2. Tori
-	3. Relationship with curvature (Chern-Weil theory)
+    1. Splitting principle
+    2. Tori
+    3. Relationship with curvature (Chern-Weil theory)
 
 ## Abstract
 
@@ -149,25 +149,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="13298" class="Symbol">{-#</a> <a id="13302" class="Keyword">OPTIONS</a> <a id="13310" class="Pragma">--without-K</a> <a id="13322" class="Pragma">--cohesion</a> <a id="13333" class="Pragma">--flat-split</a> <a id="13346" class="Symbol">#-}</a>
+<pre class="Agda"><a id="13306" class="Symbol">{-#</a> <a id="13310" class="Keyword">OPTIONS</a> <a id="13318" class="Pragma">--without-K</a> <a id="13330" class="Pragma">--cohesion</a> <a id="13341" class="Pragma">--flat-split</a> <a id="13354" class="Symbol">#-}</a>
 
-<a id="13351" class="Keyword">module</a> <a id="13358" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13380" class="Keyword">where</a>
+<a id="13359" class="Keyword">module</a> <a id="13366" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13388" class="Keyword">where</a>
 
-<a id="13387" class="Keyword">open</a> <a id="13392" class="Keyword">import</a> <a id="13399" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="13426" class="Keyword">open</a> <a id="13431" class="Keyword">import</a> <a id="13438" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="13395" class="Keyword">open</a> <a id="13400" class="Keyword">import</a> <a id="13407" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="13434" class="Keyword">open</a> <a id="13439" class="Keyword">import</a> <a id="13446" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="13663" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="13675" href="discrete_gauge_theory.html#13675" class="Postulate">𝕊¹</a> <a id="13678" class="Symbol">:</a> <a id="13680" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13683" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="13671" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="13683" href="discrete_gauge_theory.html#13683" class="Postulate">𝕊¹</a> <a id="13686" class="Symbol">:</a> <a id="13688" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13691" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="13690" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="13702" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a> <a id="13710" class="Symbol">:</a> <a id="13712" href="discrete_gauge_theory.html#13675" class="Postulate">𝕊¹</a>
+<a id="13698" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="13710" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a> <a id="13718" class="Symbol">:</a> <a id="13720" href="discrete_gauge_theory.html#13683" class="Postulate">𝕊¹</a>
 
-<a id="13716" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="13728" href="discrete_gauge_theory.html#13728" class="Postulate">loop-𝕊¹</a> <a id="13736" class="Symbol">:</a> <a id="13738" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13741" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a> <a id="13749" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a>
+<a id="13724" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="13736" href="discrete_gauge_theory.html#13736" class="Postulate">loop-𝕊¹</a> <a id="13744" class="Symbol">:</a> <a id="13746" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13749" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a> <a id="13757" href="discrete_gauge_theory.html#13710" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
@@ -178,6 +178,8 @@ Next we will form the total space $(x:X)\times f(x)$ and look at what we know ab
 Can this connection be curved, or is it necessarily flat? It can be curved! Consider a path in the Rubik's cube nerve (the octahedron) starting from the top (white) point (which stands in for the whole white face of the cube) and moving to the red point, then green, then back to the white point. Applying $f$ to this loop gives an automorphism of the torsor $f(white)$. This is a group element of the central type $S^1$ which we will name $f(wrgw)$. This can be a non-identity element. But since this path bounds a 2-cell $wrg$ in $X$, there is a 2-path from this loop to $\refl_w$. Is there a path from $f(wrgw)$ to $1_{S^1}$? Yes, the central type $S^1$ is connected so there are various paths we could choose, which differ by winding number. The 2-face will map to this path. $\todo{detail the 2-type structure of \(\BAut_1 S^1\)}$
 
 The lifting of paths is a connection, and the assignment of paths $1=_{S^1}g$ to 2-cells is curvature. Classically these are defined infinitesimally as a 1-form and a 2-form, so it's all making sense.
+
+If the map is more than just "the bundle" and contains the data of a curved connection automatically, can we recover the underlying bundle without its connection?
 
 Classically we have that hiccup that connections aren't actually 1-forms, they are points in an affine space modeled on 1-forms. But curvature is an honest 2-form. Can we detect that hiccup here? Yes, in this context we made an arbitrary choice when we assigned $f(white)$. We could slide the whole image of $f$ around in $\BAut_1 S^1$ and get an equivalent bundle and connection. But no matter where we place the octahedron, the curvature assignment is the same, because the choices of torsors cancel out. But do they entirely? If you read classical material very carefully you might notice fine print like this: curvature is defined only up to conjugation! We could have told you that, since all the points in a space of torsors have the same group as the loop space at that point, but they are conjugate to each other. In fact they are merely conjugate, as there are many conjugations (paths between two points) we can choose. A whole torsor's worth!
 
@@ -200,6 +202,38 @@ Donaldson-Kronheimer: “The non-triviality of the orbit space is a reflection o
 
 The action of $\Gg$ on $\Aa$ is not free, even when a connection $A$ is irreducible. The stabilizer of $A$ coincides with the center of $G$. This leads to framed connections.
 
+## Classical theorems
+
+Cohen Theorem 2.24 p. 73: Complex line bundles over CPn are the integers, and for n>=0 the bundle is the n-fold tensor power of the universal line bundle.
+
+Cohen Theorem 2.25: The only nontriv real line bundle over RPn is the canonical line bundle.
+
+Cohen Theorem 2.27: A bundle has a nontriv section iff the classifying map factor through one dimension lower.
+
+Covering spaces have a unique connection and it's flat.
+
+A characteristic class is a natural transformation between the functor PrinG and the functor H^*.
+
+The first Chern class is a complete invariant of complex line bundles. The first S-W class is a complete invariant of real line bundles.
+
+c1 is zero iff the bundle has an SU(n) structure. w1 is zero iff the bundle has an SO(n) structure.
+
+The cohomology of BU(n) is a polynomial algebra on n generators over Z with ci in H^2i, and similarly for BO(n) over Z2 with wi in H^i.
+
+Whitney sum formula for c and w.
+
+The splitting principle.
+
+The w classes for the tangent bundles of spheres are 0 starting with S1.
+
+The w classes for the tangent bundles of RPn and CPn.
+
+## Chern-Weil theory
+
+## Cohomology as obstructions to lifts (obstruction theory)
+
+
+
 ## Torus groups
 
 We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle) (aka "splitting principle").
@@ -208,8 +242,21 @@ Leray-Hirsch theorem.
 
 ## Follow-ups
 
-[Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
+* [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
+* [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
+* intersection forms
+* examples of nontrivial manifolds
+* a situation where classically there's an obstruction to a distribution; Lie bracket remaining in subbundle
+* Baez Galois theory formulations
+* locating the classical formulas for curvature ($F=dA+\frac{1}{2}A\wedge A$); Bianchi identity
+* locating the classical formula for the action of the gauge group on a connection/curvature
+* locating the Leibniz rule
+* if $\ap$ "is" differentiation, then is $d^2=0$?
+* which map from the Rubik's cube is the Hopf bundle?
+* Hodge star
+* orientation of a bundle
 
-[Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
+
+
 
 ## References
