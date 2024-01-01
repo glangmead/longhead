@@ -83,50 +83,38 @@ csl: ima.csl
 </center>
 
 ## Outline
-1. Combinatorial topology
-	1. Cech, PL, CW
-	2. Contrast with the path groupoid narratives
-2. We'll use the k-skeleton inclusions to control maps
-3. Torsors, deloopings, BAut
-4. Where is the principal bundle, where is the connection, where is the curvature?
-5. Arriving at the gauge group and its delooping without using the "space of connections for a fixed bundle"
-6. Using the homotopy type of the gauge group
-	1. characteristic classes
-	2. seeing Chern-Weil in characteristic classes
-7. Examples, including with maximal tori
+1. Combinatorial types
+2. Classifying spaces of principal bundles
+3. Observing connections and curvature
+4. Gauge transformations
+5. Characteristic classes
+	1. Splitting principle
+  2. Tori
+	3. Relationship with curvature (Chern-Weil theory)
 
 ## Abstract
 
-We introduce discrete gauge theory.
+What can we import into homotopy type theory from gauge theory using combinatorial spaces and principal torus bundles?
 
 ## Introduction
 
-[Gauge theory](https://en.wikipedia.org/wiki/Gauge_theory) is a general methodology for defining invariants of spaces, whether those be invariants of the homotopy type, the homomorphism class, or the diffeomorphism class. We make use of mediating objects such as principal bundles over the space, connections on the bundles, and morphisms of these. These additional objects provide access to information beyond the homology and homotopy groups of the space, but they are also of direct interest as well. In physics, the fields that model matter particles are sections of bundles, and those that model force fields are connections. The laws of nature are postulated to be invariant under automorphisms of all the underlying principal bundles, and so all the objects we need to study topology are relevant in physics as well!
+[Gauge theory](https://en.wikipedia.org/wiki/Gauge_theory) is a general methodology for defining invariants of spaces, including invariants of the homotopy type, the homomorphism class, or the diffeomorphism class. We make use of mediating objects such as principal bundles over the space, connections on the bundles, and morphisms of these. These additional objects provide access to information beyond the homology and homotopy groups of the space, but they are also of direct interest as well. In physics the fields that model force fields are connections, and the fields that model matter particles are sections of associated vector bundles. The laws of nature are postulated to be invariant under automorphisms of all the underlying principal bundles, and so all the objects we need to study topology are relevant in physics as well!
 
-The standard introductions to differential geometry and gauge theory work at the infinitesimal level. Connections are differential forms with values in the Lie algebra of a Lie group, forms are sections of a skew symmetric product of cotangent spaces. This fine local structure is so far inaccessible to homotopy type theory, even with modalities such as those offered by differential cohesion. These modalities are intriguing but very alien to classical intuitions. We won't be saying more about that line of investigation.
+The standard treatments of differential geometry and gauge theory work at the infinitesimal level. Connections are differential forms with values in the Lie algebra of a Lie group, rather than functions from finite-length paths directly into the Lie group. This fine local structure is so far inaccessible to homotopy type theory, even with modalities such as those offered by differential cohesion. These modalities are intriguing but very alien to classical intuitions. We won't be saying more about that line of investigation.
 
-There is another approach, which is to draw inspiration from discrete and combinatorial methods. [Discrete differential geometry](https://en.wikipedia.org/wiki/Discrete_differential_geometry) is an active field of applied mathematics and computer science, which has reused or created definitions of vector field, differential form, connection and curvature, that apply to a triangulated surface embedded in 3-dimensional space (as might be used in a computer graphics engine).
+There is another approach, which is to draw inspiration from discrete and combinatorial methods. [Discrete differential geometry](https://en.wikipedia.org/wiki/Discrete_differential_geometry) is an active field of applied mathematics and computer science which has combinatorial versions of vector fields, differential forms, connections and curvature, which apply to a triangulated surface embedded in 3-dimensional space (as might be used in a computer graphics engine).
 
 Algebraic topology of course has always had a train of thought devoted to combinatorial approximations to smooth or continuous spaces, a major example of which is the notion of a CW complex. The theory of piecewise linear (PL) manifolds is another important example where a finite structure is used to capture important properties of a space.
 
-Such complexes are easy to define in homotopy type theory, as [higher inductive types](https://en.wikipedia.org/wiki/Homotopy_type_theory#The_univalence_axiom,_synthetic_homotopy_theory,_and_higher_inductive_types). We will see a lot of examples shortly. Can we define bundles, forms and connections on these?
-
-## Survey of classical results
-
-Here is a brief overview of the kinds of results we want to gain access to in HoTT. 
-
-* Freed-Hopkins
-* $B\Gg$
-* hairy ball theorem
-* characteristic classes
+Such complexes are easy to define in homotopy type theory, as [higher inductive types](https://en.wikipedia.org/wiki/Homotopy_type_theory#The_univalence_axiom,_synthetic_homotopy_theory,_and_higher_inductive_types). We will see a lot of examples shortly. How much of gauge theory can we define with these?
 
 ## Not the fundamental groupoid, not the path groupoid
 
-There are other avenues one could pursue to treat the theory of connections in category theory or homotopy type theory. John Baez and collaborators [@baez_schreiber_higher_gauge] [@baez_huerta_higher_gauge] have emphasized the *path groupoid* $\mathcal{P}_1(X)$ of a manifold $X$, which is a sort of infinitary higher inductive type whose points are the points of $X$, whose paths are so-called *thin homotopy* classes of smooth paths (paths up to a homotopy that is 1-dimensional, for example a reparameterization of the path that simply changes speed), and where composition of paths is carefully defined so that compositions are always smooth. A connection is then simply a functor $\mathcal{P}_1(X)\to BG$ where $BG$ is a one-object groupoid whose paths are a given group $G$. 
+There are a few avenues folks have pursued to treat the theory of connections in category theory or homotopy type theory. John Baez and collaborators [@baez_schreiber_higher_gauge] [@baez_huerta_higher_gauge] have emphasized the *path groupoid* $\mathcal{P}_1(X)$ of a manifold $X$, which is a sort of infinitary higher inductive type whose points are the points of $X$, whose morphisms are so-called *thin homotopy* classes of smooth paths (paths up to a homotopy that is 1-dimensional, for example a reparameterization of the path that simply changes speed but has the same image and orientation), and where composition of paths is carefully defined so that compositions are always smooth. A connection is then simply a functor $\mathcal{P}_1(X)\to BG$ where $BG$ is a one-object groupoid whose morphisms form the group $G$. 
 
-The path groupoid construction has not been defined in HoTT, and it's not clear that it can be done, or whether it's worthwhile to do so. A related object which does exist in HoTT is the *fundamental groupoid* of $X$, whose points are the points of $X$ and whose paths are homotopy classes of paths. This is the 1-truncation of the full *fundamental $\infty$-groupoid* of $X$ which does not take equivalence classes but retains all the paths and adds higher equalities for the homotopies. Mike Shulman [@shulman_cohesion] and others have developed and extended a system of functions and higher inductive types that act as *modal operators* inside HoTT, with a corresponding topos-theoretic interpretation that extends ideas of Lawvere known as *cohesion*. One of the higher inductive types is called *shape* and when applied to a 0-type such as a manifold, constructs its fundamental $\infty$-groupoid as a higher type. This offers a pathway for classical objects to be imported into type theory, and for us to then define type-theoretic versions of classical constructions such as bundles and connections.
+The path groupoid construction has not been defined in HoTT, and it's not clear that it can be done or whether it's worthwhile to do so. A related object which has been defined in HoTT is the *fundamental groupoid* of $X$, whose points are the points of $X$ and whose paths are homotopy classes of paths. This is the 1-truncation of the full *fundamental $\infty$-groupoid* of $X$ which does not take equivalence classes but retains all the paths and adds higher equalities for the homotopies. Mike Shulman [@shulman_cohesion] and others have developed and extended a system of functions and higher inductive types that act as *modal operators* inside HoTT, with a corresponding topos-theoretic interpretation that extends ideas of Lawvere known as *cohesion*. One of the higher inductive types is called [*shape*](https://ncatlab.org/nlab/show/shape+modality) and when this operator is applied to a 0-type such as a manifold the output is its fundamental $\infty$-groupoid as a higher type. This offers a pathway for classical objects to be imported into type theory, and for us to then define type-theoretic versions of classical constructions such as bundles and connections.
 
-But the fundamental $\infty$-groupoid of a space is a relatively impoverished object, since paths that are homotopic are made equal. Connections that agree on homotopy-equivalent paths are called *flat* and are so special that we cannot build gauge theory with them! We need non-flat connections.
+But the fundamental $\infty$-groupoid of a space is a relatively impoverished object, since paths that are homotopic are made equal. Connections that agree on homotopy-equivalent paths are called *flat* and are so special that we cannot build gauge theory just with them. We seek a fuller picture of connections.
 
 ## Combinatorial manifolds
 
@@ -161,25 +149,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="13545" class="Symbol">{-#</a> <a id="13549" class="Keyword">OPTIONS</a> <a id="13557" class="Pragma">--without-K</a> <a id="13569" class="Pragma">--cohesion</a> <a id="13580" class="Pragma">--flat-split</a> <a id="13593" class="Symbol">#-}</a>
+<pre class="Agda"><a id="13298" class="Symbol">{-#</a> <a id="13302" class="Keyword">OPTIONS</a> <a id="13310" class="Pragma">--without-K</a> <a id="13322" class="Pragma">--cohesion</a> <a id="13333" class="Pragma">--flat-split</a> <a id="13346" class="Symbol">#-}</a>
 
-<a id="13598" class="Keyword">module</a> <a id="13605" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13627" class="Keyword">where</a>
+<a id="13351" class="Keyword">module</a> <a id="13358" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="13380" class="Keyword">where</a>
 
-<a id="13634" class="Keyword">open</a> <a id="13639" class="Keyword">import</a> <a id="13646" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="13673" class="Keyword">open</a> <a id="13678" class="Keyword">import</a> <a id="13685" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="13387" class="Keyword">open</a> <a id="13392" class="Keyword">import</a> <a id="13399" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="13426" class="Keyword">open</a> <a id="13431" class="Keyword">import</a> <a id="13438" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="13910" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="13922" href="discrete_gauge_theory.html#13922" class="Postulate">𝕊¹</a> <a id="13925" class="Symbol">:</a> <a id="13927" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13930" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="13663" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="13675" href="discrete_gauge_theory.html#13675" class="Postulate">𝕊¹</a> <a id="13678" class="Symbol">:</a> <a id="13680" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="13683" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="13937" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="13949" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a> <a id="13957" class="Symbol">:</a> <a id="13959" href="discrete_gauge_theory.html#13922" class="Postulate">𝕊¹</a>
+<a id="13690" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="13702" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a> <a id="13710" class="Symbol">:</a> <a id="13712" href="discrete_gauge_theory.html#13675" class="Postulate">𝕊¹</a>
 
-<a id="13963" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="13975" href="discrete_gauge_theory.html#13975" class="Postulate">loop-𝕊¹</a> <a id="13983" class="Symbol">:</a> <a id="13985" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13988" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a> <a id="13996" href="discrete_gauge_theory.html#13949" class="Postulate">base-𝕊¹</a>
+<a id="13716" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="13728" href="discrete_gauge_theory.html#13728" class="Postulate">loop-𝕊¹</a> <a id="13736" class="Symbol">:</a> <a id="13738" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="13741" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a> <a id="13749" href="discrete_gauge_theory.html#13702" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
@@ -223,3 +211,5 @@ Leray-Hirsch theorem.
 [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
 
 [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
+
+## References
