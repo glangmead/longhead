@@ -172,16 +172,11 @@ If the map is more than just "the bundle" and contains the data of a curved conn
 
 Classically we have that hiccup that connections aren't actually 1-forms, they are points in an affine space modeled on 1-forms. But curvature is an honest 2-form. Can we detect that hiccup here? Yes, in this context we made an arbitrary choice when we assigned $f(white)$. We could slide the whole image of $f$ around in $\BAut_1 S^1$ and get an equivalent bundle and connection. But no matter where we place the octahedron, the curvature assignment is the same, because the choices of torsors cancel out. But do they entirely? If you read classical material very carefully you might notice fine print like this: curvature is defined only up to conjugation! We could have told you that, since all the points in a space of torsors have the same group as the loop space at that point, but they are conjugate to each other. In fact they are merely conjugate, as there are many conjugations (paths between two points) we can choose. A whole torsor's worth!
 
-## Pathovers as horizontal \times vertical
+## Pathovers as horizontal $\times$ vertical
 
-Symmetry Lemma 4.14.1: 
-Fix a section $s:(x:B)\to f(x)$ (or just the two endpoints of the lift).
-Given $f$ and $s$, we have $\underline{\underline{(x, s(x))} =_{E} \underline{(x', s(x'))}} \simeq \underline{\underline{(x=_B x')}\times \underline{s(x)=_{f(x)}s(x')}}$.
+**Lemma** If $X$ is a type and $f:X\to \U$ is a type family, and $x, x':X$, and $y:f(x), y':f(x')$, then we have an equivalence $(x, y) \pathover{} (x', y') \simeq (x=x')\times(y=y)$ of the type of paths over paths in $x=x'$ to the indicated product.**[TODO: prove this generalization of Symmetry Lemma 4.14.1.]**
 
-the type on the left are paths over $x=x'$ anchored on the section
-(the ones that are $s(x)\pathover{p} s(x')$ for some $p:x=x'$)
-
-This mirrors exactly the classical picture where a connection is exactly the data of a decomposition of tangent vectors in the total space into a horizontal component and a vertical component. The horizontal component is isomorphic to something in the base space, and the vertical component is tangent to a fiber, i.e. a torsor.
+We can think of the two factors of the equivalence as providing horizontal and vertical components of the path in the total space.
 
 ## Gauge transformations
 
