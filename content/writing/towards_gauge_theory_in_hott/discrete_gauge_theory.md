@@ -1,21 +1,9 @@
 ---
 header-includes: |
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quattrocento:wght@700">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  "HTML-CSS": {matchFontHeight: false},
-  SVG: {matchFontHeight: false},
-  CommonHTML: {matchFontHeight: false}
-  });
-  MathJax.Hub.Config({
-  "HTML-CSS": {minScaleAdjust: 100},
-  SVG: {minScaleAdjust: 100},
-  CommonHTML: {minScaleAdjust: 100}
-  });
-  </script>
   <style>
   body {
-    font-family: Baskerville, 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville', Baskerville, serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: Quattrocento, sans-serif;
@@ -151,25 +139,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="14368" class="Symbol">{-#</a> <a id="14372" class="Keyword">OPTIONS</a> <a id="14380" class="Pragma">--without-K</a> <a id="14392" class="Pragma">--cohesion</a> <a id="14403" class="Pragma">--flat-split</a> <a id="14416" class="Symbol">#-}</a>
+<pre class="Agda"><a id="14043" class="Symbol">{-#</a> <a id="14047" class="Keyword">OPTIONS</a> <a id="14055" class="Pragma">--without-K</a> <a id="14067" class="Pragma">--cohesion</a> <a id="14078" class="Pragma">--flat-split</a> <a id="14091" class="Symbol">#-}</a>
 
-<a id="14421" class="Keyword">module</a> <a id="14428" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14450" class="Keyword">where</a>
+<a id="14096" class="Keyword">module</a> <a id="14103" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14125" class="Keyword">where</a>
 
-<a id="14457" class="Keyword">open</a> <a id="14462" class="Keyword">import</a> <a id="14469" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="14496" class="Keyword">open</a> <a id="14501" class="Keyword">import</a> <a id="14508" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="14132" class="Keyword">open</a> <a id="14137" class="Keyword">import</a> <a id="14144" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="14171" class="Keyword">open</a> <a id="14176" class="Keyword">import</a> <a id="14183" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="14733" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="14745" href="discrete_gauge_theory.html#14745" class="Postulate">𝕊¹</a> <a id="14748" class="Symbol">:</a> <a id="14750" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14753" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="14408" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="14420" href="discrete_gauge_theory.html#14420" class="Postulate">𝕊¹</a> <a id="14423" class="Symbol">:</a> <a id="14425" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14428" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="14760" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="14772" href="discrete_gauge_theory.html#14772" class="Postulate">base-𝕊¹</a> <a id="14780" class="Symbol">:</a> <a id="14782" href="discrete_gauge_theory.html#14745" class="Postulate">𝕊¹</a>
+<a id="14435" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="14447" href="discrete_gauge_theory.html#14447" class="Postulate">base-𝕊¹</a> <a id="14455" class="Symbol">:</a> <a id="14457" href="discrete_gauge_theory.html#14420" class="Postulate">𝕊¹</a>
 
-<a id="14786" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="14798" href="discrete_gauge_theory.html#14798" class="Postulate">loop-𝕊¹</a> <a id="14806" class="Symbol">:</a> <a id="14808" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14811" href="discrete_gauge_theory.html#14772" class="Postulate">base-𝕊¹</a> <a id="14819" href="discrete_gauge_theory.html#14772" class="Postulate">base-𝕊¹</a>
+<a id="14461" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="14473" href="discrete_gauge_theory.html#14473" class="Postulate">loop-𝕊¹</a> <a id="14481" class="Symbol">:</a> <a id="14483" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14486" href="discrete_gauge_theory.html#14447" class="Postulate">base-𝕊¹</a> <a id="14494" href="discrete_gauge_theory.html#14447" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
