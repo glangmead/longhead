@@ -83,9 +83,11 @@ csl: ima.csl
 
 ## Abstract
 
-We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory.
+We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory. We intend this document to be an introduction to modern geometry and gauge theory for anyone familiar with homotopy type theory. The hope is that it works vice-versa as well.
 
 ## Introduction
+
+A literate Markdown+Agda version of this document [is available as well](https://github.com/glangmead/writing/blob/master/differential_geometry_in_hott/agda/discrete_gauge_theory.lagda.md).
 
 [Gauge theory](https://en.wikipedia.org/wiki/Gauge_theory) is a general methodology for defining invariants of spaces, including invariants of the homotopy type, the homomorphism class, or the diffeomorphism class. We make use of mediating objects such as principal bundles over the space, connections on the bundles, and morphisms of these. These additional objects provide access to information beyond the homology and homotopy groups of the space, but they are also of direct interest as well. In physics the fields that model force fields are connections, and the fields that model matter particles are sections of associated vector bundles. The laws of nature are postulated to be invariant under automorphisms of all the underlying principal bundles, and so all the objects we need to study topology are relevant in physics as well!
 
@@ -138,25 +140,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="13955" class="Symbol">{-#</a> <a id="13959" class="Keyword">OPTIONS</a> <a id="13967" class="Pragma">--without-K</a> <a id="13979" class="Pragma">--cohesion</a> <a id="13990" class="Pragma">--flat-split</a> <a id="14003" class="Symbol">#-}</a>
+<pre class="Agda"><a id="14321" class="Symbol">{-#</a> <a id="14325" class="Keyword">OPTIONS</a> <a id="14333" class="Pragma">--without-K</a> <a id="14345" class="Pragma">--cohesion</a> <a id="14356" class="Pragma">--flat-split</a> <a id="14369" class="Symbol">#-}</a>
 
-<a id="14008" class="Keyword">module</a> <a id="14015" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14037" class="Keyword">where</a>
+<a id="14374" class="Keyword">module</a> <a id="14381" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14403" class="Keyword">where</a>
 
-<a id="14044" class="Keyword">open</a> <a id="14049" class="Keyword">import</a> <a id="14056" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="14083" class="Keyword">open</a> <a id="14088" class="Keyword">import</a> <a id="14095" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="14410" class="Keyword">open</a> <a id="14415" class="Keyword">import</a> <a id="14422" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="14449" class="Keyword">open</a> <a id="14454" class="Keyword">import</a> <a id="14461" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Bundles with connection
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="14320" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="14332" href="discrete_gauge_theory.html#14332" class="Postulate">𝕊¹</a> <a id="14335" class="Symbol">:</a> <a id="14337" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14340" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="14686" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="14698" href="discrete_gauge_theory.html#14698" class="Postulate">𝕊¹</a> <a id="14701" class="Symbol">:</a> <a id="14703" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14706" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="14347" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="14359" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a> <a id="14367" class="Symbol">:</a> <a id="14369" href="discrete_gauge_theory.html#14332" class="Postulate">𝕊¹</a>
+<a id="14713" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="14725" href="discrete_gauge_theory.html#14725" class="Postulate">base-𝕊¹</a> <a id="14733" class="Symbol">:</a> <a id="14735" href="discrete_gauge_theory.html#14698" class="Postulate">𝕊¹</a>
 
-<a id="14373" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="14385" href="discrete_gauge_theory.html#14385" class="Postulate">loop-𝕊¹</a> <a id="14393" class="Symbol">:</a> <a id="14395" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14398" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a> <a id="14406" href="discrete_gauge_theory.html#14359" class="Postulate">base-𝕊¹</a>
+<a id="14739" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="14751" href="discrete_gauge_theory.html#14751" class="Postulate">loop-𝕊¹</a> <a id="14759" class="Symbol">:</a> <a id="14761" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="14764" href="discrete_gauge_theory.html#14725" class="Postulate">base-𝕊¹</a> <a id="14772" href="discrete_gauge_theory.html#14725" class="Postulate">base-𝕊¹</a>
 </pre>
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
@@ -216,8 +218,6 @@ The w classes for the tangent bundles of RPn and CPn.
 
 ## Cohomology as obstructions to lifts (obstruction theory)
 
-
-
 ## Torus groups
 
 We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle) (aka "splitting principle").
@@ -240,7 +240,72 @@ Leray-Hirsch theorem.
 * Hodge star
 * orientation of a bundle
 
+## Baez-Muniain outline (I-III)
 
+* Maxwell's equations
+* Manifolds
+* Vector fields
+* Differential forms
+* Rewriting Maxwell's equations
+* DeRham theory in electromagnetism
+* Symmetry
+* Bundles and connections
+* Curvature and the Yang-Mills equation
+* Chern-Simons theory
+* Link invariants from gauge theory
+* Semi-Riemannian geometry
+* Einstein's equation
+* Lagrangians for general relativity
+* The ADM formalism
+* The new variables
 
+## Kobayashi-Nomizu outline (I-III)
+
+* Differentiable manifolds
+* Tensor algebras
+* Tensor fields
+* Lie groups
+* Fibre bundles
+* Connections in a principal fibre bundle
+* Existence and extension of connections
+* Parallelism
+* Holonomy groups
+* Curvature form and structure equation
+* Mappings of connections
+* Reduction theorem
+* Holonomy theorem
+* Flat connections
+* Local and infinitesimal holonomy groups
+* Invariant connections
+* Connections in a vector bundle
+* Linear connections
+* Affine connections
+* Developments
+* Curvature and torsion tensors
+* Geodesics
+* Expressions in local coordinate systems
+* Normal coordinates
+* Linear infinitesimal holonomy groups
+* ...
+
+## Kolar-Michor-Slovak outline (I-IV)
+
+* Differentiable manifolds
+* Submersions and immersions
+* Vector fields and flows
+* Lie groups
+* Lie subgroups and homogeneous spaces
+* Vector bundles
+* Differential forms
+* Derivations on the algebra of differential forms and the Frölicher-Nijenhuis bracket
+* General fiber bundles and connections
+* Principal fiber bundles and G-bundles
+* Principal and induced connections
+* Jets
+* Jet groups
+* Natural bundles and operators
+* Prolongations of principal fiber bundles
+* Canonical differential forms
+* Connections and the absolute differentiation
 
 ## References
