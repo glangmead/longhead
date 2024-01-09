@@ -85,9 +85,143 @@ csl: ima.csl
 
 We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory. We intend this document to be an introduction to modern geometry and gauge theory for anyone familiar with homotopy type theory. The hope is that it works vice-versa as well.
 
-## Introduction
-
 A literate Markdown+Agda version of this document [is available as well](https://github.com/glangmead/writing/blob/master/differential_geometry_in_hott/agda/discrete_gauge_theory.lagda.md).
+
+## Outline version
+
+### Summary of differential geometry, gauge theory, and our crown jewel: Chern-Weil theory
+
+Items that students need to know, that might be especially helpful to see first in this settings:
+
+* tensors and forms
+* connections and transport
+* classifying spaces and "horizontal vs vertical"
+* Chern-Weil theory
+* gauge transformations
+* [@freed2013chernweil]
+* space!
+
+It might be good to follow the narrative of some good books:
+
+Outline of [@baez1994gauge] I-III
+
+* Maxwell's equations
+* Manifolds
+* Vector fields
+* Differential forms
+* Rewriting Maxwell's equations
+* DeRham theory in electromagnetism
+* Symmetry
+* Bundles and connections
+* Curvature and the Yang-Mills equation
+* Chern-Simons theory
+* Link invariants from gauge theory
+* Semi-Riemannian geometry
+* Einstein's equation
+* Lagrangians for general relativity
+* The ADM formalism
+* The new variables
+
+Outline of [@kobayashinomizu] I-III
+
+* Differentiable manifolds
+* Tensor algebras
+* Tensor fields
+* Lie groups
+* Fibre bundles
+* Connections in a principal fibre bundle
+* Existence and extension of connections
+* Parallelism
+* Holonomy groups
+* Curvature form and structure equation
+* Mappings of connections
+* Reduction theorem
+* Holonomy theorem
+* Flat connections
+* Local and infinitesimal holonomy groups
+* Invariant connections
+* Connections in a vector bundle
+* Linear connections
+* Affine connections
+* Developments
+* Curvature and torsion tensors
+* Geodesics
+* Expressions in local coordinate systems
+* Normal coordinates
+* Linear infinitesimal holonomy groups
+* ...
+
+Outline of [@kolar_natural_1993] I-IV
+
+* Differentiable manifolds
+* Submersions and immersions
+* Vector fields and flows
+* Lie groups
+* Lie subgroups and homogeneous spaces
+* Vector bundles
+* Differential forms
+* Derivations on the algebra of differential forms and the Frölicher-Nijenhuis bracket
+* General fiber bundles and connections
+* Principal fiber bundles and G-bundles
+* Principal and induced connections
+* Jets
+* Jet groups
+* Natural bundles and operators
+* Prolongations of principal fiber bundles
+* Canonical differential forms
+* Connections and the absolute differentiation
+
+Outline of [hamilton2017]
+
+* Lie groups and Lie algebras
+* Group actions
+* Fibre bundles
+* Connections and curvature
+* Spinors
+* Lagrangians
+* Appendix: tensors and forms
+
+### Our objects 1: combinatorial manifolds
+
+* kinds
+  * CW complexes
+  * simplicial complexes
+  * nerves of good open covers
+* data structures
+  * polytopes
+  * graded poset point of view
+  * pushouts thereof
+  * homotopy pushouts thereof
+
+### Our objects 2: groups
+
+* (the Symmetry book approach: torsors, deloopings, $\BAut$)
+
+### Polytopes in $BS^1$
+
+* why these are principal bundles
+* why these have connections
+* why these have curvature
+
+### Other topics
+
+* [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
+* [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
+* intersection forms
+* examples of nontrivial manifolds
+* a situation where classically there's an obstruction to a distribution; Lie bracket remaining in subbundle
+* Baez Galois theory formulations
+* locating the classical formulas for curvature ($F=dA+\frac{1}{2}A\wedge A$); Bianchi identity
+* locating the classical formula for the action of the gauge group on a connection/curvature
+* locating the Leibniz rule
+* if $\ap$ "is" differentiation, then is $d^2=0$?
+* which map from the Rubik's cube is the Hopf bundle?
+* Hodge star
+* orientation of a bundle
+* Cohomology as obstructions to lifts (obstruction theory)
+* Maximal tori, [splitting principle](https://ncatlab.org/nlab/show/splitting+principle), Leray-Hirsch theorem
+
+## Summary of differential geometry, gauge theory, and our crown jewel: Chern-Weil theory
 
 [Gauge theory](https://en.wikipedia.org/wiki/Gauge_theory) is a general methodology for defining invariants of spaces, including invariants of the homotopy type, the homomorphism class, or the diffeomorphism class. We make use of mediating objects such as principal bundles over the space, connections on the bundles, and morphisms of these. These additional objects provide access to information beyond the homology and homotopy groups of the space, but they are also of direct interest as well. In physics the fields that model force fields are connections, and the fields that model matter particles are sections of associated vector bundles. The laws of nature are postulated to be invariant under automorphisms of all the underlying principal bundles, and so all the objects we need to study topology are relevant in physics as well!
 
@@ -95,19 +229,26 @@ The standard treatments of differential geometry and gauge theory work at the in
 
 There is another approach, which is to draw inspiration from discrete and combinatorial methods. [Discrete differential geometry](https://en.wikipedia.org/wiki/Discrete_differential_geometry) is an active field of applied mathematics and computer science which has developed combinatorial versions of vector fields, differential forms, connections and curvature, defined on a triangulated surface embedded in 3-dimensional space (as might be used in a computer graphics engine).
 
-Algebraic topology of course has always had a train of thought devoted to combinatorial approximations to smooth or continuous spaces, a major example of which is the notion of a CW complex. The theory of piecewise linear (PL) manifolds is another important example where a finite structure is used to capture important properties of a space.
-
-Such complexes are easy to define in homotopy type theory, as [higher inductive types](https://en.wikipedia.org/wiki/Homotopy_type_theory#The_univalence_axiom,_synthetic_homotopy_theory,_and_higher_inductive_types). We will see a lot of examples shortly. How much of gauge theory can we define with these?
-
-## Not the fundamental groupoid, not the path groupoid
+### Previous work on gauge theory in higher categories
 
 There are a few avenues folks have pursued to treat the theory of connections in category theory or homotopy type theory. John Baez and collaborators [@baez_schreiber_higher_gauge] [@baez_huerta_higher_gauge] have emphasized the *path groupoid* $\mathcal{P}_1(X)$ of a manifold $X$, which is a sort of infinitary higher inductive type whose points are the points of $X$, whose morphisms are so-called *thin homotopy* classes of smooth paths (paths up to a homotopy that is 1-dimensional, for example a reparameterization of the path that simply changes speed but has the same image and orientation), and where composition of paths is carefully defined so that compositions are always smooth. A connection is then simply a functor $\mathcal{P}_1(X)\to BG$ where $BG$ is a one-object groupoid whose morphisms form the group $G$. 
 
 The path groupoid construction has not been defined in HoTT, and it's not clear that it can be done or whether it's worthwhile to do so. A related object which has been defined in HoTT is the *fundamental groupoid* of $X$, whose points are the points of $X$ and whose paths are homotopy classes of paths. This is the 1-truncation of the full *fundamental $\infty$-groupoid* of $X$ which does not take equivalence classes but retains all the paths and adds higher equalities for the homotopies. Mike Shulman [@shulman_cohesion] and others have developed and extended a system of functions and higher inductive types that act as *modal operators* inside HoTT, with a corresponding topos-theoretic interpretation that extends ideas of Lawvere known as *cohesion*. One of the higher inductive types is called [*shape*](https://ncatlab.org/nlab/show/shape+modality) and when this operator is applied to a 0-type such as a manifold the output is its fundamental $\infty$-groupoid as a higher type. This offers a pathway for classical objects to be imported into type theory, and for us to then define type-theoretic versions of classical constructions such as bundles and connections.
 
-But the fundamental $\infty$-groupoid of a space is a relatively impoverished object, since paths that are homotopic are made equal. Connections that agree on homotopy-equivalent paths are called *flat* and are so special that we cannot build gauge theory just with them. We seek a fuller picture of connections.
+But the functions from the shape of a space to a classifying space is a relatively impoverished object, since paths that are homotopic are made equal. Connections that agree on homotopy-equivalent paths are called *flat* and are so special that we cannot build gauge theory just with them. We seek a fuller picture of connections.
 
-## Combinatorial manifolds
+## Our objects 1: combinatorial manifolds
+
+**[TODO]**
+Definitions and relations between:
+* CW complexes
+* simplicial complexes
+* polytopes
+* PL manifolds
+
+Theorems:
+* relationship with homotopy, homeomorphism, smooth structures, depending on dimension
+* can we form homotopy pushouts of dyadic posets?
 
 Per Hatcher [@hatcher_at] a *CW complex* is a space $X$ constructed through the following recursive procedure. Start with a set $X_0$, the 0-cells of $X$. Then inductively form the $n$-skeleton from the $n-1$-skeleton by attaching a set of disks via attaching maps of the boundary spheres. If $I_{n}$ is the indexing set at stage $n$, this means forming the pushout
 $$\begin{CD}
@@ -139,32 +280,34 @@ Consider the surface of a Rubik's cube as a stand-in for a 2-sphere. Let's call 
 We can define a non-flat connection on this space, one that captures the intrinsic curvature of the embedding into 3-dimensional space, in the following way.
 
 ![](curved_cube.gif "Animation of the transport of an oriented shape along a cube, visiting three faces, coming back rotated by 90 degrees"){ width=600 }
-<!-- Exportimage("filename", "curved_cube.gif", "type", "gif", "slider", tt, "loop", false, "time", 50, "width", 600) -->
+<!-- Exportimage("filename", "curved_cube2.gif", "type", "gif", "slider", tt, "loop", false, "time", 10, "width", 600) -->
 
 Imagine a closed path on the original cube that starts at the white center square, moves along the top face and then the red face to the red center square, then comes around to the front green square, then back up to the white north pole. This path traverses three faces. In the dual octahedron this path picks out the white-red edge, then the red-green edge, then green-white. So it's also a closed path in the dual space. We will assign to this curve a point in $SO(2)$, which is the structure group of the tangent bundle of the sphere. In particular we assign the value "clockwise rotation by 90 degrees". That's what happens to an imaginary tangent vector as it is transported around this curve. I haven't defined tangent vectors, but I don't need to, they are just to help us understand why we made this choice of group element.
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="14609" class="Symbol">{-#</a> <a id="14613" class="Keyword">OPTIONS</a> <a id="14621" class="Pragma">--without-K</a> <a id="14633" class="Pragma">--cohesion</a> <a id="14644" class="Pragma">--flat-split</a> <a id="14657" class="Symbol">#-}</a>
+<pre class="Agda"><a id="18047" class="Symbol">{-#</a> <a id="18051" class="Keyword">OPTIONS</a> <a id="18059" class="Pragma">--without-K</a> <a id="18071" class="Pragma">--cohesion</a> <a id="18082" class="Pragma">--flat-split</a> <a id="18095" class="Symbol">#-}</a>
 
-<a id="14662" class="Keyword">module</a> <a id="14669" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="14691" class="Keyword">where</a>
+<a id="18100" class="Keyword">module</a> <a id="18107" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="18129" class="Keyword">where</a>
 
-<a id="14698" class="Keyword">open</a> <a id="14703" class="Keyword">import</a> <a id="14710" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="14737" class="Keyword">open</a> <a id="14742" class="Keyword">import</a> <a id="14749" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="18136" class="Keyword">open</a> <a id="18141" class="Keyword">import</a> <a id="18148" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="18175" class="Keyword">open</a> <a id="18180" class="Keyword">import</a> <a id="18187" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
-## Bundles with connection
+## Our objects 2: groups
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="14974" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="14986" href="discrete_gauge_theory.html#14986" class="Postulate">𝕊¹</a> <a id="14989" class="Symbol">:</a> <a id="14991" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="14994" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="18410" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="18422" href="discrete_gauge_theory.html#18422" class="Postulate">𝕊¹</a> <a id="18425" class="Symbol">:</a> <a id="18427" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="18430" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="15001" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="15013" href="discrete_gauge_theory.html#15013" class="Postulate">base-𝕊¹</a> <a id="15021" class="Symbol">:</a> <a id="15023" href="discrete_gauge_theory.html#14986" class="Postulate">𝕊¹</a>
+<a id="18437" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="18449" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a> <a id="18457" class="Symbol">:</a> <a id="18459" href="discrete_gauge_theory.html#18422" class="Postulate">𝕊¹</a>
 
-<a id="15027" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="15039" href="discrete_gauge_theory.html#15039" class="Postulate">loop-𝕊¹</a> <a id="15047" class="Symbol">:</a> <a id="15049" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="15052" href="discrete_gauge_theory.html#15013" class="Postulate">base-𝕊¹</a> <a id="15060" href="discrete_gauge_theory.html#15013" class="Postulate">base-𝕊¹</a>
+<a id="18463" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="18475" href="discrete_gauge_theory.html#18475" class="Postulate">loop-𝕊¹</a> <a id="18483" class="Symbol">:</a> <a id="18485" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="18488" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a> <a id="18496" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a>
 </pre>
+## Polytopes in $BS^1$
+
 Given a nerve $X$, the type of principal $S^1$ bundles over $X$ is the function type $X\to \BAut_1 S^1$.
 
 Given a particular function $f:X\to \BAut_1 S^1$, what does this function do at the various levels of $X$? On terms $x_0:X$ it assigns a particular $S^1$-torsor $f(x_0):\BAut_1 S^1$. On paths $p:x_1=_X x_2$ it assigns an isomorphism of torsors $f(p):f(x_0)=f(x_1)$. 
@@ -179,142 +322,18 @@ If the map is more than just "the bundle" and contains the data of a curved conn
 
 Classically we have that hiccup that connections aren't actually 1-forms, they are points in an affine space modeled on 1-forms. But curvature is an honest 2-form. Can we detect that hiccup here? Yes, in this context we made an arbitrary choice when we assigned $f(white)$. We could slide the whole image of $f$ around in $\BAut_1 S^1$ and get an equivalent bundle and connection. But no matter where we place the octahedron, the curvature assignment is the same, because the choices of torsors cancel out. But do they entirely? If you read classical material very carefully you might notice fine print like this: curvature is defined only up to conjugation! We could have told you that, since all the points in a space of torsors have the same group as the loop space at that point, but they are conjugate to each other. In fact they are merely conjugate, as there are many conjugations (paths between two points) we can choose. A whole torsor's worth!
 
-## Pathovers as horizontal $\times$ vertical
+### Pathovers as horizontal $\times$ vertical
 
 **Lemma** If $X$ is a type and $f:X\to \U$ is a type family, and $x, x':X$, and $y:f(x), y':f(x')$, then we have an equivalence $(x, y) \pathover{} (x', y') \simeq (x=x')\times(y=y)$ of the type of paths over paths in $x=x'$ to the indicated product.**[TODO: prove this generalization of Symmetry Lemma 4.14.1.]**
 
 We can think of the two factors of the equivalence as providing horizontal and vertical components of the path in the total space.
 
-## Gauge transformations
+### Gauge transformations
 
 Physicists call automorphisms of the principal bundle *gauge transformations*. **[TODO: explain about torsors and gauges and such]**. This means homotopies of the given bundle $f:X\to \BAut_1 S^1$, i.e. functions of type $(x:X)\to f(x)=f(x)$. 
 
 Donaldson-Kronheimer: “The non-triviality of the orbit space is a reflection of the impossibility of finding a uniform, global procedure by which to pick out a preferred gauge for each equivalence class of connections;” ([Donaldson and Kronheimer, 1997, p. 185](zotero://select/library/items/6SNR3CNY)) ([pdf](zotero://open-pdf/library/items/CIC23ZVM?page=185&annotation=2KPBLMAP))
 
 The action of $\Gg$ on $\Aa$ is not free, even when a connection $A$ is irreducible. The stabilizer of $A$ coincides with the center of $G$. This leads to framed connections.
-
-## Classical theorems
-
-Example HITs: spheres, RPn (RP2 is in Brunerie at al "Synthetic integral coho"), tori
-
-Cohen Theorem 2.24 p. 73: Complex line bundles over CPn are the integers, and for n>=0 the bundle is the n-fold tensor power of the universal line bundle.
-
-Cohen Theorem 2.25: The only nontriv real line bundle over RPn is the canonical line bundle.
-
-Cohen Theorem 2.27: A bundle has a nontriv section iff the classifying map factor through one dimension lower.
-
-Covering spaces have a unique connection and it's flat.
-
-A characteristic class is a natural transformation between the functor PrinG and the functor H^*.
-
-The first Chern class is a complete invariant of complex line bundles. The first S-W class is a complete invariant of real line bundles.
-
-c1 is zero iff the bundle has an SU(n) structure. w1 is zero iff the bundle has an SO(n) structure.
-
-The cohomology of BU(n) is a polynomial algebra on n generators over Z with ci in H^2i, and similarly for BO(n) over Z2 with wi in H^i.
-
-Whitney sum formula for c and w.
-
-The splitting principle.
-
-The w classes for the tangent bundles of spheres are 0 starting with S1.
-
-The w classes for the tangent bundles of RPn and CPn.
-
-## Chern-Weil theory
-
-## Cohomology as obstructions to lifts (obstruction theory)
-
-## Torus groups
-
-We can get partway towards a theory of principal bundles over arbitrary Lie groups by using the [maximal torus](https://ncatlab.org/nlab/show/splitting+principle) (aka "splitting principle").
-
-This theory is specific to compact Lie groups, which have a theory relating the group to its maximal torus plus a Weyl group. All maximal tori are conjugate to each other. The maximal torus of $U(n)$ is the diagonal subgroup which is $U(1)^n$. Every element of a compact Lie group is conjugate to an element of the maximal torus.
-
-Leray-Hirsch theorem.
-
-## Follow-ups
-
-* [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
-* [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
-* intersection forms
-* examples of nontrivial manifolds
-* a situation where classically there's an obstruction to a distribution; Lie bracket remaining in subbundle
-* Baez Galois theory formulations
-* locating the classical formulas for curvature ($F=dA+\frac{1}{2}A\wedge A$); Bianchi identity
-* locating the classical formula for the action of the gauge group on a connection/curvature
-* locating the Leibniz rule
-* if $\ap$ "is" differentiation, then is $d^2=0$?
-* which map from the Rubik's cube is the Hopf bundle?
-* Hodge star
-* orientation of a bundle
-
-## Baez-Muniain outline (I-III)
-
-* Maxwell's equations
-* Manifolds
-* Vector fields
-* Differential forms
-* Rewriting Maxwell's equations
-* DeRham theory in electromagnetism
-* Symmetry
-* Bundles and connections
-* Curvature and the Yang-Mills equation
-* Chern-Simons theory
-* Link invariants from gauge theory
-* Semi-Riemannian geometry
-* Einstein's equation
-* Lagrangians for general relativity
-* The ADM formalism
-* The new variables
-
-## Kobayashi-Nomizu outline (I-III)
-
-* Differentiable manifolds
-* Tensor algebras
-* Tensor fields
-* Lie groups
-* Fibre bundles
-* Connections in a principal fibre bundle
-* Existence and extension of connections
-* Parallelism
-* Holonomy groups
-* Curvature form and structure equation
-* Mappings of connections
-* Reduction theorem
-* Holonomy theorem
-* Flat connections
-* Local and infinitesimal holonomy groups
-* Invariant connections
-* Connections in a vector bundle
-* Linear connections
-* Affine connections
-* Developments
-* Curvature and torsion tensors
-* Geodesics
-* Expressions in local coordinate systems
-* Normal coordinates
-* Linear infinitesimal holonomy groups
-* ...
-
-## Kolar-Michor-Slovak outline (I-IV)
-
-* Differentiable manifolds
-* Submersions and immersions
-* Vector fields and flows
-* Lie groups
-* Lie subgroups and homogeneous spaces
-* Vector bundles
-* Differential forms
-* Derivations on the algebra of differential forms and the Frölicher-Nijenhuis bracket
-* General fiber bundles and connections
-* Principal fiber bundles and G-bundles
-* Principal and induced connections
-* Jets
-* Jet groups
-* Natural bundles and operators
-* Prolongations of principal fiber bundles
-* Canonical differential forms
-* Connections and the absolute differentiation
 
 ## References
