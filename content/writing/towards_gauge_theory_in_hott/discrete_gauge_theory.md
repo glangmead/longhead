@@ -181,6 +181,54 @@ Outline of [@hamilton2017]
 * Lagrangians
 * Appendix: tensors and forms
 
+Outline of [@milnor1974characteristic]
+
+* Smooth manifolds
+* Vector bundles
+* Stiefel-Whitney classes
+* Grassmann manifold and universal bundles
+* A cell structure for Grassmann manifolds
+* The cohomology ring $H^{\bullet} (\mathrm{Gr}_n, \zz/2)$
+* Existence of Stiefel-Whitney classes
+* Oriented bundles and the Euler class
+* The Thom isomorphism theorem
+* Computations in a smooth manifold
+* Obstructions
+* Complex vector spaces and complex manifolds
+* Chern classes
+* Pontrjagin classes
+* Chern numbers and Pontrjagin numbers
+* The oriented cobordism ring $\Omega_*$
+* Thom spaces and transitivity
+* Multiplicative sequences and the signature theorem
+* Combinatorial Pontrjagin classes
+
+Outline of [@bott_tu]
+
+* de Rham complex on $\rr^n$
+* The Mayer-Vietoris sequence
+* Orientation and integration
+* Poincaré lemma
+* The Mayer-Vietoris argument
+* The Thom isomorphism
+* The nonorientable case
+* The generalized Mayer-Vietoris principle
+* More examples and applications of the Mayer-Vietoris principle
+* Presheaves and Cech cohomology
+* Sphere bundles
+* The Thom isomorphism and Poincaré duality revisited
+* Monodromy
+* The spectral sequence of a filtered complex
+* Cohomology with integer coefficients
+* The path fibration
+* Review of homotopy theory
+* Applications to homotopy theory
+* Rational homotopy theory
+* Chern classes of a complex vector bundle
+* The splitting principle and flag manifolds
+* Pontrjagin classes
+* The search for the universal bundle
+
 ### Our objects 1: combinatorial manifolds
 
 * kinds
@@ -205,12 +253,8 @@ Outline of [@hamilton2017]
 
 ### Other topics
 
-* [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
-* [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
-* intersection forms
 * examples of nontrivial manifolds
-* a situation where classically there's an obstruction to a distribution; Lie bracket remaining in subbundle
-* Baez Galois theory formulations
+* integration
 * locating the classical formulas for curvature ($F=dA+\frac{1}{2}A\wedge A$); Bianchi identity
 * locating the classical formula for the action of the gauge group on a connection/curvature
 * locating the Leibniz rule
@@ -218,6 +262,11 @@ Outline of [@hamilton2017]
 * which map from the Rubik's cube is the Hopf bundle?
 * Hodge star
 * orientation of a bundle
+* [Scoccola 05/2020 - Nilpotent Types and Fracture Squares in Homotopy Type Theory](zotero://select/items/1_E7IEEMRP)
+* [Cohen - The Topology of Fiber Bundles Lecture Notes](zotero://select/items/1_TX88MRXW)
+* intersection forms
+* a situation where classically there's an obstruction to a distribution; Lie bracket remaining in subbundle
+* Baez Galois theory formulations
 * Cohomology as obstructions to lifts (obstruction theory)
 * Maximal tori, [splitting principle](https://ncatlab.org/nlab/show/splitting+principle), Leray-Hirsch theorem
 
@@ -286,25 +335,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="18043" class="Symbol">{-#</a> <a id="18047" class="Keyword">OPTIONS</a> <a id="18055" class="Pragma">--without-K</a> <a id="18067" class="Pragma">--cohesion</a> <a id="18078" class="Pragma">--flat-split</a> <a id="18091" class="Symbol">#-}</a>
+<pre class="Agda"><a id="19521" class="Symbol">{-#</a> <a id="19525" class="Keyword">OPTIONS</a> <a id="19533" class="Pragma">--without-K</a> <a id="19545" class="Pragma">--cohesion</a> <a id="19556" class="Pragma">--flat-split</a> <a id="19569" class="Symbol">#-}</a>
 
-<a id="18096" class="Keyword">module</a> <a id="18103" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="18125" class="Keyword">where</a>
+<a id="19574" class="Keyword">module</a> <a id="19581" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="19603" class="Keyword">where</a>
 
-<a id="18132" class="Keyword">open</a> <a id="18137" class="Keyword">import</a> <a id="18144" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="18171" class="Keyword">open</a> <a id="18176" class="Keyword">import</a> <a id="18183" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="19610" class="Keyword">open</a> <a id="19615" class="Keyword">import</a> <a id="19622" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="19649" class="Keyword">open</a> <a id="19654" class="Keyword">import</a> <a id="19661" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Our objects 2: groups
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="18406" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="18418" href="discrete_gauge_theory.html#18418" class="Postulate">𝕊¹</a> <a id="18421" class="Symbol">:</a> <a id="18423" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="18426" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="19884" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="19896" href="discrete_gauge_theory.html#19896" class="Postulate">𝕊¹</a> <a id="19899" class="Symbol">:</a> <a id="19901" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="19904" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="18433" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="18445" href="discrete_gauge_theory.html#18445" class="Postulate">base-𝕊¹</a> <a id="18453" class="Symbol">:</a> <a id="18455" href="discrete_gauge_theory.html#18418" class="Postulate">𝕊¹</a>
+<a id="19911" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="19923" href="discrete_gauge_theory.html#19923" class="Postulate">base-𝕊¹</a> <a id="19931" class="Symbol">:</a> <a id="19933" href="discrete_gauge_theory.html#19896" class="Postulate">𝕊¹</a>
 
-<a id="18459" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="18471" href="discrete_gauge_theory.html#18471" class="Postulate">loop-𝕊¹</a> <a id="18479" class="Symbol">:</a> <a id="18481" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="18484" href="discrete_gauge_theory.html#18445" class="Postulate">base-𝕊¹</a> <a id="18492" href="discrete_gauge_theory.html#18445" class="Postulate">base-𝕊¹</a>
+<a id="19937" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="19949" href="discrete_gauge_theory.html#19949" class="Postulate">loop-𝕊¹</a> <a id="19957" class="Symbol">:</a> <a id="19959" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="19962" href="discrete_gauge_theory.html#19923" class="Postulate">base-𝕊¹</a> <a id="19970" href="discrete_gauge_theory.html#19923" class="Postulate">base-𝕊¹</a>
 </pre>
 ## Polytopes in $BS^1$
 
