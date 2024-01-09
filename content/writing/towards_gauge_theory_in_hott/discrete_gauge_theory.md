@@ -83,7 +83,7 @@ csl: ima.csl
 
 ## Abstract
 
-We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory. We intend this document to be an introduction to modern geometry and gauge theory for anyone familiar with homotopy type theory. The hope is that it works vice-versa as well.
+We use combinatorial manifolds and torus groups to bring the study of connections on principal bundles into homotopy type theory. We intend this document to be an introduction to modern geometry and gauge theory for anyone familiar with homotopy type theory. Familiarity with [@Symmetry] is helpful.
 
 A literate Markdown+Agda version of this document [is available as well](https://github.com/glangmead/writing/blob/master/differential_geometry_in_hott/agda/discrete_gauge_theory.lagda.md).
 
@@ -286,25 +286,25 @@ Imagine a closed path on the original cube that starts at the white center squar
 
 Classically a connection is usually defined to be a 1-form with values in the Lie algebra of the structure group. That's just the infinitesimal version of what we did, which is the assignment of group elements to paths.
 
-<pre class="Agda"><a id="18047" class="Symbol">{-#</a> <a id="18051" class="Keyword">OPTIONS</a> <a id="18059" class="Pragma">--without-K</a> <a id="18071" class="Pragma">--cohesion</a> <a id="18082" class="Pragma">--flat-split</a> <a id="18095" class="Symbol">#-}</a>
+<pre class="Agda"><a id="18042" class="Symbol">{-#</a> <a id="18046" class="Keyword">OPTIONS</a> <a id="18054" class="Pragma">--without-K</a> <a id="18066" class="Pragma">--cohesion</a> <a id="18077" class="Pragma">--flat-split</a> <a id="18090" class="Symbol">#-}</a>
 
-<a id="18100" class="Keyword">module</a> <a id="18107" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="18129" class="Keyword">where</a>
+<a id="18095" class="Keyword">module</a> <a id="18102" href="discrete_gauge_theory.html" class="Module Operator">discrete_gauge_theory</a> <a id="18124" class="Keyword">where</a>
 
-<a id="18136" class="Keyword">open</a> <a id="18141" class="Keyword">import</a> <a id="18148" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
-<a id="18175" class="Keyword">open</a> <a id="18180" class="Keyword">import</a> <a id="18187" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
+<a id="18131" class="Keyword">open</a> <a id="18136" class="Keyword">import</a> <a id="18143" href="foundation.universe-levels.html" class="Module">foundation.universe-levels</a>
+<a id="18170" class="Keyword">open</a> <a id="18175" class="Keyword">import</a> <a id="18182" href="foundation-core.identity-types.html" class="Module">foundation-core.identity-types</a>
 </pre>
 ## Our objects 2: groups
 
 We take as our starting point the delooping framework of [@buchholtz2023central]. Consider the central type $S^1$, given as the higher inductive type:
 
- <pre class="Agda"><a id="18410" class="Keyword">postulate</a>
-  <a id="𝕊¹"></a><a id="18422" href="discrete_gauge_theory.html#18422" class="Postulate">𝕊¹</a> <a id="18425" class="Symbol">:</a> <a id="18427" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="18430" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
+ <pre class="Agda"><a id="18405" class="Keyword">postulate</a>
+  <a id="𝕊¹"></a><a id="18417" href="discrete_gauge_theory.html#18417" class="Postulate">𝕊¹</a> <a id="18420" class="Symbol">:</a> <a id="18422" href="Agda.Primitive.html#388" class="Primitive">UU</a> <a id="18425" href="Agda.Primitive.html#915" class="Primitive">lzero</a>
 
-<a id="18437" class="Keyword">postulate</a>
-  <a id="base-𝕊¹"></a><a id="18449" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a> <a id="18457" class="Symbol">:</a> <a id="18459" href="discrete_gauge_theory.html#18422" class="Postulate">𝕊¹</a>
+<a id="18432" class="Keyword">postulate</a>
+  <a id="base-𝕊¹"></a><a id="18444" href="discrete_gauge_theory.html#18444" class="Postulate">base-𝕊¹</a> <a id="18452" class="Symbol">:</a> <a id="18454" href="discrete_gauge_theory.html#18417" class="Postulate">𝕊¹</a>
 
-<a id="18463" class="Keyword">postulate</a>
-  <a id="loop-𝕊¹"></a><a id="18475" href="discrete_gauge_theory.html#18475" class="Postulate">loop-𝕊¹</a> <a id="18483" class="Symbol">:</a> <a id="18485" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="18488" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a> <a id="18496" href="discrete_gauge_theory.html#18449" class="Postulate">base-𝕊¹</a>
+<a id="18458" class="Keyword">postulate</a>
+  <a id="loop-𝕊¹"></a><a id="18470" href="discrete_gauge_theory.html#18470" class="Postulate">loop-𝕊¹</a> <a id="18478" class="Symbol">:</a> <a id="18480" href="foundation-core.identity-types.html#5936" class="Datatype">Id</a> <a id="18483" href="discrete_gauge_theory.html#18444" class="Postulate">base-𝕊¹</a> <a id="18491" href="discrete_gauge_theory.html#18444" class="Postulate">base-𝕊¹</a>
 </pre>
 ## Polytopes in $BS^1$
 
