@@ -6,4 +6,4 @@ echo "---" > $TRG
 echo 'title: "Discrete Gauge Theory in Homotopy Type Theory"' >> $TRG
 cat $SRCYML | head -n 20 | egrep '^[a-z][a-z]*: ' | egrep -v title >> $TRG
 echo "---" >> $TRG
-cat $SRCHTML | egrep -v "<title>" >> $TRG
+cat $SRCHTML | egrep -v "(<title>|<h1 class=.title|<p class=.author|<p class=.date)" >> $TRG
