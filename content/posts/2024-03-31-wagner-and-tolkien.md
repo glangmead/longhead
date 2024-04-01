@@ -127,7 +127,7 @@ The drama elements at issue are something like this:
 9. Gudrun taunts Brynhild that Sigurd slept with her, and as proof shows her her ring.
 10. Brynhild is humiliated.
 
-Wagner's solution was to have the ring be The Ring, eliminate 7-9, and replace tghese with Brünhilde seeing the ring on _Siegfried's_ finger.
+Wagner's solution was to have the ring be The Ring, eliminate 7-9, and replace these with Brünhilde seeing the ring on _Siegfried's_ finger.
 
 Tolkien's solution was hard for me to differentiate from my own 1-10 above, probably because he was hewing closer to the source material and I am too dense to see the subtle distinctions.
 
