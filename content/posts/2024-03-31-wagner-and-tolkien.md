@@ -39,7 +39,7 @@ Here are some notes that will convey what I felt was important from the book.
 
 Wagner was working earlier in the arc of philological knowledge than Tolkien, but we can think of them both as being inspired by Germanic and Norse/Icelandic poems and legends.
 
-We're dealing here in particular with the [_Poetic Edda_](https://en.wikipedia.org/wiki/Poetic_Edda), the [_Prose Edda_](https://en.wikipedia.org/wiki/Prose_Edda) and the [_Völsunga saga_](https://en.wikipedia.org/wiki/Völsunga_saga), all written in old norse in the 13th century. In addition there is the middle-high German adaptation, also from the 13th century, the [_Nibelungenlied_](https://en.wikipedia.org/wiki/Nibelungenlied).
+We're dealing here in particular with the [_Poetic Edda_](https://en.wikipedia.org/wiki/Poetic_Edda), the [_Prose Edda_](https://en.wikipedia.org/wiki/Prose_Edda) and the [_Völsunga saga_](https://en.wikipedia.org/wiki/Völsunga_saga), all written in Old Norse in the 13th century. In addition there is the middle-high German adaptation, also from the 13th century, the [_Nibelungenlied_](https://en.wikipedia.org/wiki/Nibelungenlied).
 
 ## Two philologists
 
@@ -48,8 +48,8 @@ The goals of these two artists were similar, in that both were fascinated by thi
 * Wagner read the original stories for inspiration. He didn't try to do a straight adaptation.
 * The Ring seemed to many folks afterward to be more authentic than the originals, despite all Wagner's additions!
 * Tolkien did such things too -- creating material but pretending it was just missing before. It let him (Tolkien) combine his fiction writing with his scholarly research. What better way to explain your hypothesis about the resolution of conflicting data than to write the missing story?
-* The Volsunga saga compiler did something similar, compiling earlier stories into their own version.
-* Wagner didn't think the Nibelungenlied felt authentic enough, or mythic enough, but when he was shown the Eddas he was inpsired.
+* The _Völsunga saga_ compiler did something similar, compiling earlier stories into their own version.
+* Wagner didn't think the _Nibelungenlied_ felt authentic enough, or mythic enough, but when he was shown the _Eddas_ he was inpsired.
 * Opinions differ on how much Old Norse Wagner knew. It was not none. But he owned both original Eddas and translations.
 * Both used archaic vocabulary, for example in Wagner: Friedel (lover), Wal (bodies of slain warriors), Mage (kinsman), Minne (love), Mut (mood).
 * Both used archaic grammar (inversions), e.g. in LotR, "Only to the North these tidings came."
@@ -63,12 +63,12 @@ The goals of these two artists were similar, in that both were fascinated by thi
 
 Tom Shippey calls Wagner's _Ring_ the most important medieval adaptation of the 19th century, and _Lord of the Rings_ the most important of the 20th. Here are the elements of Wagner's _Ring_ that are shared with Tolkien's _Rings_, and which have common origin in the medieval texts:
 
-* Slaying a dragon (Eddas, Völsunga saga)
-* Ring-quarrelling relatives (Poetic Edda)
-* Reforged sword (Völsunga saga)
-* Hiding in a cave with the ring (Eddas)
-* Riddle game (Poetic Edda)
-* Dwarves as creators of artifacts (Eddas)
+* Slaying a dragon (_Eddas_, _Völsunga saga_)
+* Ring-quarrelling relatives (_Poetic Edda_)
+* Reforged sword (_Völsunga saga_)
+* Hiding in a cave with the ring (_Eddas_)
+* Riddle game (_Poetic Edda_)
+* Dwarves as creators of artifacts (_Eddas_)
 
 ## Shared original elements
 
@@ -107,7 +107,7 @@ Both men wrote a lot about their process and their opinions. Here are some key p
 
 Vink's book spends some time observing that the medieval stories are contradictory on a certain plot point, and that Wagner and Tolkien both knew this and had their separate solutions. This raises the whole process whereby a modern creator decides to fill in gaps in older material, as a way of adapting and extending that material. This is one of the things that I love about Tolkien, and so it helped transfer some of that adoration to Wagner.
 
-The question for philologists was: what was the matter with the ring cursed by Andvari, found by Sigurd in the dragon's hoard, such that Brynhild demanded Sigurd's death? It arises from a gap in the Poetic Edda (we are missing most of the _Great Lay of Sigurd_). The Prose Edda and Nibelungenlied contradict each other.
+The question for philologists was: what was the matter with the ring cursed by Andvari, found by Sigurd in the dragon's hoard, such that Brynhild demanded Sigurd's death? It arises from a gap in the _Poetic Edda_ (we are missing most of the _Great Lay of Sigurd_). The _Prose Edda_ and _Nibelungenlied_ contradict each other.
 
 It became known that all of these medieval sources are adaptations of a 5th century story. What was the story?
 Wagner came up with a solution.
