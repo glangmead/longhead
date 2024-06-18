@@ -24,6 +24,16 @@ Swift
 
 ### **Apple Inc., Pittsburgh, PA --- 2011--Present** 
 
+#### Machine Learning Manager, Services, June 2024
+
+Manager of Apple News algorithms design team. Our team of scientist-engineers
+develop algorithmic aspects of the user experience in News and Stocks, such as:
+on-device personalization, semantic understanding of text, deduplication of 
+same-fact news stories. We collaborate at the intersection of technology and
+liberal arts, working with designers, journalists, app engineers, and backend 
+operations engineers.
+
+
 #### Machine Learning Engineer, Services, January 2014
 
 Founding member of Apple News algorithms team starting 2014. Designed
