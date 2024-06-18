@@ -33,7 +33,6 @@ same-fact news stories. We collaborate at the intersection of technology and
 liberal arts, working with designers, journalists, app engineers, and backend 
 operations engineers.
 
-
 #### Machine Learning Engineer, Services, January 2014
 
 Founding member of Apple News algorithms team starting 2014. Designed
