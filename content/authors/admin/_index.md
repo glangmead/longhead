@@ -64,13 +64,13 @@ email: "glangmead@gmail.com"
 #- Researchers
 #- Visitors
 ---
-My name is Greg Langmead. I am a machine learning engineer at [Apple](https://machinelearning.apple.com), where I work on [Apple News](https://www.apple.com/news/) and Stocks.
+My name is Greg Langmead. I am a machine learning manager at [Apple](https://machinelearning.apple.com), where I work on [Apple News](https://www.apple.com/news/) and Stocks.
 
 I am also a student in the [Philosophy department](https://www.cmu.edu/dietrich/philosophy) at Carnegie Mellon University. I study [homotopy type theory](https://homotopytypetheory.org) and differential geometry. I use theorem proving software such as [Agda](https://en.wikipedia.org/wiki/Agda_(programming_language)) and [Lean](https://leanprover.github.io).
 
 I have a Ph.D. in mathematics from Columbia University (2001) where I studied gauge theory, supersymmetry, and four-dimensional topology. My dissertation was titled "[A Supersymmetric Gauge Theory Formulation of the Donaldson Polynomial Invariants](https://arxiv.org/abs/hep-th/0210192)."
 
-Previously I worked at Design Science and SDL Language Weaver. I'm all over the map.
+Previously I worked at Design Science and SDL Language Weaver.
 
 I'm interested in music and try to find time to practice piano, guitar and sometimes the ukulele. I love learning about the chord progressions used in music and am a frequent visitor to [Theorytab](https://www.hooktheory.com/theorytab).
 
