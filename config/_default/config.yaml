@@ -19,18 +19,13 @@ removePathAccents: true
 ## MODULES
 ############################
 
-module:
-  imports:
-    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms/v5
-    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5
-
 ############################
 ## ADVANCED
 ############################
 
 enableGitInfo: false
 summaryLength: 30
-paginate: 25
+paginate.pagerSize: 25
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
