@@ -1,6 +1,6 @@
 {{ $is_list := .is_list }}
 {{ $share := .share | default false }}
-{{ $page := .page }}
+{{ $page := .Page }}
 
 <meta content="{{ $page.Params.Date }}" itemprop="datePublished">
 <meta content="{{ $page.Params.LastMod }}" itemprop="dateModified">
@@ -19,7 +19,7 @@
 
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
-    {{ $date := $page.Lastmod.Format site.Params.date_format }}
+    {{ $date := $page.Lastmod.Format .Site.Params.dateFormat }}
     {{ if eq $page.Type "publication" }}
       {{ $date = $page.Date.Format (site.Params.publications.date_format | default "January, 2006") }}
     {{ else }}
@@ -49,7 +49,7 @@
   </span>
   {{ end }}
 
-  {{ $comments_enabled := and site.DisqusShortname (not (or site.Params.disable_comments (eq $page.Params.comments false))) }}
+  {{ $comments_enabled := and .Site.Config.Services.Disqus.Shortname (not (or site.Params.disable_comments (eq $page.Params.comments false))) }}
   {{ if and $comments_enabled (site.Params.comment_count | default true) }}
   <span class="middot-divider"></span>
   <a href="{{ $page.RelPermalink }}#disqus_thread"><!-- Count will be inserted here --></a>

@@ -5,7 +5,7 @@
 
 title: Long Head # Website name
 baseURL: 'https://greg.langmead.info/' # Website URL
-
+theme: academic
 ############################
 ## LANGUAGE
 ############################
@@ -48,7 +48,7 @@ taxonomies:
   tag: tags
   category: categories
   publication_type: publication_types
-  author: authors
+  author: admin
 markup:
   _merge: deep
 related:
