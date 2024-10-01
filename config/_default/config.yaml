@@ -16,16 +16,13 @@ defaultContentLanguageInSubdir: false
 removePathAccents: true
 
 ############################
-## MODULES
-############################
-
-############################
 ## ADVANCED
 ############################
 
 enableGitInfo: false
 summaryLength: 30
-paginate.pagerSize: 25
+pagination:
+  pagerSize: 25
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
@@ -37,7 +34,7 @@ permalinks:
   publication_types: '/publication-type/:slug/'
 disableAliases: true
 outputs:
-  home: [HTML, RSS, JSON, WebAppManifest, headers, redirects]
+  home: [HTML, RSS, JSON, headers, redirects]
   section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos

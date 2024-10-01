@@ -5,13 +5,12 @@
   {{ partial "page_header.html" . }}
 
   <div class="article-container">
-
     {{ if .Params.abstract }}
     <h3>{{ i18n "abstract" }}</h3>
     <p class="pub-abstract" itemprop="text">{{ .Params.abstract | markdownify }}</p>
     {{ end }}
 
-    {{ if (.Params.publication_types) and (ne (index .Params.publication_types 0) "0") }}
+    {{ if (.Params.publication_types) }}
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">

@@ -1,6 +1,6 @@
 {{ $is_list := .is_list }}
 {{ $share := .share | default false }}
-{{ $page := .Page }}
+{{ $page := .page }}
 
 <meta content="{{ $page.Params.Date }}" itemprop="datePublished">
 <meta content="{{ $page.Params.LastMod }}" itemprop="dateModified">
@@ -19,7 +19,7 @@
 
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
-    {{ $date := $page.Lastmod.Format .Site.Params.dateFormat }}
+    {{ $date := $page.Lastmod.Format site.Params.date_format }}
     {{ if eq $page.Type "publication" }}
       {{ $date = $page.Date.Format (site.Params.publications.date_format | default "January, 2006") }}
     {{ else }}

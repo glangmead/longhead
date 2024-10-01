@@ -5,6 +5,11 @@
 
 # Appearance
 
+color_theme: default
+day_night: true
+gravatar: true
+date_format: "Jan 2, 2006"
+
 appearance:
   theme_day: minimal
   theme_night: minimal
