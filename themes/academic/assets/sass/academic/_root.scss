@@ -550,18 +550,14 @@ div.alert > div:first-child::before {
   left: -2rem;
   font-size: 1.5rem;
   color: #209cee;
-  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  content: '\f05a';
   width: 1.5rem;
   text-align: center;
 }
 
 div.alert-warning > div:first-child::before {
-  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #ff3860;
-  content: '\f071';
 }
 
 div.alert a {
