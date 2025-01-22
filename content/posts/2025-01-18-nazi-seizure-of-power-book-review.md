@@ -30,7 +30,7 @@ The full title of this book is _The Nazi Seizure of Power: The Experience of a S
 
 ## The underlying radicalization of the middle class
 
-Before the Depression the class warfare was severe and the middle class had an over-developed fear of "Marxism." The workers on the other hand, i.e. those who belonged to the party that was falsely maligned as Marxist, wanted democracy. This checks out in the U.S. today, obviously.
+Before the Depression the class warfare was severe and the middle class had an over-developed fear of "Marxism." The workers on the other hand, i.e. those who belonged to the party that was falsely maligned as Marxist, wanted democracy. This checks out in the U.S. today, obviously. Some quotes:
 
 > Mass extremism, intolerance, a desperate desire for radical change—all factors that make a stable democracy impossible—are difficult to evoke. When the community is secure, political agitators find themselves ranting in near-empty halls. It takes a haunting fear, a sudden awareness of hitherto unsuspected dangers, to fill the halls with audiences who see the agitator as their deliverer.
 
@@ -53,6 +53,8 @@ The worker's party was the Socialist party, the SPD. They seemed to fully unders
 After the (small number of) bankruptcies that affected the middle class:
 
 > The SPD, instead of commiserating with the burghers, exploited these bankruptcies
+
+Other quotes:
 
 > it was unwilling to be a revolutionary party at a time when the best defense of democracy may have been social revolution
 
@@ -82,7 +84,7 @@ Look at some of these false beliefs and these emotions and see if you recognize 
 
 > In the opinion of a keen observer, "Most of those who joined the Nazis did so because they wanted a radical answer to the economic problem. Then, too, people wanted a hard, sharp, clear leadership—they were disgusted with the eternal political strife of parliamentary party politics."
 
-Meanwhile, the folks who joined the party eagerly and became Nazi Nazis are a bit less examined in this book, but this analysis of the eventual party leader and mayor Ernst Girmann seems spot on, and we can all recognize this sort of belligerant and nihilistic resentment:
+Meanwhile, the folks who joined the party eagerly and became _Nazi_ Nazis are a bit less examined in this book, but this analysis of the eventual party leader and mayor Ernst Girmann seems spot on, and we can all recognize this sort of belligerant and nihilistic resentment:
 
 > many of the actions taken by Girmann and his closest friends suggest that they were a product of social resentment
 
