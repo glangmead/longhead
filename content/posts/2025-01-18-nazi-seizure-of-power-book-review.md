@@ -38,7 +38,7 @@ Before the Depression the class warfare was severe and the middle class had an o
 
 > propaganda themes that produced results. That meant primarily appeals to small businessmen, shop clerks, and the rural population, with a primary content of anti-Marxism plus attacks on the economic policies of the Weimar Republic
 
-> I was drawn by the feeling of strength about the party, even though there was much in it which was highly questionable
+> "I was drawn by the feeling of strength about the party, even though there was much in it which was highly questionable"
 
 > To most Northeimers the NSDAP [i.e. the National Socialist German Worker's Party] was first and foremost an anti-Marxist party
 
@@ -48,7 +48,7 @@ Before the Depression the class warfare was severe and the middle class had an o
 
 ## The opposition party
 
-The worker's party was the Socialist party, the SPD. They seemed to fully understand the Nazi thread on the one hand, but offered only ineffectual strategies on the other hand. We can recognize a lot of this in today's Democratic party.
+The worker's party was the Socialist party, the SPD. They seemed to fully understand the Nazi threat on the one hand, but offered only ineffectual strategies on the other hand. We can recognize a lot of this in today's Democratic party.
 
 After the (small number of) bankruptcies that affected the middle class:
 
@@ -76,7 +76,7 @@ Look at some of these false beliefs and these emotions and see if you recognize 
 
 > The townspeople believed that the Nazis were numerous
 
-> There was no pressure put on me by my father or anyone else to join the Hitler Youth—I decided to join it independently simply because I wanted to be in a boys club where I could strive towards a nationalistic ideal [...] we enjoyed ourselves and also felt important
+> "There was no pressure put on me by my father or anyone else to join the Hitler Youth — I decided to join it independently simply because I wanted to be in a boys club where I could strive towards a nationalistic ideal [...] we enjoyed ourselves and also felt important"
 
 > Many who voted Nazi simply ignored or rationalized the anti-Semitism of the party, just as they ignored other unpleasant aspects of the Nazi movement
 
@@ -130,7 +130,7 @@ This is sort of the main thing, to me. An atomized mass of people who mistrust e
 
 Here's a charming letter the mayor wrote to a woman:
 
-> It has been reported to me that on the occasion of the Führer’s birthday ceremony you did not raise your arm during the singing of the Horst Wessel song and the national anthem. I call your attention to the fact that by doing this you put yourself in danger of being physically assaulted. Nor would it be possible to protect you, because you would deserve it. It is singularly provocative when people still ostentatiously exclude themselves from our racial community by actions like yours. Heil Hitler!
+> "It has been reported to me that on the occasion of the Führer’s birthday ceremony you did not raise your arm during the singing of the Horst Wessel song and the national anthem. I call your attention to the fact that by doing this you put yourself in danger of being physically assaulted. Nor would it be possible to protect you, because you would deserve it. It is singularly provocative when people still ostentatiously exclude themselves from our racial community by actions like yours. Heil Hitler!""
 
 ## The economic revival
 
