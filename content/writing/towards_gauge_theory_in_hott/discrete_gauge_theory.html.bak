@@ -140,14 +140,14 @@
 </div>
 <p>If <span class="math inline">\((X,\phi),(Y,\psi):BG\)</span> then a <span class="math inline">\(G\)</span>-equivariant map is a function <span class="math inline">\(f:X\to Y\)</span> such that <span class="math inline">\(f(\phi(g,x))=\psi(g,f(x))\)</span>. Denote the type of <span class="math inline">\(G\)</span>-equivariant maps by <span class="math inline">\(X\to_G Y\)</span>.</p>
 <div class="mylemma">
-<p><strong>Lemma 2</strong>. <em>There is a natural equivalence <span class="math inline">\((X=_{BG}Y) \simeq (X\to_G Y)\)</span>.</em></p>
+<p><strong>Lemma 2</strong>. <em>There is a natural equivalence <span class="math inline">\((X=_{BG}Y) \simeq (X\to_G Y)\)</span>.0◻</em></p>
 </div>
 <p>Denote by <span class="math inline">\(*\)</span> the torsor given by <span class="math inline">\(G\)</span> actions on its underlying set by left-translation. This serves as a basepoint for <span class="math inline">\(BG\)</span> and we have a group isomorphism <span class="math inline">\(\Omega BG\simeq G\)</span>.</p>
 <div class="mylemma">
-<p><strong>Lemma 3</strong>. <em>A <span class="math inline">\(G\)</span>-set <span class="math inline">\((X,\phi)\)</span> is a <span class="math inline">\(G\)</span>-torsor if and only if there merely exists a <span class="math inline">\(G\)</span>-equivariant equivalence <span class="math inline">\(*\to_G X\)</span>.</em></p>
+<p><strong>Lemma 3</strong>. <em>A <span class="math inline">\(G\)</span>-set <span class="math inline">\((X,\phi)\)</span> is a <span class="math inline">\(G\)</span>-torsor if and only if there merely exists a <span class="math inline">\(G\)</span>-equivariant equivalence <span class="math inline">\(*\to_G X\)</span>.0◻</em></p>
 </div>
 <div class="mycor">
-<p><strong>Corollary 4</strong>. <em>The pointed type <span class="math inline">\((BG,*)\)</span> is a <span class="math inline">\(\mathrm{K}(G,1)\)</span>.</em></p>
+<p><strong>Corollary 4</strong>. <em>The pointed type <span class="math inline">\((BG,*)\)</span> is a <span class="math inline">\(\mathrm{K}(G,1)\)</span>.0◻</em></p>
 </div>
 <p>In particular, to classify principal <span class="math inline">\(S^1\)</span>-bundles we map into the space <span class="math inline">\(\mathrm{K}(S^1, 1)\)</span>, a type of torsors of the circle. Since <span class="math inline">\(S^1\)</span> is a <span class="math inline">\(\mathrm{K}(\ensuremath{\mathbb{Z}},1)\)</span>, we have <span class="math inline">\(\mathrm{K}(S^1,1)\simeq\mathrm{K}(\ensuremath{\mathbb{Z}},2)\)</span>.</p>
 <h2 data-number="2.1" id="bundles-of-mere-circles"><span class="header-section-number">2.1</span> Bundles of mere circles</h2>
@@ -172,7 +172,7 @@
 <p>Suppose we have <span class="math inline">\(T:M\to\mathrm{EM}(\ensuremath{\mathbb{Z}},1)\)</span> and <span class="math inline">\(P\stackrel{\mathrm{def}}{=}\sum_{x:M}T(x)\)</span>. We adopt a convention of naming objects in <span class="math inline">\(M\)</span> with Latin letters, and the corresponding structures in <span class="math inline">\(P\)</span> with Greek letters. Recall that if <span class="math inline">\(p:a=_M b\)</span> then <span class="math inline">\(T\)</span> acts on <span class="math inline">\(p\)</span> with what’s called the <em>action on paths</em>, denoted <span class="math inline">\(\ensuremath{\mathsf{ap}}(T)(p):T(a)=T(b)\)</span>. This is a path in the codomain, which in this case is a type of types. Type theory also provides a function called <em>transport</em>, denoted <span class="math inline">\(\mathsf{tr}(p):T(a)\to T(b)\)</span> which acts on the fibers of <span class="math inline">\(P\)</span>. <span class="math inline">\(\mathsf{tr}(p)\)</span> is a function, acting on the terms of the types <span class="math inline">\(T(a)\)</span> and <span class="math inline">\(T(b)\)</span>, and univalence tells us this is the isomorphism corresponding to <span class="math inline">\(\ensuremath{\mathsf{ap}}(T)(p)\)</span>.</p>
 <p>Type theory also tells us that paths in <span class="math inline">\(P\)</span> are given by pairs of paths: a path <span class="math inline">\(p:a=_M b\)</span> in the base, and a pathover <span class="math inline">\(\pi:\mathsf{tr}(p)(\alpha)=_{T(b)}\beta\)</span> between <span class="math inline">\(\alpha:T(a)\)</span> and <span class="math inline">\(\beta:T(b)\)</span> in the fibers. We can’t directly compare <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> since they are of different types, so we apply transport to one of them. We say <span class="math inline">\(\pi\)</span> lies over <span class="math inline">\(p\)</span>. See Figure <a href="#fig:pathovers" data-reference-type="ref" data-reference="fig:pathovers">1</a>.</p>
 <figure id="fig:pathovers">
-<img src="pathovers.png" style="width:2.77778in" />
+<embed src="figs/pathovers.pdf" style="width:2.77778in" />
 <figcaption>A path <span class="math inline">\(\pi\)</span> over the path <span class="math inline">\(p\)</span> in the base involves the transport function.</figcaption>
 </figure>
 <p>Lastly we want to recall that in the presence of a section <span class="math inline">\(X:M\to P\)</span> there is a dependent generalization of <span class="math inline">\(\ensuremath{\mathsf{ap}}\)</span> called <span class="math inline">\(\mathsf{apd}\)</span>: <span class="math inline">\(\mathsf{apd}(X)(p):\mathsf{tr}(p)(X(a))=X(b)\)</span> which is a pathover between the two values of the section over the basepoints of the path <span class="math inline">\(p\)</span>.</p>
@@ -201,7 +201,7 @@
 <p>In a 2-dimensional combinatorial manifold the link is a polygon. See Figure <a href="#fig:sphere_triangulation" data-reference-type="ref" data-reference="fig:sphere_triangulation">3</a> for some examples of 2-dimensional combinatorial manifolds of genus 0, 1, and 3.</p>
 <p>A classical 1940 result of Whitehead, building on Cairn, states that every smooth manifold admits a combinatorial triangulation<span class="citation" data-cites="whitehead_triangulation"> (<a href="#ref-whitehead_triangulation" role="doc-biblioref">Whitehead, 1940</a>)</span>. So it appears reasonably well motivated to study this class of objects. See for example the classic book by Kirby and Siebenmann<span class="citation" data-cites="kirby_siebenmann"> (<a href="#ref-kirby_siebenmann" role="doc-biblioref">Kirby &amp; Siebenmann, 1977</a>)</span>. There are important examples in four dimensions of topological manifolds that do not have any smoothness structure or triangulation. These will be out of reach of the theory we are building.</p>
 <figure id="fig:sphere_triangulation">
-<p><img src="triangulated_sphere.png" style="width:1.38889in" /> <img src="Torus-triang.png" style="width:1.38889in" alt="image" /> <img src="triangulated_genus3.png" style="width:1.38889in" /></p>
+<p><embed src="figs/triangulated_sphere.pdf" style="width:1.38889in" /> <img src="figs/Torus-triang.png" style="width:1.38889in" alt="image" /> <embed src="figs/triangulated_genus3.pdf" style="width:1.38889in" /></p>
 <figcaption>Combinatorial triangulations of a sphere, torus, and 3-holed torus. Sphere created with the tool <code>stripy</code>; torus from Wikipedia (<a href="https://commons.wikimedia.org/w/index.php?curid=30856793">By Ag2gaeh</a> - Own work, CC BY-SA 3.0.); 3-holed torus from Wikipedia (<a href="https://commons.wikimedia.org/wiki/File:Tri-brezel.svg">By Ag2gaeh</a> - Own work, CC BY-SA 3.0.)</figcaption>
 </figure>
 <h2 data-number="3.2" id="higher-inductive-combinatorial-manifolds"><span class="header-section-number">3.2</span> Higher inductive combinatorial manifolds</h2>
@@ -302,7 +302,7 @@
 <div id="def:octahedron_holonomy" class="mydef">
 <p><strong>Definition 19</strong>. <em>The map <span class="math inline">\(R:C_4\to C_4\)</span> rotates by one quarter turn, one “click":</em></p>
 <div class="multicols">
-
+<p><em><span>2</span></em></p>
 <ul>
 <li><p><em><span class="math inline">\(R(c_1) = c_2\)</span></em></p></li>
 <li><p><em><span class="math inline">\(R(c_2) = c_3\)</span></em></p></li>
@@ -320,7 +320,7 @@
 <div id="def:octahedron_curvature" class="mydef">
 <p><strong>Definition 20</strong>. <em>Define <span class="math inline">\(T_2:\ensuremath{\mathbb{O}}\to\mathrm{EM}(\ensuremath{\mathbb{Z}},1)\)</span> by extending <span class="math inline">\(T_1\)</span> to the faces as follows:</em></p>
 <div class="multicols">
-
+<p><em><span>2</span></em></p>
 <ul>
 <li><p><em><span class="math inline">\(T_2(wbr)=H_R\)</span></em></p></li>
 <li><p><em><span class="math inline">\(T_2(wrg)=H_R\)</span></em></p></li>
