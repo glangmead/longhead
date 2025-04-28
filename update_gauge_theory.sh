@@ -4,6 +4,7 @@ TRG=content/writing/towards_gauge_theory_in_hott/index.html
 cp ../writing/differential_geometry_in_hott/latex/discrete_gauge_theory/html/* content/writing/towards_gauge_theory_in_hott
 cp ../writing/differential_geometry_in_hott/latex/discrete_gauge_theory/discrete_gauge_theory.pdf content/writing/towards_gauge_theory_in_hott/
 cp ../writing/differential_geometry_in_hott/latex/discrete_gauge_theory/dgt_talk*.pdf content/writing/towards_gauge_theory_in_hott/
+cp content/writing/towards_gauge_theory_in_hott/*.svg public/writing/towards_gauge_theory_in_hott
 echo "---" > $TRG
 echo 'title: "Discrete differential geometry in homotopy type theory"' >> $TRG
 cat $SRCYML | egrep '^[a-z][a-z]*: ' | egrep -v title >> $TRG
