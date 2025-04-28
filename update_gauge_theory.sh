@@ -9,4 +9,4 @@ echo "---" > $TRG
 echo 'title: "Discrete differential geometry in homotopy type theory"' >> $TRG
 cat $SRCYML | egrep '^[a-z][a-z]*: ' | egrep -v title >> $TRG
 echo "---" >> $TRG
-cat $SRCHTML | sed 's+<body>+<body><p><b>Download <a href="discrete_gauge_theory.pdf">the PDF version</a> or <a href="dgt_talk_handout.pdf">the slides</a></b>.</p>+' | egrep -v "(<title>|<h1 class=.title|<p class=.author|<p class=.date)" >> $TRG
+cat $SRCHTML | sed 's+<body>+<body><p><b>Download <a href="discrete_gauge_theory.pdf">the PDF version</a> or <a href="dgt_talk_handout.pdf">the slides</a></b>.</p>+' | sed 's+<img src="./a759d588a14f8c3262cd16583e7da6f92659664d.svg" alt="image"+<img src="./a759d588a14f8c3262cd16583e7da6f92659664d.svg" alt="image" id="eq:attach"+' | sed 's+\[eq:attach\]+above+' | egrep -v "(<title>|<h1 class=.title|<p class=.author|<p class=.date)" >> $TRG
