@@ -16,7 +16,7 @@ Swift
 
 ## Education
 
-* Carnegie Mellon University, Pittsburgh, PA --- M.S. Philosophy, expected 2024.
+* Carnegie Mellon University, Pittsburgh, PA --- M.S. Philosophy, 2025.
 * Columbia University, New York, NY --- Ph.D Mathematics, 2001.
 * Columbia University, New York, NY --- B.A., Mathematics and Astrophysics, Magna cum Laude, 1994.
 
