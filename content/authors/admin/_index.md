@@ -37,9 +37,12 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: twitter
+- icon: bluesky
   icon_pack: fab
-  link: https://twitter.com/glangmead
+  link: https://bsky.app/profile/greg.langmead.info
+- icon: mastodon
+  icon_pack: fab
+  link: https://mathstodon.xyz/@glangmead
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.co.uk/citations?user=KFbBBPD_nAoJ
