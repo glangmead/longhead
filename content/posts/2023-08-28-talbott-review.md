@@ -60,7 +60,7 @@ That computers do not mediate so much as distort:
 
 > the virtue of immediacy possessed by the technical device as such is not a virtue of the content mediated by that device
 
-I had never reflected in this way on apps like [The Elements](https://apps.apple.com/us/app/the-elements-by-theodore-gray/id364147847), which I thought of as wonderful eductational tools to show my kids. What if my experience of the app is rich because I have touched so many of the materials in the period table with my senses, whereas a child who has not is receivng a different and poorer experience than I? And what should I do with the fact that I never did reflect in this way?
+I had never reflected in this way on apps like [The Elements](https://apps.apple.com/us/app/the-elements-by-theodore-gray/id364147847), which I thought of as wonderful educational tools to show my kids. What if my experience of the app is rich because I have touched so many of the materials in the periodic table with my senses, whereas a child who has not is receivng a different and poorer experience than I? And what should I do with the fact that I never did reflect in this way?
 
 ## Our existing failures
 
@@ -126,7 +126,7 @@ Here's a down-to-earth statement of an alternate vision:
 
 > There is no neat algorithm for either carving or sailing a little wooden boat in the usual, childlike manner -- and yet these activities offer a great deal of worthwhile experience, from which a later appreciation of mathematics and engineering can most healthily arise.
 
-He spends some time, and some eloquent writing, describing what a healthy and connected existence might look like. He, and Owen Barfield, feel that we has such a life during the middle ages (in a narrow western sense, naturally). We lived in harmony with our stories, with nature, and with words we felt to live in an integrated whole with the world, not mere tokens split away from it.
+He spends some time, and some eloquent writing, describing what a healthy and connected existence might look like. He, and Owen Barfield, feel that we had such a life during the middle ages (in a narrow western sense, naturally). We lived in harmony with our stories, with nature, and with words. Words we felt lived in an integrated whole with the world, not mere tokens split away from it.
 
 > Before the scientific revolution the world was more like a garment men wore about them than a stage on which they moved
 
