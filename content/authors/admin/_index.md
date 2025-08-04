@@ -28,9 +28,15 @@ interests:
 
 education:
   courses:
-  - course: PhD in Mathematics
+  - course: B.A. in Mathematics and Astrophysics
+    institution: Columbia University
+    year: 1994
+  - course: Ph.D. in Mathematics
     institution: Columbia University
     year: 2001
+  - course: M.S. in Logic, Computation and Methodology 
+    institution: Carnegie Mellon University
+    year: 2025
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
