@@ -22,9 +22,9 @@ Swift
 
 ## Experience
 
-### **Apple Inc., Pittsburgh, PA --- 2011--Present** 
+### **Apple Inc., Pittsburgh, PA --- 2011--2025** 
 
-#### Machine Learning Manager, Services, June 2024
+#### Machine Learning Manager, Services, June 2024—August 2025
 
 Manager of Apple News algorithms design team. Our team of scientist-engineers
 develop algorithmic aspects of the user experience in News and Stocks, such as:
