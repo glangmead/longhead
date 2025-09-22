@@ -4,6 +4,12 @@
 
 .navbar {
   min-height: 70px !important;
+  background-color: #EEE;
+}
+
+.dark .navbar {
+  min-height: 70px !important;
+  background-color: #222;
 }
 
 .navbar-light {
