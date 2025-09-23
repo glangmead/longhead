@@ -128,7 +128,7 @@ Now for some payoff. In Swift there is no type-of-types such as `Type` in Agda, 
 ```swift
 // the pi type of the family, i.e. a type of sections of the family
 struct State {
-  var piece: (Piece) -> Board
+  var piece: (Piece) -> (Column, Int)
   var player: Player
   var phase: Phase
 }
@@ -142,7 +142,7 @@ enum Action {
   // the state of one piece
   struct PiecePosition {
     var piece: Piece
-    var position: Board
+    var position: (Column, Int)
   }
 
   case piecePosition(PiecePosition)
@@ -151,6 +151,6 @@ enum Action {
 }
 ```
 
-I wanted to use a tuple for `piecePosition`, i.e. `case piecePosition((Piece, Board))`, since it's a pair after all, but I need to use types that conform to `Hashable` (to put them in sets-of-actions) and tuples don't conform, so fine we'll use a helper struct `PiecePosition`.
+I wanted to use a tuple for `piecePosition`, i.e. `case piecePosition((Piece, (Column, Int)))`, since it's a pair after all, but I need to use types that conform to `Hashable` (to put them in sets-of-actions) and tuples don't conform, so fine we'll use a helper struct `PiecePosition`.
 
 That's where I am so far. I'll keep implementing "Can't Stop" and some lenses for it next.
