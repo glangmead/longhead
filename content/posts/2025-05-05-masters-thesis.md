@@ -28,4 +28,4 @@ image:
 projects: []
 ---
 
-Hey, I finished my M.S. in Logic at the CMU Philosophy department! I enrolled there part-time in fall 2017 (after auditing two courses the year before), so that took a very very long time. You can check it out [here on my site](content/differential_geometry_in_hott), or [on YouTube](https://youtu.be/gfES21UUEy4), or [on arxiv.org](https://arxiv.org/abs/2504.20363).
+Hey, I finished my M.S. in Logic at the CMU Philosophy department! I enrolled there part-time in fall 2017 (after auditing two courses the year before), so that took a very very long time. You can check it out [here on my site](writing/differential_geometry_in_hott), or [on YouTube](https://youtu.be/gfES21UUEy4), or [on arxiv.org](https://arxiv.org/abs/2504.20363).
