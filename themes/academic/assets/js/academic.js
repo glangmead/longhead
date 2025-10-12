@@ -50,7 +50,7 @@
   }
 
   // Check for hash change event and fix responsive offset for hash links (e.g. Markdown footnotes).
-  window.addEventListener("hashchange", scrollToAnchor);
+  //window.addEventListener("hashchange", scrollToAnchor);
 
   /* ---------------------------------------------------------------------------
    * Add smooth scrolling to all links inside the main navbar.
@@ -420,7 +420,7 @@
         // immediately scroll to target ID taking into account responsive offset.
         // Otherwise, wait for `imagesLoaded()` to complete before scrolling to hash to prevent scrolling to wrong
         // location.
-        scrollToAnchor();
+        //scrollToAnchor();
       }
     }
 
