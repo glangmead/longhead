@@ -34,9 +34,25 @@ permalinks:
   categories: '/category/:slug/'
   publication_types: '/publication-type/:slug/'
 disableAliases: true
+outputFormats:
+  'text':
+    baseName: index
+    isHTML: false
+    isPlainText: true
+    mediaType: text/plain
+    noUgly: true
+    notAlternative: false
+    path: ''
+    permalinkable: false
+    protocol: ''
+    rel: alternate
+    root: false
+    ugly: false
+    weight: 0
 outputs:
   home: [HTML, RSS, JSON]
   section: [HTML, RSS]
+  page: [HTML, TEXT]
 imaging:
   resampleFilter: lanczos
   quality: 75
