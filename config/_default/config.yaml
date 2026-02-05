@@ -6,6 +6,7 @@
 title: Long Head # Website name
 baseURL: 'https://greg.langmead.info/' # Website URL
 theme: academic
+custom_css: ["css/greg.css"]
 ############################
 ## LANGUAGE
 ############################

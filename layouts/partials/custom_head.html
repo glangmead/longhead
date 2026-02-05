@@ -1,3 +1,5 @@
 {{ partial "site_js.html" . }}
-
+{{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
 <link rel="me" href="https://mathstodon.xyz/@glangmead" />
