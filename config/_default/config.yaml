@@ -79,3 +79,6 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+author:
+  name: "Your Name"
+  email: "glangmead@removemegmail.com"
