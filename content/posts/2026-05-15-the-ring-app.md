@@ -42,7 +42,7 @@ Then what about those leitmotifs? These are such a fun angle of their own. They 
 
 ![Page 337 from Julius Burghold's libretto, plus my annotations](/img/burghold_337.png)
 
-And here's how that is presented in my app at the moment:
+And here's how that is presented in my app at the moment. (Notice the missing translations -- I didn't notice at first that I'd chosen a buggy section, but I might as well. This is a long section of simultaneous singing and Armour divided it up differently, so I'll have to go in manually in the end to fix everything up.)
 
 ![Screenshot of The Ring App running on macOS, showing the same region of the libretto as the Julius Burghold screenshot.](/img/ringapp.png)
 
