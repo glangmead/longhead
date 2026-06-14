@@ -77,6 +77,7 @@ related:
       weight: 70
 security:
   _merge: deep
+  allowContent: ['.*']
 sitemap:
   _merge: deep
 author:
