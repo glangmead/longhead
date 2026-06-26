@@ -10,7 +10,7 @@
     <title>{{ if eq  .Title  site.Title }}{{ site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne  .Title  site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ site.Title }}</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>{{ with site.LanguageCode }}
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>{{ with site.Language.Locale }}
     <language>{{.}}</language>{{end}}
     <managingEditor>Greg Langmead</managingEditor>
     <webMaster>Greg Langmead</webMaster>{{ with site.Copyright }}
