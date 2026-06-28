@@ -7,6 +7,9 @@ main:
   - name: Home
     url: '#about'
     weight: 10
+  - name: Apps
+    url: 'https://www.luminousdesigns.tech/'
+    weight: 15
   - name: CV
     url: 'cv'
     weight: 20

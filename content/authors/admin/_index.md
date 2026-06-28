@@ -73,7 +73,9 @@ email: "glangmead@gmail.com"
 #- Researchers
 #- Visitors
 ---
-My name is Greg Langmead. From 2011–2025 I worked for [Apple](https://machinelearning.apple.com), where for my last year I was a machine learning manager for [Apple News](https://www.apple.com/news/) and Stocks. For the previous 10 years was a machine learning engineer on News and Stocks, and before that an engineer for Books (née iBooks).
+My name is Greg Langmead. In 2026 I created [Luminous Designs LLC](https://www.luminousdesigns.tech/) and develop mobile apps for Apple platforms. I released [an app for listening to Wagner's Ring](https://www.luminousdesigns.tech/ring), and [an app for playing interactive fiction games with your voice](https://www.luminousdesigns.tech/diction).
+
+From 2011–2025 I worked for [Apple](https://machinelearning.apple.com), where for my last year I was a machine learning manager for [Apple News](https://www.apple.com/news/) and Stocks. For the previous 10 years was a machine learning engineer on News and Stocks, and before that an engineer for Books (née iBooks).
 
 I have a Ph.D. in mathematics from Columbia University (2001) where I studied gauge theory, supersymmetry, and four-dimensional topology. My dissertation was titled "[A Supersymmetric Gauge Theory Formulation of the Donaldson Polynomial Invariants](https://arxiv.org/abs/hep-th/0210192)."
 
