@@ -29,7 +29,7 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-In the [previous post](../2025-09-22-game-state-swift) I described the process of reading a rulebook for the first time: you read up to page 10, where it says "oh and if a blue piece captures a red piece then advance the morale track." Before reaching that page you already had a game in your head, and now you need to add one more rule and you obtain a new, slightly larger game. I wanted a software engine where that is reflected in the architecture. In this post I'll explain `RulePage` and the operations that combine them into a game. The main outermost operation, the one you apply in your brain after you've finished reading all the rules, is called `oapply` after the operad-algebra constructor of the same name in [AlgebraicDynamics.jl](https://github.com/AlgebraicJulia/AlgebraicDynamics.jl).
+In the [previous post](../2025-09-22-game-state-swift) I described the process of reading a rulebook for the first time: you read up to page 10, where it says "oh and if a blue piece captures a red piece then advance the morale track." Before reaching that page you already had a game in your head, and now you need to add one more rule and you obtain a new, slightly larger game. I wanted a software engine where that is reflected in the architecture. In this post I'll explain `RulePage`s and the operations that combine them into a game. The main outermost operation, the one you apply in your brain after you've finished reading all the rules, is called `oapply` after the operad-algebra constructor of the same name in [AlgebraicDynamics.jl](https://github.com/AlgebraicJulia/AlgebraicDynamics.jl). But we'll see another operation too!
 
 ## `GameRule` and `RulePage`
 
@@ -210,11 +210,11 @@ Every amendment was implemented in one of three ways: a new page owning a new ca
 
 ## Bonding: even more compositionality
 
-`oapply` builds a game by taking the disjoint union of pages. The predicates are each checked for truth and the actions are unioned. The reducers are all run (though we assume only one handler, which was the reason for the early exit in the code above). But we can tease out _another operator_ from what we just described above! I'm calling it _bonding_, written $\oplus$, and it is the product to `oapply`'s sum.
+`oapply` builds a game by taking the disjoint union of pages. The predicates are each checked for truth and the actions are unioned. The reducers are all run (though we assume only one handler, which was the reason for the early exit in the code above). But we can tease out _another operator_ from what we just described above! I'm calling it _bonding_, written $\oplus$, and it is the product to `oapply`'s sum (yes it's an oplus but it makes sense to me).
 
 Bonding folds two compatible `RulePage`s into a single `RulePage`: it **ANDs** the preconditions, **concatenates** the reduce-steps in list order, and unions the offers, though in practice there's only one nonempty `offer` field, as you'll see in the example. Because the reduce steps concatenate in order, $\oplus$ is associative but not commutative: a page that reads what an earlier page wrote must come after it.
 
-Two Hearts rules are expressible with bonding:
+Hearts rules are better combined with bonding!
 
 **Legal plays are an AND of independent restrictions.** The rulebook gives three sentences about what you may play, and each narrows the same `.playCard`: 
 
