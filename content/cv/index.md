@@ -5,7 +5,7 @@
 I am a teammate and leader, mathematician and engineer, researcher and
 developer of shipping products. I want to give back and have an impact.
 
-* Successful leader, individual contributor, and collaborator
+* Successful leader, individual contributor, catalyst, and collaborator
 * Long and successful track record integrating research into products
 * Ph.D. in mathematics, in four-dimensional geometry and mathematical
 physics
@@ -21,6 +21,12 @@ Swift
 * Columbia University, New York, NY --- B.A., Mathematics and Astrophysics, Magna cum Laude, 1994.
 
 ## Experience
+
+### **[Luminous Designs LLC](https://www.luminousdesigns.tech), Pittsburgh, PA --- 2026--present**
+
+#### Founder
+
+Solo developer of iOS and macOS apps. [The Ring App](https://www.luminousdesigns.tech/ring/) is an educational app for listening to Richard Wagner’s Ring of the Nibelung opera cycle with synchronized highlighting of the German and English libretto. [Diction](https://www.luminousdesigns.tech/diction/) is a game app for playing interactive fiction hands-free with voice commands and text to speech. In progress: DynamicalSystems uses functional programming and the theory of operads to translate board game rules into correct and testable logic.
 
 ### **Apple Inc., Pittsburgh, PA --- 2011--2025** 
 
