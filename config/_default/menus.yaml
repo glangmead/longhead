@@ -19,6 +19,9 @@ main:
   - name: Publications
     url: 'publications'
     weight: 40
+  - name: Courses
+    url: 'courses'
+    weight: 45
   - name: Blog
     url: 'posts'
     weight: 50
