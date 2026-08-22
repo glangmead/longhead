@@ -37,23 +37,24 @@ projects: []
 
 * [How Computers Work](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-) -- playlist of 5 5-minute videos.
 * [How the Internet Works](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7) -- playlist of 6 7-minute videos.
-* [Software Engineering for Vibe Coders: Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends) (Technically, Aug 2026) -- written for non-technical people who build with AI tools; restaurant analogy (dining room = frontend, kitchen = backend/API/database). Part 1 of a 6-part series. The rest of [Technically](https://technically.dev/) is a glossary and newsletter "making practical sense of software" for non-engineers.
-* [Amy J. Ko's free books](https://faculty.washington.edu/ajko/books/) -- *Critically Conscious Computing* has the most on how novices form misconceptions.
-* [Teaching Tech Together](https://teachtogether.tech/en/index.html) (Greg Wilson; free) -- evidence-backed book on teaching adults programming in short workshops, by the founder of Software Carpentry. Chapters on mental models, cognitive load, designing lessons backward from exercises, live coding, and "In the Classroom."
-* [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison) -- short, defines the distinction, and ends with a concrete list of rules for beginners: low stakes only, watch secrets and data privacy, set billing limits, get a review.
-* [What happens when you type google.com](https://github.com/alex/what-happens-when) -- the exhaustive answer, keypress to pixels. Use the section headings as a whiteboard outline.
-* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens) -- see many, many screens.
+* [Software Engineering for Vibe Coders: Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends)  restaurant analogy (dining room = frontend, kitchen = backend/API/database). Part 1 of a 6-part series.
+* [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison) -- low stakes only, watch secrets and data privacy, set billing limits, get a review.
+* [What happens when you type google.com](https://github.com/alex/what-happens-when) -- the exhaustive answer, keypress to pixels.
+* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens) -- see many, many screens from apps.
 * [Apple Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector)
-* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free) -- information architecture "for everybody." Seven short chapters with exercises; IA is "the way we arrange the parts of something to make it understandable."
-* [Automate the Boring Stuff with Python, 3rd ed.](https://automatetheboringstuff.com/3e/) (free) -- Part II is what "a script" means in the landscape of software. [Chapter 0](https://automatetheboringstuff.com/3e/chapter0.html) defines "what is a program" and has a section titled "AI Won't Replace Programmers."
-* [Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS) -- lay-readable, with a comparison table. Covers the *how it's delivered* axis.
-* [Introduction to Web Development](https://www.theodinproject.com/lessons/foundations-introduction-to-web-development) (The Odin Project) -- front-end vs back-end vs full-stack, and what kind of developer works on which part.
-* [Curated list of learning resources](https://welearncode.com/favorite-free-resources/)
-
+* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free) -- information architecture: "the way we arrange the parts of something to make it understandable."
+* [Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS) -- basic lingo.
+* [Introduction to Web Development](https://www.theodinproject.com/lessons/foundations-introduction-to-web-development) (The Odin Project) -- another high level overview.
 
 ## History
 
 * [Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)) ![](/img/margaret_hamilton.jpg)
+
+## Python
+
+* [Automate the Boring Stuff with Python, 3rd ed.](https://automatetheboringstuff.com/3e/)
+* [Python visualizer](https://pythontutor.com/visualize.html)
+* [Jupyter everywhere](https://jupytereverywhere.org)
 
 ## Building apps
 
@@ -77,4 +78,5 @@ projects: []
 * [Teaching Tech Together](https://teachtogether.tech/en/)
 * [Teachcomputing](https://teachcomputing.org/pedagogy)
 * [CS teaching tips](https://www.csteachingtips.org/browse-all)
+* [Amy J. Ko's free books](https://faculty.washington.edu/ajko/books/) -- *Critically Conscious Computing* has the most on how novices form misconceptions.
 
