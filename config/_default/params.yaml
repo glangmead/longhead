@@ -5,6 +5,8 @@
 
 # Appearance
 
+custom_css: ["css/greg.css"]
+
 color_theme: default
 day_night: true
 gravatar: true
