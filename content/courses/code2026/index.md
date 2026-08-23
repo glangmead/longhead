@@ -30,7 +30,7 @@ projects: []
 
 ## In-class tools maybe
 
-* [Python visualizer](https://pythontutor.com/visualize.html)
+* [Python visualizer](https://pythontutor.com/member.html?glangmead@gmail.com)
 * [Jupyter everywhere](https://jupytereverywhere.org)
 
 ## The best links to understand everything
