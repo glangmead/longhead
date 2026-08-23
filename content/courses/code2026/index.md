@@ -31,6 +31,7 @@ projects: []
 ## In-class tools maybe
 
 * [Python visualizer](https://pythontutor.com/member.html?glangmead@gmail.com)
+  * [Examples](https://pythontutor.com/articles/python-visualizer.html)
 * [Jupyter everywhere](https://jupytereverywhere.org)
 
 ## The best links to understand everything
@@ -45,6 +46,10 @@ projects: []
 * [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free) -- information architecture: "the way we arrange the parts of something to make it understandable."
 * [Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS) -- basic lingo.
 * [Introduction to Web Development](https://www.theodinproject.com/lessons/foundations-introduction-to-web-development) (The Odin Project) -- another high level overview.
+
+## Books
+
+* [Learn AI-Assisted Python Programming, 2nd ed.](https://www.manning.com/books/learn-ai-assisted-python-programming-second-edition) 
 
 ## History
 
