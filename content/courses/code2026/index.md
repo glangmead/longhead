@@ -28,8 +28,9 @@ image:
 projects: []
 ---
 
-## In-class tools maybe
+## In-class tools
 
+* [nologin.in scratch pad](https://nologin.in/highlinecode2026)
 * [Python visualizer](https://pythontutor.com/member.html?glangmead@gmail.com)
   * [Examples](https://pythontutor.com/articles/python-visualizer.html)
 * [Jupyter everywhere](https://jupytereverywhere.org)
