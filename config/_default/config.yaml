@@ -65,6 +65,10 @@ taxonomies:
   author: admin
 markup:
   _merge: deep
+  goldmark:
+    renderer:
+      # Render inline/raw HTML in Markdown content (e.g. embedded iframes).
+      unsafe: true
 related:
   threshold: 80
   includeNewer: true

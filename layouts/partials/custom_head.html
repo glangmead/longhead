@@ -3,3 +3,22 @@
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
 <link rel="me" href="https://mathstodon.xyz/@glangmead" />
+
+{{/* Course pages use a near-full-width content column on desktop. */}}
+{{ if eq .Section "courses" }}
+<style>
+  @media only screen and (min-width: 768px) {
+    .article-container,
+    .universal-wrapper {
+      max-width: 95%;
+      width: 95%;
+    }
+  }
+  /* Keep fixed-size embeds (e.g. iframes) from overflowing narrow viewports. */
+  .article-style iframe,
+  .article-style img,
+  .article-style table {
+    max-width: 100%;
+  }
+</style>
+{{ end }}
