@@ -27,8 +27,9 @@ projects: []
 * for loop
 * lists, concatenation, appending, indexing, changing, length, membership test, looping, sorting
 
-Links
+**Links**
 
+* [Python tutor visualizer](https://pythontutor.com/member.html)
 * [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
 * [Jupyter everywhere](https://jupytereverywhere.org)
 * Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [lists](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/05_Lists.html)
