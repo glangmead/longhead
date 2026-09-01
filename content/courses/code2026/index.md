@@ -118,7 +118,7 @@ count occurrences of a char in a string:
 ## Coding
 
 * [Practical Python Programming](https://dabeaz-course.github.io/practical-python/Notes/Contents.html)
-* [Python tutor](https://pythontutor.com/member.html?glangmead@gmail.com)
+* [Python tutor visualizer](https://pythontutor.com/member.html?glangmead@gmail.com)
   * [Examples](https://pythontutor.com/articles/python-visualizer.html)
 * [Jupyter everywhere](https://jupytereverywhere.org)
 
