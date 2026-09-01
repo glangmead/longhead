@@ -30,6 +30,8 @@ projects: []
 
 ## Class 1
 
+<hr />
+
 ### Lists, loops, arithmetic
 
 [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
@@ -37,7 +39,9 @@ projects: []
 add numbers in a notebook: [Jupyter everywhere](https://jupytereverywhere.org)
 
 count occurrences of a char in a string:
+<hr />
 <iframe width="1200" height="600" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20count_char%28s,%20d%29%3A%0A%20%20%20%20count%20%3D%200%20%20%23%20Initialize%20a%20counter%20variable%0A%20%20%20%20%23%20Loop%20over%20each%20character%20in%20s%0A%20%20%20%20for%20char%20in%20s%3A%0A%20%20%20%20%20%20%20%20%23%20Check%20if%20the%20current%20character%20is%20equal%20to%20d%0A%20%20%20%20%20%20%20%20if%20char%20%3D%3D%20d%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20count%20%2B%3D%201%20%20%23%20Increment%20the%20counter%20if%20they%20match%0A%0A%20%20%20%20return%20count%0A%20%20%20%20%0Amariah%20%3D%20%22%22%22Music%20Box%20is%20the%20third%20studio%20album%20by%20Mariah%20Carey%20%0A%28pictured%29,%20released%20on%20August%2031,%201993,%20by%20Columbia%20Records.%20%0AThe%20album%20topped%20the%20charts%20in%2015%20countries%20and%20%0Abecame%20Carey's%20bestseller%20and%20one%20of%20the%20best-selling%20albums%20in%20%0Ahistory,%20with%20over%2030%20million%20copies%20sold%20worldwide.%22%22%22%0Achar%20%3D%20%22e%22%0A%0Aprint%28count_char%28mariah,%20char%29%29&codeDivHeight=400&codeDivWidth=350&curInstr=0&origin=opt-frontend.js&py=311"> </iframe>
+<hr />
 
 ### Front end, back end
 
@@ -57,6 +61,8 @@ count occurrences of a char in a string:
 
 ## Class 2
 
+<hr />
+
 ### Functions, variables
 
 ### Databases
@@ -65,6 +71,8 @@ count occurrences of a char in a string:
 
 ## Class 3
     
+<hr />
+
 ### Dictionaries, objects
 
 ### git
@@ -73,6 +81,8 @@ count occurrences of a char in a string:
 
 ## Class 4
     
+<hr />
+
 ### Files, network, scraping
 
 ### Other languages
@@ -83,6 +93,8 @@ count occurrences of a char in a string:
 
 ## Class 5
     
+<hr />
+
 ### Storage, games (and game state trees)
 
 ### Specs
@@ -91,16 +103,21 @@ count occurrences of a char in a string:
 
 ## Class 6
     
+<hr />
+
 ### Advanced python topics: sympy, numpy, pytorch
 
 ### QA
 
 ### Theory of programming languages
 
+# Notes
 
-## Track 1: The coding language itself
+<hr />
 
-* [Automate the Boring Stuff with Python, 3rd ed.](https://automatetheboringstuff.com/3e/)
+## Coding
+
+* [Practical Python Programming](https://dabeaz-course.github.io/practical-python/Notes/Contents.html)
 * [Python tutor](https://pythontutor.com/member.html?glangmead@gmail.com)
   * [Examples](https://pythontutor.com/articles/python-visualizer.html)
 * [Jupyter everywhere](https://jupytereverywhere.org)
@@ -138,12 +155,12 @@ Unwrap)
 * [Roguelike dungeon-crawl tutorial in Rust](https://bfnightly.bracketproductions.com/rustbook/)
 
 
-## Track 3: AI for coding
+## AI for coding
 
 * [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison) -- low stakes only, watch secrets and data privacy, set billing limits, get a review.
 * [Learn AI-Assisted Python Programming, 2nd ed.](https://www.manning.com/books/learn-ai-assisted-python-programming-second-edition) 
 
-## Track 0: Pedagogy
+## Pedagogy
 
 * [Teaching Tech Together](https://teachtogether.tech/en/)
 * [Teachcomputing](https://teachcomputing.org/pedagogy)
