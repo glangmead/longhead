@@ -1,6 +1,4 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
 title: "code2026"
 subtitle: "Resources for learning to code with the help of AI in 2026"
 summary: "Links and materials for a course on learning to code with the help of AI in 2026"
@@ -11,20 +9,10 @@ date: 2026-08-19T08:36:26-04:00
 lastmod: 2026-08-22T12:00:00-04:00
 featured: false
 draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: ""
   focal_point: ""
   preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
 projects: []
 ---
 
@@ -32,16 +20,17 @@ projects: []
 
 <hr />
 
-### Lists, loops, arithmetic
+### Arithmetic, loops, lists
 
-[Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
+* kinds of values: boolean, integer, floating point
+* add, subtract, multiply, divide, modulus (remainder)
+* 
 
-add numbers in a notebook: [Jupyter everywhere](https://jupytereverywhere.org)
+Resources
 
-count occurrences of a char in a string:
-<hr />
-<iframe width="1200" height="600" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20count_char%28s,%20d%29%3A%0A%20%20%20%20count%20%3D%200%20%20%23%20Initialize%20a%20counter%20variable%0A%20%20%20%20%23%20Loop%20over%20each%20character%20in%20s%0A%20%20%20%20for%20char%20in%20s%3A%0A%20%20%20%20%20%20%20%20%23%20Check%20if%20the%20current%20character%20is%20equal%20to%20d%0A%20%20%20%20%20%20%20%20if%20char%20%3D%3D%20d%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20count%20%2B%3D%201%20%20%23%20Increment%20the%20counter%20if%20they%20match%0A%0A%20%20%20%20return%20count%0A%20%20%20%20%0Amariah%20%3D%20%22%22%22Music%20Box%20is%20the%20third%20studio%20album%20by%20Mariah%20Carey%20%0A%28pictured%29,%20released%20on%20August%2031,%201993,%20by%20Columbia%20Records.%20%0AThe%20album%20topped%20the%20charts%20in%2015%20countries%20and%20%0Abecame%20Carey's%20bestseller%20and%20one%20of%20the%20best-selling%20albums%20in%20%0Ahistory,%20with%20over%2030%20million%20copies%20sold%20worldwide.%22%22%22%0Achar%20%3D%20%22e%22%0A%0Aprint%28count_char%28mariah,%20char%29%29&codeDivHeight=400&codeDivWidth=350&curInstr=0&origin=opt-frontend.js&py=311"> </iframe>
-<hr />
+* [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
+* [Jupyter everywhere](https://jupytereverywhere.org)
+* Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [loops](), [lists]()
 
 ### Front end, back end
 
@@ -73,7 +62,7 @@ count occurrences of a char in a string:
     
 <hr />
 
-### Dictionaries, objects
+### Dictionaries, objects, libraries
 
 ### git
 
