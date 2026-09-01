@@ -24,29 +24,26 @@ projects: []
 
 * kinds of values: boolean, integer, floating point
 * add, subtract, multiply, divide, modulus (remainder)
-* 
+* for loop
+* lists, concatenation, appending, indexing, changing, length, membership test, looping, sorting
 
-Resources
+Links
 
 * [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
 * [Jupyter everywhere](https://jupytereverywhere.org)
-* Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [loops](), [lists]()
+* Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [lists](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/05_Lists.html)
 
 ### Front end, back end
 
-[Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends)  restaurant analogy (dining room = frontend, kitchen = backend/API/database). Part 1 of a 6-part series.
-
-[Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens) -- see many, many screens from apps.
-
-[How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free) -- information architecture: "the way we arrange the parts of something to make it understandable."
-
-[Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS) -- basic lingo.
+* [Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends)  restaurant analogy (dining room = frontend, kitchen = backend/API/database). Part 1 of a 6-part series.
+* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens) -- see many, many screens from apps.
+* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free) -- information architecture: "the way we arrange the parts of something to make it understandable."
+* [Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS) -- basic lingo.
 
 ### Addition circuits
 
-[Circuits that add numbers](https://en.wikipedia.org/wiki/Adder_(electronics))
-
-[Video on said circuits](https://www.youtube.com/watch?v=ecn-8iGDRSo)
+* [Circuits that add numbers](https://en.wikipedia.org/wiki/Adder_(electronics))
+* [Video on said circuits](https://www.youtube.com/watch?v=ecn-8iGDRSo)
 
 ## Class 2
 
