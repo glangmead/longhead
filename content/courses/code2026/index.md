@@ -33,6 +33,7 @@ projects: []
 * [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
 * [Jupyter everywhere](https://jupytereverywhere.org)
 * Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [lists](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/05_Lists.html)
+* [A little about why](https://docs.python.org/3/tutorial/floatingpoint.html) floating point numbers behave unexpectedly
 
 ### Front end, back end
 
