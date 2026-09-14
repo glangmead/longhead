@@ -26,7 +26,7 @@ Swift
 
 #### Founder
 
-Solo developer of iOS and macOS apps. [The Ring App](https://www.luminousdesigns.tech/ring/) is an educational app for listening to Richard Wagner’s Ring of the Nibelung opera cycle with synchronized highlighting of the German and English libretto. [Diction](https://www.luminousdesigns.tech/diction/) is a game app for playing interactive fiction hands-free with voice commands and text to speech. In progress: DynamicalSystems uses functional programming and the theory of operads to translate board game rules into correct and testable logic.
+Solo developer of iOS and macOS apps. [The Ring App](https://www.luminousdesigns.tech/ring/) is an educational app for listening to Richard Wagner’s Ring of the Nibelung opera cycle with synchronized highlighting of the German and English libretto. [Diction](https://www.luminousdesigns.tech/diction/) is a game app for playing interactive fiction hands-free with voice commands and text to speech. In progress: DynamicalSystems uses functional programming and the theory of operads to translate board game rules into correct and testable logic. Orbital is an ambient music app that uses functional arrows and a hierarchical understanding of music theory (melody notes moving within chords, within scales, within the chromatic universe) to synthesize sounds and generate music with randomness, with full support for spatial audio.
 
 ### **Apple Inc., Pittsburgh, PA --- 2011--2025** 
 
