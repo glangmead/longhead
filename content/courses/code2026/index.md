@@ -93,7 +93,32 @@ projects: []
     
 <hr />
 
-### Advanced python topics: sympy, numpy, pytorch
+### Security and privacy
+
+* Secrets, i.e. passwords and access keys to your app's data
+  * **Uber, 2014.** An engineer put an Amazon web services (AWS) access key into code he published in a public repository. Someone used it to download a file with 100,000+ drivers' names and licence numbers. Sources: [FTC revised complaint (PDF)](https://www.ftc.gov/system/files/documents/cases/152_3054_c-4662_uber_technologies_revised_complaint.pdf), [FTC analysis of proposed order](https://www.ftc.gov/system/files/documents/cases/1523054_uber_technologies_revised_analysis.pdf).
+  * **A solo developer, 2015.** Pushed AWS keys to GitHub, noticed, deleted them
+  about five minutes later. A bot had already taken them and started ~140 EC2
+  instances mining Bitcoin, and the dev was charged $2,375. Sources: [The Register](https://www.theregister.com/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots), [Slashdot discussion](https://it.slashdot.org/story/15/01/02/2342228/bots-scanning-github-to-steal-amazon-ec2-keys).
+* Having logins in your wite is a big responsibility
+  * **Adobe, 2013 — 153 million accounts.** The passwords were *encrypted*, not
+  hashed, which produces identical output for identical input. So every user with the password `123456` had the same ciphertext. The dump also included every user's plaintext password hint. Sources: [Schneier, "Cryptographic Blunders Revealed by Adobe's Password Leak"](https://www.schneier.com/blog/archives/2013/11/cryptographic_b.html), [CSO Online: encrypted, not hashed](https://www.csoonline.com/article/540070/network-security-adobe-confirms-stolen-passwords-were-encrypted-not-hashed.html), [Have I Been Pwned record](https://haveibeenpwned.com/Breach/Adobe), [XKCD 1286](https://xkcd.com/1286/).
+  * **RockYou, 2009 — 32.6 million passwords in plain text.** Breached by SQL
+  injection (explained in the comic below). Sources: [TechCrunch (2009)](https://techcrunch.com/2009/12/14/rockyou-hacked/), [Help Net Security, on the SQL injection](https://www.helpnetsecurity.com/2009/12/14/serious-sql-flaw-could-have-compromised-millions-of-rockyoucom-users/). <br/> <a href="https://xkcd.com/327/"><img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" width="500" /></a>
+  * **Facebook 2019, and Twitter and GitHub in 2018.** Passwords written to
+  internal log files in plain text before the hashing step. Three of the largest engineering organisations on the planet. Sources: [Krebs on Security](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/), [TechCrunch](https://techcrunch.com/2019/03/21/facebook-plaintext-passwords/), [BleepingComputer, on Twitter and GitHub](https://www.bleepingcomputer.com/news/security/twitter-admits-recording-plaintext-passwords-in-internal-logs-just-like-github/).
+* Storing images is a big responsibility.
+  * **Tea, July 2025 — 72,000 images including 13,000 selfies and photo IDs.** An
+  app for women's dating safety required a selfie plus a government ID. The images
+  were stored in a cloud storage bucket with no authentication; anyone with the URL could list and download everything. Sources: [American Bar Association technical and legal analysis](https://www.americanbar.org/groups/intellectual_property_law/resources/newsletters/cloud-misconfiguration-private-right-of-action-tea-app-data-breach/), [Engadget](https://www.engadget.com/cybersecurity/tea-app-suffers-breach-exposing-thousands-of-user-images-190731414.html).
+* Using third party libraries in your web app is a commitment to applying vulnerability patches forever.
+  * **Equifax, 2017: 147.9 million people.** An Apache
+  Struts security patch was published on 7 March. An internal notice went out on 9 March. A
+  scan on 15 March failed to find the affected system. Attackers got in in May and
+  were not noticed until 29 July. The fix was to run `pip install pip-audit && pip-audit`. Sources: [GAO-18-559 (PDF)](https://www.gao.gov/assets/gao-18-559.pdf), [House Oversight report (PDF)](https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf).
+
+
+
 
 ### QA
 
