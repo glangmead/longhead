@@ -53,7 +53,9 @@ Additional resources about this idea
 * [Central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) (Wikipedia; "Operation" section names the instruction cycle), [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (Wikipedia; diagram at top: instructions and data share one memory).
 * [Little Man Computer](https://peterhigginson.co.uk/lmc/) (Peter Higginson simulator): watch a program run one instruction at a time. Retro UI. [Wikipedia page](https://en.wikipedia.org/wiki/Little_man_computer) has the mailroom metaphor.
 * [Build an 8-bit computer](https://eater.net/8bit) (Ben Eater): going deeper; registers, RAM, program counter, bus, each as a breadboard module.
-* Already in Notes: Code.org "How Computers Work" playlist fits here.
+* [How Computers Work](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-): playlist of 5 5-minute videos.
+* [How the Internet Works](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7): playlist of 6 7-minute videos.
+* [What happens when you type google.com](https://github.com/alex/what-happens-when): the exhaustive answer, keypress to pixels.
 
 ### The apps that run our code
 
@@ -67,16 +69,13 @@ Additional resources about this idea
 * Technically glossary: [runtime](https://technically.dev/universe/runtime), [terminal](https://technically.dev/universe/terminal), [macOS/Windows/Linux](https://technically.dev/universe/macos-windows-linux), [iOS/Android](https://technically.dev/universe/ios-android).
 * [The Unix Shell](https://swcarpentry.github.io/shell-novice/) (Software Carpentry), episodes 1-2: what a file, directory, path, and command are.
 
-### The notional machine
-
-* [Call stack](https://en.wikipedia.org/wiki/Call_stack) (Wikipedia)
-
-### Theory of programming languages
+### Programming languages and what they have in common
 
 * [A Map of the Territory](https://craftinginterpreters.com/a-map-of-the-territory.html)
 * [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
 * [Type system](https://en.wikipedia.org/wiki/Type_system)
 * [Turing completeness](https://en.wikipedia.org/wiki/Turing_completeness)
+* [Call stack](https://en.wikipedia.org/wiki/Call_stack) (Wikipedia)
 * The dichotomy: [Syntax (programming languages)](https://en.wikipedia.org/wiki/Syntax_(programming_languages)), [Semantics (computer science)](https://en.wikipedia.org/wiki/Semantics_(computer_science))
 
 <hr />
@@ -132,7 +131,7 @@ A notebook is another way to interact with Python (or R, or Mathematica, or othe
 * [Hash table](https://en.wikipedia.org/wiki/Hash_table) (Wikipedia), [Associative array](https://en.wikipedia.org/wiki/Associative_array) (Wikipedia).
 * [Object oriented](https://technically.dev/universe/object-oriented) (Technically glossary): "an object is a 'thing' that can hold data and do stuff, and you can create many of."
 
-### Importing other modules
+### Importing other modules, and connecting to the internet
 
 Try [this Jupyter Everywhere notebook](https://jupytereverywhere.org/lab/index.html?notebook=beloved-adaptable-stingray) which contains the following code to obtain a weather report. It imports a few modules: `json`, `time`, and `urllib` to help it do its job.
 
@@ -182,9 +181,6 @@ Those modules come from somewhere. In this case the Jupyter Everywhere system ha
 
 * [package registry](https://technically.dev/universe/package-registry) (Technically glossary): importing other libraries into python.
 * [Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index) (Wikipedia): where `pip install` gets things.
-
-### Downloading a web page and extracting information from it
-
 * Technically glossary: [HTTP](https://technically.dev/universe/http), [scrape](https://technically.dev/universe/scrape), [IP address](https://technically.dev/universe/ip-address), [DNS](https://technically.dev/universe/dns).
 
 ### Games (and game state trees)
@@ -255,7 +251,11 @@ Here I only wanted to share some stories, which will help you know what to do by
 * [git cheat sheet](https://wizardzines.com/comics/git-cheat-sheet/) (Julia Evans comic): one page, poster-style.
 * [Git on Wikipedia](https://en.wikipedia.org/wiki/Git)
 
-### Specs
+### Software engineering
+
+* [Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)) ![](/img/margaret_hamilton.jpg)
+
+Specs
 
 It remains to be seen if we need to retain this paradigm exactly, but everything here needs to reappear somewhere in the prompt-based development cycle, even if it's in your head. Learn from your elders!
 
@@ -263,44 +263,6 @@ It remains to be seen if we need to retain this paradigm exactly, but everything
 * [User story](https://en.wikipedia.org/wiki/User_story) (Wikipedia): "As a ..., I want ..., so that ..." template.
 * [Software requirements specification](https://en.wikipedia.org/wiki/Software_requirements_specification), [Product requirements document](https://en.wikipedia.org/wiki/Product_requirements_document) (Wikipedia): references.
 * [How to Design Programs](https://htdp.org/): the design recipe: problem, signature, examples, body, tests.
-
-### QA
-
-This is your job now. The agent can build software but you have test it and find bugs and crashes.
-
-* [List of famous software bugs](https://en.wikipedia.org/wiki/List_of_software_bugs) (Wikipedia): Ariane 5, Therac-25, Mars Climate Orbiter stories.
-* Willison, [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/): "the one thing you absolutely cannot outsource to the machine is testing." The Atomic Object post on the same point assumes TDD jargon; skipped.
-* [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) (official tutorial): a traceback example and how to read it.
-* Automate the Boring Stuff, 3rd ed.: [Debugging](https://automatetheboringstuff.com/3e/chapter5.html): tracebacks, assertions, the debugger.
-* [How I got better at debugging](https://wizardzines.com/comics/better-at-debugging/) (Julia Evans comic): "it's never magic."
-* [Debugging](https://technically.dev/universe/debugging) (Technically glossary)
-* [pytest: Get Started](https://docs.pytest.org/en/stable/getting-started.html): the 4-line first test.
-* [Software testing](https://en.wikipedia.org/wiki/Software_testing), [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Software bug](https://en.wikipedia.org/wiki/Software_bug) (Wikipedia): references.
-* [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) (Wikipedia)
-
-# Backup notes
-
-<hr />
-
-## Coding
-
-* [Practical Python Programming](https://dabeaz-course.github.io/practical-python/Notes/Contents.html)
-* [Python tutor visualizer](https://pythontutor.com/member.html?glangmead@gmail.com)
-  * [Examples](https://pythontutor.com/articles/python-visualizer.html)
-* [Jupyter everywhere](https://jupytereverywhere.org)
-
-### Overviews
-
-* [How Computers Work](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-): playlist of 5 5-minute videos.
-* [How the Internet Works](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7): playlist of 6 7-minute videos.
-* [Software Engineering for Vibe Coders: Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends)  restaurant analogy (dining room = frontend, kitchen = backend/API/database). Part 1 of a 6-part series.
-* [What happens when you type google.com](https://github.com/alex/what-happens-when): the exhaustive answer, keypress to pixels.
-* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens): see many, many screens from apps.
-* [Apple Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector)
-* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free): information architecture: "the way we arrange the parts of something to make it understandable."
-* [Web apps vs native apps vs hybrid apps](https://aws.amazon.com/compare/the-difference-between-web-apps-native-apps-and-hybrid-apps/) (AWS): basic lingo.
-* [Introduction to Web Development](https://www.theodinproject.com/lessons/foundations-introduction-to-web-development) (The Odin Project): another high level overview.
-* [Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)) ![](/img/margaret_hamilton.jpg)
 
 ### Building apps
 
@@ -321,17 +283,21 @@ Unwrap)
 
 * [Roguelike dungeon-crawl tutorial in Rust](https://bfnightly.bracketproductions.com/rustbook/)
 
-
-## AI for coding
+### AI for coding
 
 * [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison): low stakes only, watch secrets and data privacy, set billing limits, get a review.
 * [Learn AI-Assisted Python Programming, 2nd ed.](https://www.manning.com/books/learn-ai-assisted-python-programming-second-edition) 
 
-## Pedagogy
+### QA
 
-* [Teaching Tech Together](https://teachtogether.tech/en/)
-* [Teachcomputing](https://teachcomputing.org/pedagogy)
-* [CS teaching tips](https://www.csteachingtips.org/browse-all)
-* [Amy J. Ko's free books](https://faculty.washington.edu/ajko/books/): *Critically Conscious Computing* has the most on how novices form misconceptions.
+This is your job now. The agent can build software but you have test it and find bugs and crashes.
 
-
+* [List of famous software bugs](https://en.wikipedia.org/wiki/List_of_software_bugs) (Wikipedia): Ariane 5, Therac-25, Mars Climate Orbiter stories.
+* Willison, [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/): "the one thing you absolutely cannot outsource to the machine is testing." The Atomic Object post on the same point assumes TDD jargon; skipped.
+* [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) (official tutorial): a traceback example and how to read it.
+* Automate the Boring Stuff, 3rd ed.: [Debugging](https://automatetheboringstuff.com/3e/chapter5.html): tracebacks, assertions, the debugger.
+* [How I got better at debugging](https://wizardzines.com/comics/better-at-debugging/) (Julia Evans comic): "it's never magic."
+* [Debugging](https://technically.dev/universe/debugging) (Technically glossary)
+* [pytest: Get Started](https://docs.pytest.org/en/stable/getting-started.html): the 4-line first test.
+* [Software testing](https://en.wikipedia.org/wiki/Software_testing), [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Software bug](https://en.wikipedia.org/wiki/Software_bug) (Wikipedia): references.
+* [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) (Wikipedia)
