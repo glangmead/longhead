@@ -91,53 +91,130 @@ What you want to come away understanding is the following, which will allow you 
 
 1. Running programs live in memory, which is divided between a **call stack** (the "frames" in the CS Circles visualizer) and a **heap** (called "objects" in the CS Circles visualizer).
 
-    See this for example in CS Circles section 10 <iframe width='500' height='480' frameborder='0' scrolling='no' src='https://cscircles.cemc.uwaterloo.ca/wp-content/plugins/pybox/OnlinePythonTutor3-cemc/iframe-embed.html#code=def+square%28x%29%3A+++++%23+function+definition%0A++++return+x%2Ax+++++%23+body+only+has+one+line%0A%0A%23+use+the+function%2C+now+that+it%27s+defined%0Aprint%28square%2810%29%29++++++++%0Aprint%28square%28square%282%29%29%29&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&showOnlyOutputs=false&py=3&curInstr=0&resizeContainer=true&highlightLines&width=460&rightStdout=1'></iframe>
+    See this for example in CS Circles section 10, reproduced here <p><iframe width="800" height="400" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20square%28x%29%3A%20%20%20%20%20%23%20function%20definition%0A%20%20%20%20return%20x*x%20%20%20%20%20%23%20body%20only%20has%20one%20line%0A%0A%23%20use%20the%20function,%20now%20that%20it's%20defined%0Aprint%28square%2810%29%29%20%20%20%20%20%20%20%20%0Aprint%28square%28square%282%29%29%29&codeDivHeight=400&codeDivWidth=350&curInstr=0&origin=opt-frontend.js&py=311"> </iframe>
 
-2. When code is executed, Python steps through the instructions, doing what each one tells it to in turn.
-
-    see it here
+2. When code is executed, Python steps through the instructions, doing what each one tells it to in turn. That's what the "Next" button simulates in the visualization above.
 
 3. Every piece of data is stored in a two-part structure. The first part says what **type** the data is, and the second part is the actual **value**.
 
-    see it here
-
 4. Memory for some types is allocated in the stack, and for others inside the heap. This shows up in the visualizer.
 
-    see it here
-
-5. Lists, dictionaries and other collections store references to other data rather than storing those values directly. They can be modified after they are created, i.e. a list can be extended or new values can be added to a set.
-
-    see it here
+5. Lists, dictionaries and other collections store references to other data rather than storing those values directly. They can be modified after they are created, e.g. a list can be extended. In the visualizer these are the arrows pointing out of the frame into the objects, as opposed to values like integers shown directly in the frame.
 
 6. When code is loaded into memory, Python converts it to a sequence of instructions that are stored like any other data. This is why it’s possible to assign functions to variables and pass them as parameters.
 
-    see it here
+    Here's an example of using functions as data <p><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23%20Using%20functions%20as%20just%20another%20kind%20of%20data%0A%0Adef%20square%28x%29%3A%0A%20%20%20%20return%20x*x%0A%0Adef%20addone%28x%29%3A%0A%20%20%20%20return%20x%20%2B%201%0A%0Afns%20%3D%20%5Bsquare,%20addone%5D%0Aval%20%3D%204%0Afor%20f%20in%20fns%3A%0A%20%20%20%20val%20%3D%20f%28val%29%0Aprint%28val%29&codeDivHeight=400&codeDivWidth=350&curInstr=16&origin=opt-frontend.js&py=311"> </iframe>
 
 7. Some instructions make Python read data, do calculations, and create new data. Other instructions control what instructions Python executes, which is how loops and conditionals work. Yet another instruction tells Python to call a function.
 
-    see it here
-
 8. When a function is called, Python pushes a new stack frame onto the call stack.
-
-    see it here
 
 9. Each stack frame stores variables’ names and references to data. Function parameters are just more variables in the frame.
 
-    see it here
-
 10. When a variable is used, Python looks for it in the top stack frame. If it isn’t there, it looks in the bottom (global) frame.
 
-    see it here
+    Here's a variant of an earlier visualization where inside `add_something` there is a local variable `x` in the frame, but also a global variable `to_add` that the interpreter accesses from the global frame <p><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23%20Using%20functions%20as%20just%20another%20kind%20of%20data%0A%0Ato_add%20%3D%201%0A%0Adef%20square%28x%29%3A%0A%20%20%20%20return%20x*x%0A%0Adef%20add_something%28x%29%3A%0A%20%20%20%20return%20x%20%2B%20to_add%0A%0Afns%20%3D%20%5Bsquare,%20add_something%5D%0Aval%20%3D%204%0Afor%20f%20in%20fns%3A%0A%20%20%20%20val%20%3D%20f%28val%29%0Aprint%28val%29&codeDivHeight=400&codeDivWidth=350&curInstr=13&origin=opt-frontend.js&py=311"> </iframe>
 
 11. When the function finishes, Python erases its stack frame and jumps backs to the instructions it was executing before the function call. If there isn’t a “before,” the program has finished.
 
-    see it here
-
-https://cscircles.cemc.uwaterloo.ca/10-def/
+That's software in a nutshell!
 
 ### Notebooks
 
 A notebook is another way to interact with Python (or R, or Mathematica, or others). It's a document with three types of cells: formatted text, cells for entering code, and cells that show the output of the code. They usually are web pages. There's a free site that offers notebooks called [Jupyter everywhere](https://jupytereverywhere.org). They run on your own comptuer in the browser, via a special version of python that's also running in your browser.
+
+### Odds and ends
+
+* [Zero-based numbering](https://en.wikipedia.org/wiki/Zero-based_numbering) (Wikipedia): why lists start at 0.
+* [Floating point is weird](https://wizardzines.com/comics/floating-point-weird/) (Julia Evans comic)
+* [Hash table](https://en.wikipedia.org/wiki/Hash_table) (Wikipedia), [Associative array](https://en.wikipedia.org/wiki/Associative_array) (Wikipedia).
+* [Object oriented](https://technically.dev/universe/object-oriented) (Technically glossary): "an object is a 'thing' that can hold data and do stuff, and you can create many of."
+
+### Importing other modules
+
+Try [this Jupyter Everywhere notebook](https://jupytereverywhere.org/lab/index.html?notebook=beloved-adaptable-stingray) which contains the following code to obtain a weather report. It imports a few modules: `json`, `time`, and `urllib` to help it do its job.
+
+```python
+import json
+import time
+import urllib
+
+def fetch(url, timeout=10):
+    """Fetch a URL. Returns (status, headers, body-as-text).
+
+    A request has to say who's asking. Many servers reject the default
+    Python user-agent outright; an honest one that names the project is both
+    politer and more reliable. Never lie about being a browser.
+    """
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "code2026-class-example/1.0 (teaching example)"},
+    )
+    # timeout is not optional in real code. Without it, a server that never
+    # answers hangs your program forever.
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return response.status, dict(response.headers), response.read().decode("utf-8")
+
+weather_url = "https://api.open-meteo.com/v1/forecast?" + urllib.parse.urlencode({
+    "latitude": 40.7128,      # New York
+    "longitude": -74.0060,
+    "current": "temperature_2m,wind_speed_10m",
+    "temperature_unit": "fahrenheit",
+})
+try:
+    # Pause between calls to a different service. One request is fine;
+    # a loop making hundreds will get your address blocked.
+    time.sleep(0.5)
+    _, _, weather_body = fetch(weather_url)
+    weather = json.loads(weather_body)
+    now = weather["current"]
+    units = weather["current_units"]
+    print(f"  New York right now: {now['temperature_2m']}{units['temperature_2m']}, "
+          f"wind {now['wind_speed_10m']} {units['wind_speed_10m']}")
+    print(f"  (reading taken at {now['time']})")
+except Exception as error:
+    print(f"  weather lookup failed: {type(error).__name__}: {error}")
+```
+
+Those modules come from somewhere. In this case the Jupyter Everywhere system has them instaleld because they are very common modules everyone needs. But if a given system doesn't have a module, you can install it with `pip install json` or similar. Here are some links that provide context on this infrastructure:
+
+* [package registry](https://technically.dev/universe/package-registry) (Technically glossary): importing other libraries into python.
+* [Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index) (Wikipedia): where `pip install` gets things.
+
+### Downloading a web page and extracting information from it
+
+* Technically glossary: [HTTP](https://technically.dev/universe/http), [scrape](https://technically.dev/universe/scrape), [IP address](https://technically.dev/universe/ip-address), [DNS](https://technically.dev/universe/dns).
+
+### Games (and game state trees)
+
+* [Game tree](https://en.wikipedia.org/wiki/Game_tree) (Wikipedia)
+* [Game tree for tic-tac-toe in python](https://banay.me/post/tic-tac-toe-minimax/) including building an AI to play the game
+
+### Security and privacy
+
+Here I only wanted to share some stories, which will help you know what to do by counterexample.
+
+* Do not store secrets, i.e. your, the developer's, own passwords and access keys (or, even scarier, those of your employer).
+  * **Uber, 2014.** An engineer put an Amazon web services (AWS) access key into code he published in a public repository. Someone used it to download a file with 100,000+ drivers' names and licence numbers. Sources: [FTC revised complaint (PDF)](https://www.ftc.gov/system/files/documents/cases/152_3054_c-4662_uber_technologies_revised_complaint.pdf), [FTC analysis of proposed order](https://www.ftc.gov/system/files/documents/cases/1523054_uber_technologies_revised_analysis.pdf).
+  * **A solo developer, 2015.** Pushed AWS keys to GitHub, noticed, deleted them
+  about five minutes later. A bot had already taken them and started ~140 EC2
+  instances mining Bitcoin, and the dev was charged $2,375. Sources: [The Register](https://www.theregister.com/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots), [Slashdot discussion](https://it.slashdot.org/story/15/01/02/2342228/bots-scanning-github-to-steal-amazon-ec2-keys).
+* Having users log in to your site is a big responsibility.
+  * **Adobe, 2013: 153 million accounts.** The passwords were *encrypted*, not
+  hashed, which produces identical output for identical input. So every user with the password `123456` had the same ciphertext. The dump also included every user's plaintext password hint. Sources: [Schneier, "Cryptographic Blunders Revealed by Adobe's Password Leak"](https://www.schneier.com/blog/archives/2013/11/cryptographic_b.html), [CSO Online: encrypted, not hashed](https://www.csoonline.com/article/540070/network-security-adobe-confirms-stolen-passwords-were-encrypted-not-hashed.html), [Have I Been Pwned record](https://haveibeenpwned.com/Breach/Adobe), [XKCD 1286](https://xkcd.com/1286/).
+  * **RockYou, 2009: 32.6 million passwords in plain text.** Breached by SQL
+  injection (explained in the comic below). Sources: [TechCrunch (2009)](https://techcrunch.com/2009/12/14/rockyou-hacked/), [Help Net Security, on the SQL injection](https://www.helpnetsecurity.com/2009/12/14/serious-sql-flaw-could-have-compromised-millions-of-rockyoucom-users/). <br/> <a href="https://xkcd.com/327/"><img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" width="500" /></a>
+  * **Facebook 2019, and Twitter and GitHub in 2018.** Passwords written to
+  internal log files in plain text before the hashing step. Three of the largest engineering organisations on the planet. Sources: [Krebs on Security](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/), [TechCrunch](https://techcrunch.com/2019/03/21/facebook-plaintext-passwords/), [BleepingComputer, on Twitter and GitHub](https://www.bleepingcomputer.com/news/security/twitter-admits-recording-plaintext-passwords-in-internal-logs-just-like-github/).
+* Storing images is a big responsibility.
+  * **Tea, July 2025: 72,000 images including 13,000 selfies and photo IDs.** An
+  app for women's dating safety required a selfie plus a government ID. The images
+  were stored in a cloud storage bucket with no authentication; anyone with the URL could list and download everything. Sources: [American Bar Association technical and legal analysis](https://www.americanbar.org/groups/intellectual_property_law/resources/newsletters/cloud-misconfiguration-private-right-of-action-tea-app-data-breach/), [Engadget](https://www.engadget.com/cybersecurity/tea-app-suffers-breach-exposing-thousands-of-user-images-190731414.html).
+* Using third party libraries in your web app is a commitment to applying vulnerability patches forever.
+  * **Equifax, 2017: 147.9 million people.** An Apache
+  Struts security patch was published on March 7. An internal notice went out on March 9. A
+  scan on March 15 failed to find the affected system. Attackers got in in May and
+  were not noticed until July 29. The fix was only to run `pip install pip-audit && pip-audit`. Sources: [GAO-18-559 (PDF)](https://www.gao.gov/assets/gao-18-559.pdf), [House Oversight report (PDF)](https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf).
 
 <hr />
 
@@ -198,38 +275,6 @@ This is your job now. The agent can build software but you have test it and find
 * [pytest: Get Started](https://docs.pytest.org/en/stable/getting-started.html): the 4-line first test.
 * [Software testing](https://en.wikipedia.org/wiki/Software_testing), [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Software bug](https://en.wikipedia.org/wiki/Software_bug) (Wikipedia): references.
 * [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) (Wikipedia)
-
-### Functions, variables
-
-### Dictionaries, objects, libraries
-
-### Files, network, scraping
-
-### Storage, games (and game state trees)
-
-### Security and privacy
-
-* Do not store secrets, i.e. your, the developer's, own passwords and access keys (or, even scarier, those of your employer).
-  * **Uber, 2014.** An engineer put an Amazon web services (AWS) access key into code he published in a public repository. Someone used it to download a file with 100,000+ drivers' names and licence numbers. Sources: [FTC revised complaint (PDF)](https://www.ftc.gov/system/files/documents/cases/152_3054_c-4662_uber_technologies_revised_complaint.pdf), [FTC analysis of proposed order](https://www.ftc.gov/system/files/documents/cases/1523054_uber_technologies_revised_analysis.pdf).
-  * **A solo developer, 2015.** Pushed AWS keys to GitHub, noticed, deleted them
-  about five minutes later. A bot had already taken them and started ~140 EC2
-  instances mining Bitcoin, and the dev was charged $2,375. Sources: [The Register](https://www.theregister.com/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots), [Slashdot discussion](https://it.slashdot.org/story/15/01/02/2342228/bots-scanning-github-to-steal-amazon-ec2-keys).
-* Having users log in to your site is a big responsibility.
-  * **Adobe, 2013: 153 million accounts.** The passwords were *encrypted*, not
-  hashed, which produces identical output for identical input. So every user with the password `123456` had the same ciphertext. The dump also included every user's plaintext password hint. Sources: [Schneier, "Cryptographic Blunders Revealed by Adobe's Password Leak"](https://www.schneier.com/blog/archives/2013/11/cryptographic_b.html), [CSO Online: encrypted, not hashed](https://www.csoonline.com/article/540070/network-security-adobe-confirms-stolen-passwords-were-encrypted-not-hashed.html), [Have I Been Pwned record](https://haveibeenpwned.com/Breach/Adobe), [XKCD 1286](https://xkcd.com/1286/).
-  * **RockYou, 2009: 32.6 million passwords in plain text.** Breached by SQL
-  injection (explained in the comic below). Sources: [TechCrunch (2009)](https://techcrunch.com/2009/12/14/rockyou-hacked/), [Help Net Security, on the SQL injection](https://www.helpnetsecurity.com/2009/12/14/serious-sql-flaw-could-have-compromised-millions-of-rockyoucom-users/). <br/> <a href="https://xkcd.com/327/"><img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" width="500" /></a>
-  * **Facebook 2019, and Twitter and GitHub in 2018.** Passwords written to
-  internal log files in plain text before the hashing step. Three of the largest engineering organisations on the planet. Sources: [Krebs on Security](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/), [TechCrunch](https://techcrunch.com/2019/03/21/facebook-plaintext-passwords/), [BleepingComputer, on Twitter and GitHub](https://www.bleepingcomputer.com/news/security/twitter-admits-recording-plaintext-passwords-in-internal-logs-just-like-github/).
-* Storing images is a big responsibility.
-  * **Tea, July 2025: 72,000 images including 13,000 selfies and photo IDs.** An
-  app for women's dating safety required a selfie plus a government ID. The images
-  were stored in a cloud storage bucket with no authentication; anyone with the URL could list and download everything. Sources: [American Bar Association technical and legal analysis](https://www.americanbar.org/groups/intellectual_property_law/resources/newsletters/cloud-misconfiguration-private-right-of-action-tea-app-data-breach/), [Engadget](https://www.engadget.com/cybersecurity/tea-app-suffers-breach-exposing-thousands-of-user-images-190731414.html).
-* Using third party libraries in your web app is a commitment to applying vulnerability patches forever.
-  * **Equifax, 2017: 147.9 million people.** An Apache
-  Struts security patch was published on March 7. An internal notice went out on March 9. A
-  scan on March 15 failed to find the affected system. Attackers got in in May and
-  were not noticed until July 29. The fix was only to run `pip install pip-audit && pip-audit`. Sources: [GAO-18-559 (PDF)](https://www.gao.gov/assets/gao-18-559.pdf), [House Oversight report (PDF)](https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf).
 
 # Backup notes
 
