@@ -18,7 +18,7 @@ projects: []
 
 {{< toc >}}
 
-This is a resource for someone wanting to learn how to code (with the help of AI) from scratch. It has three parts, which aren't in any order.
+This is a resource for someone wanting to learn how to code (with the help of AI) from scratch. It has three parts, which you are invited to jump between in any order.
 
 1. To understand code, you need to understand a little about how computers work, and about the abstract **notional machine** that the programming language targets. It's a model of how computer programs execute, and it's what you're talking to when you code. This extra material is not usually included in coding classes, but it's the wax-on-wax-off portion that will make you the Karate Kid.
 
