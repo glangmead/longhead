@@ -16,8 +16,6 @@ image:
 projects: []
 ---
 
-{{< toc >}}
-
 This is a resource for someone wanting to learn how to code (with the help of AI) from scratch. It has three parts, which you are invited to jump between in any order.
 
 1. To understand code, you need to understand a little about how computers and the internet work. This extra material is not usually included in coding classes, but it's the wax-on-wax-off portion that will make you the Karate Kid.
@@ -27,6 +25,8 @@ This is a resource for someone wanting to learn how to code (with the help of AI
 3. You need to know what to ask the agent for. You need to know what kinds of software there are, such as web sites and apps. You need to look more closely at the ones you use every day and see what all their ingredients are, what screens they have. You need to know when you need a database. You need to know about security and privacy. You need to know about testing (QA, quality assurance). You need to know about app stores.
 
 Then you'll be an expert!
+
+{{< toc >}}
 
 ## The Computer
 
@@ -48,6 +48,8 @@ Additional resources about this idea
 
 ### Computer organization
 
+Curated resources that explain more about how computers work, building up hierarchically from the individual gates.
+
 * Crash Course Computer Science [#6 Registers and RAM](https://www.youtube.com/watch?v=fpnE6UAfbtU), [#7 The CPU](https://www.youtube.com/watch?v=FZGugFqdr60), [#8 Instructions & Programs](https://www.youtube.com/watch?v=zltgXvg6r3k): 11 min each; fetch-decode-execute on screen. (#5, the ALU, is under Class 1.)
 * Technically glossary: [CPU](https://technically.dev/universe/cpu-processor), [RAM](https://technically.dev/universe/ram-memory), [disk/SSD](https://technically.dev/universe/disk-ssd-hdd), [binary](https://technically.dev/universe/binary), [operating system](https://technically.dev/universe/operating-system), [kernel](https://technically.dev/universe/kernel).
 * [Central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) (Wikipedia; "Operation" section names the instruction cycle), [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (Wikipedia; diagram at top: instructions and data share one memory).
@@ -58,6 +60,8 @@ Additional resources about this idea
 * [What happens when you type google.com](https://github.com/alex/what-happens-when): the exhaustive answer, keypress to pixels.
 
 ### The apps that run our code
+
+Code is either compiled into an executable, or interpreted live within a host executable (the latter being what python does). These compilers/interpreters are the apps that run our apps. They can grow very large and become IDEs (integrated development environments) if they also take on additional tasks like debugging, designing user interfaces, or managing multiple target platforms.
 
 * [The github repository of python itself](https://github.com/python/cpython)
 * [The python Wikipedia page](https://en.wikipedia.org/wiki/CPython)
@@ -71,9 +75,12 @@ Additional resources about this idea
 
 ### Programming languages and what they have in common
 
+Languages themselves are objects of study. Some of them make it harder to write bugs, believe it or not! Python, sadly, is not one of those.
+
 * [A Map of the Territory](https://craftinginterpreters.com/a-map-of-the-territory.html)
 * [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
 * [Type system](https://en.wikipedia.org/wiki/Type_system)
+* [Functional programming](https://en.wikipedia.org/wiki/Functional_programming)
 * [Turing completeness](https://en.wikipedia.org/wiki/Turing_completeness)
 * [Call stack](https://en.wikipedia.org/wiki/Call_stack) (Wikipedia)
 * The dichotomy: [Syntax (programming languages)](https://en.wikipedia.org/wiki/Syntax_(programming_languages)), [Semantics (computer science)](https://en.wikipedia.org/wiki/Semantics_(computer_science))
@@ -118,13 +125,13 @@ What you want to come away understanding is the following, which will allow you 
 
 11. When the function finishes, Python erases its stack frame and jumps backs to the instructions it was executing before the function call. If there isn’t a “before,” the program has finished.
 
-That's software in a nutshell!
+That's software in a nutshell! [Here are some analogies](https://notionalmachines.github.io/notional-machines.html) about bits of the notional machine.
 
 ### Notebooks
 
 A notebook is another way to interact with Python (or R, or Mathematica, or others). It's a document with three types of cells: formatted text, cells for entering code, and cells that show the output of the code. They usually are web pages. There's a free site that offers notebooks called [Jupyter everywhere](https://jupytereverywhere.org). They run on your own comptuer in the browser, via a special version of python that's also running in your browser.
 
-### Odds and ends
+### Data types
 
 * [Zero-based numbering](https://en.wikipedia.org/wiki/Zero-based_numbering) (Wikipedia): why lists start at 0.
 * [Floating point is weird](https://wizardzines.com/comics/floating-point-weird/) (Julia Evans comic)
@@ -185,8 +192,11 @@ Those modules come from somewhere. In this case the Jupyter Everywhere system ha
 
 ### Games (and game state trees)
 
+In case you want to think about writing games or AIs that play games.
+
 * [Game tree](https://en.wikipedia.org/wiki/Game_tree) (Wikipedia)
 * [Game tree for tic-tac-toe in python](https://banay.me/post/tic-tac-toe-minimax/) including building an AI to play the game
+* [Solving any Sudoku puzzle with Python](https://www.norvig.com/sudoku.html)
 
 ### Security and privacy
 
@@ -220,6 +230,8 @@ Here I only wanted to share some stories, which will help you know what to do by
 
 ### Front end, back end
 
+The basic dichotomies and building blocks, mostly written specifically for people coding with AI.
+
 * [Technically: Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends): restaurant analogy (dining room = frontend, kitchen = 
 * Technically glossary: [frontend](https://technically.dev/universe/frontend), [backend](https://technically.dev/universe/backend), [database](https://technically.dev/universe/database), [API](https://technically.dev/universe/api), [server](https://technically.dev/universe/server), [client](https://technically.dev/universe/client)
 * [What's an API?](https://read.technically.dev/p/whats-an-api) "like drive-thru windows, but in code."
@@ -228,10 +240,14 @@ Here I only wanted to share some stories, which will help you know what to do by
 
 ### Information architecture: how to present information
 
+Look at the world of software around you and how it's organized. Then you can prompt for those good patterns.
+
 * [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens): see many, many screens from apps. Be an observer of apps and sites you like, and bring that organization to your own.
 * [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free): information architecture: "the way we arrange the parts of something to make it understandable."
 
 ### Databases
+
+If you need to store data, you probably need a database.
 
 * [Software Eng for Vibe Coders: Databases + Storage](https://read.technically.dev/p/software-eng-for-vibe-coders-databases) (Technically): part 2 of the series you already link. "Like a spreadsheet, except with more rules." Free.
 * [The Beginner's Guide to Databases](https://technically.dev/posts/the-beginners-guide-to-databases) (Technically): baking-ingredients metaphor.
@@ -241,6 +257,8 @@ Here I only wanted to share some stories, which will help you know what to do by
 * Automate the Boring Stuff, 3rd ed.: [SQLite Databases](https://automatetheboringstuff.com/3e/chapter16.html).
 
 ### git
+
+Software is stored in git because it lets you go backwards and forwards in the change history, with metadata about who changed what, and with the ability to mark certain states with release tags. It also lets people go off on a new branch while others fix bugs on the old branch. It fits the software engineering discipline.
 
 * [What's version control and GitHub?](https://technically.dev/posts/whats-version-control-and-github) (Technically): `presentation_final_final_2.pptx` analogy.
 * Glossary: [version control](https://technically.dev/universe/version-control), [branch](https://technically.dev/universe/branch), [pull request](https://technically.dev/universe/pull-request), [merging](https://technically.dev/universe/merging).
@@ -253,9 +271,9 @@ Here I only wanted to share some stories, which will help you know what to do by
 
 ### Software engineering
 
-* [Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)) ![](/img/margaret_hamilton.jpg)
+* [Coiner of the term, Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)) ![](/img/margaret_hamilton.jpg)
 
-Specs
+**Specs**
 
 It remains to be seen if we need to retain this paradigm exactly, but everything here needs to reappear somewhere in the prompt-based development cycle, even if it's in your head. Learn from your elders!
 
@@ -266,6 +284,8 @@ It remains to be seen if we need to retain this paradigm exactly, but everything
 
 ### Building apps
 
+Coding for devices has its own languages and UI idioms that are designed more centrally by one company, usually. And there are extra steps to build apps for an app store such as Apple's.
+
 * [Apple's iOS Pathway](https://developer.apple.com/ios/get-started/)
 * [Apple developer Pathway](https://developer.apple.com/pathways/developer/): steps to ship an app
 * [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui): I used this.
@@ -275,15 +295,21 @@ Unwrap)
 
 ### Building web sites
 
+Web sites can be built in many different ways, though there's usually a mainstream way to do it at any given moment. If you launch something publically, it needs hosting and databases and security.
+
 * [Reddit thread about what to use in 2026](https://www.reddit.com/r/webdevelopment/comments/1smfe68/whats_your_preferred_way_of_building_websites_for/)
 * [Next.js on Wikipedia](https://en.wikipedia.org/wiki/Next.js): understanding what this entry is saying about rendering on the server versus in the browser is an excellent goal.
 * [Reddit thread about building a custom CRM with a floating chat window](https://www.reddit.com/r/nextjs/comments/1mgo7on/built_an_internal_crm_with_nextjs_for_my_company/): I just want to share how people talk about these things.
 
 ### Building terminal programs
 
+Or you can build a little text-based app, old-school.
+
 * [Roguelike dungeon-crawl tutorial in Rust](https://bfnightly.bracketproductions.com/rustbook/)
 
 ### AI for coding
+
+You will help write the book on this aspect. For now there are some good early discoveries about how to do this well.
 
 * [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison): low stakes only, watch secrets and data privacy, set billing limits, get a review.
 * [Learn AI-Assisted Python Programming, 2nd ed.](https://www.manning.com/books/learn-ai-assisted-python-programming-second-edition) 
