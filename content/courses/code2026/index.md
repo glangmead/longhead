@@ -69,7 +69,7 @@ Code is either compiled into an executable, or interpreted live within a host ex
 * [What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript) (MDN): the browser is the runtime.
 * [Integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment)
 * [Shell (computing)](https://en.wikipedia.org/wiki/Shell_(computing))
-* [Xcode](https://en.wikipedia.org/wiki/Xcode) (Wikipedia): references.
+* [Xcode](https://en.wikipedia.org/wiki/Xcode) (Wikipedia)
 * Technically glossary: [runtime](https://technically.dev/universe/runtime), [terminal](https://technically.dev/universe/terminal), [macOS/Windows/Linux](https://technically.dev/universe/macos-windows-linux), [iOS/Android](https://technically.dev/universe/ios-android).
 * [The Unix Shell](https://swcarpentry.github.io/shell-novice/) (Software Carpentry), episodes 1-2: what a file, directory, path, and command are.
 
@@ -279,7 +279,7 @@ It remains to be seen if we need to retain this paradigm exactly, but everything
 
 * Joel Spolsky, Painless Functional Specifications: [Part 1, Why Bother?](https://www.joelonsoftware.com/2000/10/02/painless-functional-specifications-part-1-why-bother/), [Part 2, What's a Spec?](https://www.joelonsoftware.com/2000/10/03/painless-functional-specifications-part-2-whats-a-spec/): part 2 links a sample spec (WhatTimeIsIt).
 * [User story](https://en.wikipedia.org/wiki/User_story) (Wikipedia): "As a ..., I want ..., so that ..." template.
-* [Software requirements specification](https://en.wikipedia.org/wiki/Software_requirements_specification), [Product requirements document](https://en.wikipedia.org/wiki/Product_requirements_document) (Wikipedia): references.
+* [Software requirements specification](https://en.wikipedia.org/wiki/Software_requirements_specification), [Product requirements document](https://en.wikipedia.org/wiki/Product_requirements_document) (Wikipedia)
 * [How to Design Programs](https://htdp.org/): the design recipe: problem, signature, examples, body, tests.
 
 ### Building apps
@@ -325,5 +325,5 @@ This is your job now. The agent can build software but you have test it and find
 * [How I got better at debugging](https://wizardzines.com/comics/better-at-debugging/) (Julia Evans comic): "it's never magic."
 * [Debugging](https://technically.dev/universe/debugging) (Technically glossary)
 * [pytest: Get Started](https://docs.pytest.org/en/stable/getting-started.html): the 4-line first test.
-* [Software testing](https://en.wikipedia.org/wiki/Software_testing), [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Software bug](https://en.wikipedia.org/wiki/Software_bug) (Wikipedia): references.
+* [Software testing](https://en.wikipedia.org/wiki/Software_testing), [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Software bug](https://en.wikipedia.org/wiki/Software_bug) (Wikipedia).
 * [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) (Wikipedia)
