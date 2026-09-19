@@ -20,9 +20,9 @@ This is a resource for someone wanting to learn how to code (with the help of AI
 
 1. To understand code, you need to understand a little about how computers and the internet work. This extra material is not usually included in coding classes, but it's the wax-on-wax-off portion that will make you the Karate Kid.
 
-2. You need to learn a specific language, in this case python. You'll need to look at the code the agent writes for you to some degree, and there's no getting around that. So you still need to "learn to code" the old-fashioned way, as far as we can tell. Maybe with more reading than writing. The takeaway is not just python, but the abstract **notional machine** that python targets. It's a model of how computer programs execute, and it carries over to other programming languages.
+2. You need to learn a specific language, in this case python. After all, you'll need to look at the code the agent writes for you to some degree, and there's no getting around that. So you still need to "learn to code" the old-fashioned way, as far as we can tell. The goal is not just learning python, but understanding the abstract **notional machine** that python targets. It's a model of how computer programs execute, and it carries over to other programming languages.
 
-3. You need to know what to ask the agent for. You need to know what kinds of software there are, such as web sites and apps. You need to look more closely at the ones you use every day and see what all their ingredients are, what screens they have. You need to know when you need a database. You need to know about security and privacy. You need to know about testing (QA, quality assurance). You need to know about app stores.
+3. You need to know what to ask the agent for. Therefore you need to know what kinds of software there are, such as web sites and apps. You need to look closely at the ones you use every day and see what screens they have, and how they organize navigation and information. You need to know when you need a database. You need to know about security and privacy. You need to know about testing (QA, quality assurance). You need to know about app stores.
 
 Then you'll be an expert!
 
