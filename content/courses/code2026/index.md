@@ -43,18 +43,18 @@ Additional resources about this idea
 * [Logic Gate Simulator](https://academo.org/demos/logic-gate-simulator/): drag-and-drop AND/OR/XOR with truth tables.
 * Crash Course Computer Science [#3 Boolean Logic & Logic Gates](https://www.youtube.com/watch?v=gI-qXk7XojA), [#5 How Computers Calculate: the ALU](https://www.youtube.com/watch?v=1I5ZMmrOfnA) (builds an adder).
 * [Exploring How Computers Work](https://www.youtube.com/watch?v=QZwneRb-zqA) (Sebastian Lague): animated, transistors to gates to an adder.
-* [Logic gate](https://en.wikipedia.org/wiki/Logic_gate) (Wikipedia; scroll to "Symbols"), [Binary number](https://en.wikipedia.org/wiki/Binary_number) (Wikipedia; table at top).
+* [Logic gate](https://en.wikipedia.org/wiki/Logic_gate) (Wikipedia), [Binary number](https://en.wikipedia.org/wiki/Binary_number) (Wikipedia).
 * Ben Eater: [Making logic gates from transistors](https://www.youtube.com/watch?v=sTu3LwpF6XI) (13 min), [the ALU](https://eater.net/8bit/alu) (the "Binary addition" video, 14 min), using breadboards.
 
 ### Computer organization
 
 Curated resources that explain more about how computers work, building up hierarchically from the individual gates.
 
-* Crash Course Computer Science [#6 Registers and RAM](https://www.youtube.com/watch?v=fpnE6UAfbtU), [#7 The CPU](https://www.youtube.com/watch?v=FZGugFqdr60), [#8 Instructions & Programs](https://www.youtube.com/watch?v=zltgXvg6r3k): 11 min each; fetch-decode-execute on screen. (#5, the ALU, is under Class 1.)
+* Crash Course Computer Science [#6 Registers and RAM](https://www.youtube.com/watch?v=fpnE6UAfbtU), [#7 The CPU](https://www.youtube.com/watch?v=FZGugFqdr60), [#8 Instructions & Programs](https://www.youtube.com/watch?v=zltgXvg6r3k): 11 min each
 * Technically glossary: [CPU](https://technically.dev/universe/cpu-processor), [RAM](https://technically.dev/universe/ram-memory), [disk/SSD](https://technically.dev/universe/disk-ssd-hdd), [binary](https://technically.dev/universe/binary), [operating system](https://technically.dev/universe/operating-system), [kernel](https://technically.dev/universe/kernel).
-* [Central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) (Wikipedia; "Operation" section names the instruction cycle), [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (Wikipedia; diagram at top: instructions and data share one memory).
+* [Central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) (Wikipedia), [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (Wikipedia).
 * [Little Man Computer](https://peterhigginson.co.uk/lmc/) (Peter Higginson simulator): watch a program run one instruction at a time. Retro UI. [Wikipedia page](https://en.wikipedia.org/wiki/Little_man_computer) has the mailroom metaphor.
-* [Build an 8-bit computer](https://eater.net/8bit) (Ben Eater): going deeper; registers, RAM, program counter, bus, each as a breadboard module.
+* [Build an 8-bit computer](https://eater.net/8bit) (Ben Eater): going deeper: registers, RAM, program counter, bus, each as a breadboard module.
 * [How Computers Work](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-): playlist of 5 5-minute videos.
 * [How the Internet Works](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7): playlist of 6 7-minute videos.
 * [What happens when you type google.com](https://github.com/alex/what-happens-when): the exhaustive answer, keypress to pixels.
@@ -243,7 +243,7 @@ The basic dichotomies and building blocks, mostly written specifically for peopl
 Look at the world of software around you and how it's organized. Then you can prompt for those good patterns.
 
 * [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens): see many, many screens from apps. Be an observer of apps and sites you like, and bring that organization to your own.
-* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free): information architecture: "the way we arrange the parts of something to make it understandable."
+* [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert): information architecture: "the way we arrange the parts of something to make it understandable."
 
 ### Databases
 
@@ -264,7 +264,7 @@ Software is stored in git because it lets you go backwards and forwards in the c
 * Glossary: [version control](https://technically.dev/universe/version-control), [branch](https://technically.dev/universe/branch), [pull request](https://technically.dev/universe/pull-request), [merging](https://technically.dev/universe/merging).
 * [About Git](https://docs.github.com/en/get-started/using-git/about-git) (GitHub docs)
 * [Hello World](https://docs.github.com/get-started/quickstart/hello-world) (GitHub quickstart): repo, branch, commit, pull request by clicking.
-* [Learn Git Branching](https://learngitbranching.js.org/): interactive; commits and branches drawn as a tree.
+* [Learn Git Branching](https://learngitbranching.js.org/): interactive, commits and branches drawn as a tree.
 * [Oh Shit, Git!?!](https://ohshitgit.com/) (Katie Sylor-Miller): for after your first mistake, shows history is recoverable. Clean-language copy at [dangitgit.com](https://dangitgit.com/).
 * [git cheat sheet](https://wizardzines.com/comics/git-cheat-sheet/) (Julia Evans comic): one page, poster-style.
 * [Git on Wikipedia](https://en.wikipedia.org/wiki/Git)
@@ -319,7 +319,7 @@ You will help write the book on this aspect. For now there are some good early d
 This is your job now. The agent can build software but you have test it and find bugs and crashes.
 
 * [List of famous software bugs](https://en.wikipedia.org/wiki/List_of_software_bugs) (Wikipedia): Ariane 5, Therac-25, Mars Climate Orbiter stories.
-* Willison, [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/): "the one thing you absolutely cannot outsource to the machine is testing." The Atomic Object post on the same point assumes TDD jargon; skipped.
+* Willison, [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/): "the one thing you absolutely cannot outsource to the machine is testing."
 * [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) (official tutorial): a traceback example and how to read it.
 * Automate the Boring Stuff, 3rd ed.: [Debugging](https://automatetheboringstuff.com/3e/chapter5.html): tracebacks, assertions, the debugger.
 * [How I got better at debugging](https://wizardzines.com/comics/better-at-debugging/) (Julia Evans comic): "it's never magic."
