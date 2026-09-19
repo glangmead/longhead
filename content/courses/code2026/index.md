@@ -81,20 +81,63 @@ Additional resources about this idea
 
 ## Python
 
-### Arithmetic, loops, lists
+[Computer Science Circles](https://cscircles.cemc.uwaterloo.ca): What you want to do is work through this site. They cover python in just the right way: with in-page visualizations of what the notional machine is doing.
 
-* kinds of values: boolean, integer, floating point
-* add, subtract, multiply, divide, modulus (remainder)
-* for loop
-* lists, concatenation, appending, indexing, changing, length, membership test, looping, sorting
+I offer some supplementary material to look at alongside.
 
-**Links**
+### The notional machine
 
-* [Python tutor visualizer](https://pythontutor.com/member.html)
-* [Python cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
-* [Jupyter everywhere](https://jupytereverywhere.org)
-* Practical Python Programming: [numbers](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/03_Numbers.html), [lists](https://dabeaz-course.github.io/practical-python/Notes/01_Introduction/05_Lists.html)
-* [A little about why](https://docs.python.org/3/tutorial/floatingpoint.html) floating point numbers behave unexpectedly
+What you want to come away understanding is the following, which will allow you to understand every single programming language at once.
+
+1. Running programs live in memory, which is divided between a **call stack** (the "frames" in the CS Circles visualizer) and a **heap** (called "objects" in the CS Circles visualizer).
+
+    See this for example in CS Circles section 10 <iframe width='500' height='480' frameborder='0' scrolling='no' src='https://cscircles.cemc.uwaterloo.ca/wp-content/plugins/pybox/OnlinePythonTutor3-cemc/iframe-embed.html#code=def+square%28x%29%3A+++++%23+function+definition%0A++++return+x%2Ax+++++%23+body+only+has+one+line%0A%0A%23+use+the+function%2C+now+that+it%27s+defined%0Aprint%28square%2810%29%29++++++++%0Aprint%28square%28square%282%29%29%29&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&showOnlyOutputs=false&py=3&curInstr=0&resizeContainer=true&highlightLines&width=460&rightStdout=1'></iframe>
+
+2. When code is executed, Python steps through the instructions, doing what each one tells it to in turn.
+
+    see it here
+
+3. Every piece of data is stored in a two-part structure. The first part says what **type** the data is, and the second part is the actual **value**.
+
+    see it here
+
+4. Memory for some types is allocated in the stack, and for others inside the heap. This shows up in the visualizer.
+
+    see it here
+
+5. Lists, dictionaries and other collections store references to other data rather than storing those values directly. They can be modified after they are created, i.e. a list can be extended or new values can be added to a set.
+
+    see it here
+
+6. When code is loaded into memory, Python converts it to a sequence of instructions that are stored like any other data. This is why it’s possible to assign functions to variables and pass them as parameters.
+
+    see it here
+
+7. Some instructions make Python read data, do calculations, and create new data. Other instructions control what instructions Python executes, which is how loops and conditionals work. Yet another instruction tells Python to call a function.
+
+    see it here
+
+8. When a function is called, Python pushes a new stack frame onto the call stack.
+
+    see it here
+
+9. Each stack frame stores variables’ names and references to data. Function parameters are just more variables in the frame.
+
+    see it here
+
+10. When a variable is used, Python looks for it in the top stack frame. If it isn’t there, it looks in the bottom (global) frame.
+
+    see it here
+
+11. When the function finishes, Python erases its stack frame and jumps backs to the instructions it was executing before the function call. If there isn’t a “before,” the program has finished.
+
+    see it here
+
+https://cscircles.cemc.uwaterloo.ca/10-def/
+
+### Notebooks
+
+A notebook is another way to interact with Python (or R, or Mathematica, or others). It's a document with three types of cells: formatted text, cells for entering code, and cells that show the output of the code. They usually are web pages. There's a free site that offers notebooks called [Jupyter everywhere](https://jupytereverywhere.org). They run on your own comptuer in the browser, via a special version of python that's also running in your browser.
 
 <hr />
 
@@ -102,7 +145,7 @@ Additional resources about this idea
 
 ### Front end, back end
 
-* [Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends)  restaurant analogy (dining room = frontend, kitchen = 
+* [Technically: Frontends + Backends](https://read.technically.dev/p/software-eng-vibe-coders-frontends-backends): restaurant analogy (dining room = frontend, kitchen = 
 * Technically glossary: [frontend](https://technically.dev/universe/frontend), [backend](https://technically.dev/universe/backend), [database](https://technically.dev/universe/database), [API](https://technically.dev/universe/api), [server](https://technically.dev/universe/server), [client](https://technically.dev/universe/client)
 * [What's an API?](https://read.technically.dev/p/whats-an-api) "like drive-thru windows, but in code."
 * [Front end and back end on Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
@@ -110,7 +153,7 @@ Additional resources about this idea
 
 ### Information architecture: how to present information
 
-* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens): see many, many screens from apps.
+* [Mobbin flow](https://mobbin.com/apps/flighty-ios-e6531374-23b5-4b62-9e1c-5ec41d351780/812571a1-c341-471e-9dc4-26b0fa92720a/screens): see many, many screens from apps. Be an observer of apps and sites you like, and bring that organization to your own.
 * [How to Make Sense of Any Mess](https://abbycovert.com/make-sense/) (Abby Covert; full text free): information architecture: "the way we arrange the parts of something to make it understandable."
 
 ### Databases
@@ -243,4 +286,5 @@ Unwrap)
 * [Teachcomputing](https://teachcomputing.org/pedagogy)
 * [CS teaching tips](https://www.csteachingtips.org/browse-all)
 * [Amy J. Ko's free books](https://faculty.washington.edu/ajko/books/): *Critically Conscious Computing* has the most on how novices form misconceptions.
+
 
