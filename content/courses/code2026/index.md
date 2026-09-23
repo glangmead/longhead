@@ -310,12 +310,12 @@ Or you can build a little text-based app, old-school.
 
 You will help write the book on this aspect. For now there are some good early discoveries about how to do this well.
 
-* [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison): low stakes only, watch secrets and data privacy, set billing limits, get a review.
+* [Not all AI-assisted programming is vibe coding](https://simonwillison.net/2025/Mar/19/vibe-coding/) (Simon Willison): rules of thumg: low stakes projects only, watch secrets and data privacy (see above), set billing limits, get a review.
 * [Learn AI-Assisted Python Programming, 2nd ed.](https://www.manning.com/books/learn-ai-assisted-python-programming-second-edition) 
 
 ### QA
 
-This is your job now. The agent can build software but you have test it and find bugs and crashes.
+This is your job now. The agent can build software but you have test it and find bugs and crashes. (That said, there are skills to help the agent test in a real browser or device simulator and find problems on its own.)
 
 * [List of famous software bugs](https://en.wikipedia.org/wiki/List_of_software_bugs) (Wikipedia): Ariane 5, Therac-25, Mars Climate Orbiter stories.
 * Willison, [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/): "the one thing you absolutely cannot outsource to the machine is testing."
