@@ -53,7 +53,7 @@ Curated resources that explain more about how computers work, building up hierar
 * Crash Course Computer Science [#6 Registers and RAM](https://www.youtube.com/watch?v=fpnE6UAfbtU), [#7 The CPU](https://www.youtube.com/watch?v=FZGugFqdr60), [#8 Instructions & Programs](https://www.youtube.com/watch?v=zltgXvg6r3k): 11 min each
 * Technically glossary: [CPU](https://technically.dev/universe/cpu-processor), [RAM](https://technically.dev/universe/ram-memory), [disk/SSD](https://technically.dev/universe/disk-ssd-hdd), [binary](https://technically.dev/universe/binary), [operating system](https://technically.dev/universe/operating-system), [kernel](https://technically.dev/universe/kernel).
 * [Central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) (Wikipedia), [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (Wikipedia).
-* [Little Man Computer](https://peterhigginson.co.uk/lmc/) (Peter Higginson simulator): watch a program run one instruction at a time. Retro UI. [Wikipedia page](https://en.wikipedia.org/wiki/Little_man_computer) has the mailroom metaphor.
+* [Little Man Computer](https://peterhigginson.co.uk/lmc/) (Peter Higginson simulator): watch a program run one instruction at a time. Retro UI. [Wikipedia page](https://en.wikipedia.org/wiki/Little_man_computer) a mailroom metaphor.
 * [Build an 8-bit computer](https://eater.net/8bit) (Ben Eater): going deeper: registers, RAM, program counter, bus, each as a breadboard module.
 * [How Computers Work](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-): playlist of 5 5-minute videos.
 * [How the Internet Works](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7): playlist of 6 7-minute videos.
@@ -184,7 +184,7 @@ except Exception as error:
     print(f"  weather lookup failed: {type(error).__name__}: {error}")
 ```
 
-Those modules come from somewhere. In this case the Jupyter Everywhere system has them instaleld because they are very common modules everyone needs. But if a given system doesn't have a module, you can install it with `pip install json` or similar. Here are some links that provide context on this infrastructure:
+Those modules come from somewhere. In this case the Jupyter Everywhere system has them installed because they are very common modules everyone needs. But if a given system doesn't have a module, you can install it with `pip install json` or similar. Here are some links that provide context on this infrastructure:
 
 * [package registry](https://technically.dev/universe/package-registry) (Technically glossary): importing other libraries into python.
 * [Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index) (Wikipedia): where `pip install` gets things.
@@ -290,8 +290,7 @@ Coding for devices has its own languages and UI idioms that are designed more ce
 * [Apple developer Pathway](https://developer.apple.com/pathways/developer/): steps to ship an app
 * [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui): I used this.
 * [Swift Playgrounds](https://developer.apple.com/swift-playground/): build a real SwiftUI app with live preview on iPad or Mac, no Xcode. The only zero-setup on-ramp for mobile.
-* [Unwrap: Learn Swift on your iPad](https://apps.apple.com/us/app/unwrap/id1440611372
-Unwrap)
+* [Unwrap: Learn Swift on your iPad](https://apps.apple.com/us/app/unwrap/id1440611372)
 
 ### Building web sites
 
