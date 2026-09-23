@@ -1,5 +1,5 @@
 ---
-title: "Learn to Code (including with AI)"
+title: "code2026"
 subtitle: "Resources for learning to code with the help of AI in 2026"
 summary: "Links and materials for a course on learning to code with the help of AI in 2026"
 authors: []
