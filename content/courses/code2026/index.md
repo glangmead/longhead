@@ -294,7 +294,7 @@ Coding for devices has its own languages and UI idioms that are designed more ce
 
 ### Building web sites
 
-Web sites can be built in many different ways, though there's usually a mainstream way to do it at any given moment. If you launch something publically, it needs hosting and databases and security.
+Web sites can be built in many different ways, though there's usually a mainstream way to do it at any given moment. If you launch something publicly, it needs hosting and databases and security.
 
 * [Reddit thread about what to use in 2026](https://www.reddit.com/r/webdevelopment/comments/1smfe68/whats_your_preferred_way_of_building_websites_for/)
 * [Next.js on Wikipedia](https://en.wikipedia.org/wiki/Next.js): understanding what this entry is saying about rendering on the server versus in the browser is an excellent goal.
